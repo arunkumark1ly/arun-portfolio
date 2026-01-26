@@ -19,7 +19,7 @@ export function Navbar() {
   const navLinks = [
     { name: "About", to: "about" },
     { name: "Experience", to: "experience" },
-    { name: "Work", to: "projects" },
+    { name: "Projects", to: "projects" },
     { name: "Contact", to: "contact" },
   ];
 
@@ -28,94 +28,79 @@ export function Navbar() {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "h-14 bg-background/95 backdrop-blur-sm border-b border-border" : "h-16 bg-transparent"
+        transition={{ duration: 0.4 }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+          scrolled ? "bg-background/95 backdrop-blur-sm border-b border-border" : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-4 h-full flex items-center justify-between">
+        <div className="max-w-4xl mx-auto px-6 md:px-8 h-14 flex items-center justify-between">
           <Link to="hero" smooth={true} duration={500} className="cursor-pointer">
-            <div className="w-8 h-8 border border-primary rounded flex items-center justify-center text-primary font-semibold text-sm">
-              A
-            </div>
+            <span className="font-mono text-primary font-semibold text-sm">AK</span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-6">
-            <ol className="flex gap-6 list-none">
-              {navLinks.map((link, i) => (
-                <motion.li 
-                  key={link.name}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  <Link
-                    to={link.to}
-                    smooth={true}
-                    duration={500}
-                    className="font-mono text-xs cursor-pointer text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <span className="text-primary mr-1">0{i + 1}.</span> {link.name}
-                  </Link>
-                </motion.li>
-              ))}
-            </ol>
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setResumeModalOpen(true)}
-                className="text-primary border-primary font-mono text-xs"
-                data-testid="button-resume-nav"
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link, i) => (
+              <Link
+                key={link.name}
+                to={link.to}
+                smooth={true}
+                duration={500}
+                className="font-mono text-xs cursor-pointer text-muted-foreground hover:text-primary transition-colors"
+                data-testid={`nav-${link.to}`}
               >
-                Resume
-              </Button>
-            </motion.div>
-          </div>
+                {link.name}
+              </Link>
+            ))}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setResumeModalOpen(true)}
+              className="font-mono text-xs h-8"
+              data-testid="button-resume-nav"
+            >
+              Resume
+            </Button>
+          </nav>
 
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-primary p-2" data-testid="button-mobile-menu">
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
+          <button 
+            onClick={() => setIsOpen(!isOpen)} 
+            className="md:hidden text-foreground p-1" 
+            data-testid="button-mobile-menu"
+          >
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
 
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 100 }}
-              className="fixed inset-y-0 right-0 w-3/4 bg-card border-l border-border shadow-xl z-50 md:hidden flex flex-col items-center justify-center p-6"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden bg-background border-b border-border overflow-hidden"
             >
-              <ol className="flex flex-col gap-6 text-center w-full">
-                {navLinks.map((link, i) => (
-                  <li key={link.name} className="w-full">
-                    <Link
-                      to={link.to}
-                      smooth={true}
-                      duration={500}
-                      onClick={() => setIsOpen(false)}
-                      className="block font-mono text-sm cursor-pointer text-muted-foreground hover:text-primary transition-colors py-2"
-                    >
-                      <div className="text-primary text-xs mb-1">0{i + 1}.</div>
-                      {link.name}
-                    </Link>
-                  </li>
+              <div className="px-6 py-4 space-y-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.to}
+                    smooth={true}
+                    duration={500}
+                    onClick={() => setIsOpen(false)}
+                    className="block font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+                    data-testid={`nav-mobile-${link.to}`}
+                  >
+                    {link.name}
+                  </Link>
                 ))}
-              </ol>
-              <div className="mt-8">
                 <Button
                   variant="outline"
+                  size="sm"
                   onClick={() => {
                     setIsOpen(false);
                     setResumeModalOpen(true);
                   }}
-                  className="text-primary border-primary font-mono text-sm px-6"
+                  className="font-mono text-xs w-full"
                   data-testid="button-resume-mobile"
                 >
                   Resume
