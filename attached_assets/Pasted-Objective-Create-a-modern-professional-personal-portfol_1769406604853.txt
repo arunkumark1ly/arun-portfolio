@@ -1,0 +1,24 @@
+Objective: Create a modern, professional personal portfolio website for Arunkumar Kandasamy, a Lead Technical Consultant and Product/Project Manager.
+
+1. Design Aesthetic & Theme:
+* Style: Minimalist, "Tech-Forward," and professional. Use a clean color palette (e.g., Deep Navy, Slate Gray, and an accent color like Electric Blue).
+* Typography: Use modern sans-serif fonts (e.g., Inter, Roboto, or Montserrat) for high readability.
+* Theme: Incorporate an "Anime/Tech" aesthetic subtly in the background or through custom icons to match my personal brand.
+2. Website Structure & Content:
+* Hero Section: * Headline: Arunkumar Kandasamy | Bridging the Gap Between Engineering & Product Vision.
+* Sub-headline: Lead Technical Consultant with 10+ years of experience in Full-Stack Development (Ruby on Rails, React) and Agile Leadership.
+* CTA: "View My Work" or "Let's Connect."
+* About Me: * Detail my journey from a Senior Software Engineer to a Lead Consultant and Project Manager. 
+    * Highlight my expertise in end-to-end product ownership, from discovery to UAT. 
+* Skills (Visual Grid):
+    * Technical: Ruby on Rails, React.js, PostgreSQL, AWS. 
+    * Management: Agile/Scrum Master, Product Roadmap, Stakeholder Relations, JIRA. 
+* Professional Timeline: * A clean, vertical timeline showing my progression through roles such as Senior Software Engineer and Lead Technical Consultant. 
+    * Include bullet points for key achievements, such as leading cross-functional teams and managing complex SaaS project lifecycles. 
+* Portfolio/Projects: * Space for project cards featuring descriptions, tech stacks used, and my specific role (e.g., Lead Developer or PM). 
+* Contact Section: * Include links to LinkedIn, GitHub, and a professional contact form. 
+3. Functional Requirements:
+* Responsive Design: Must be fully optimized for mobile, tablet, and desktop.
+* Interactivity: Add smooth scrolling, hover effects on skill icons, and a "Dark Mode" toggle.
+* SEO: Ensure the site is optimized for keywords like "Lead Technical Consultant," "Ruby on Rails Expert," and "Technical Product Manager."
+4. Final Output: "Please provide the HTML/Tailwind CSS code or a structured design plan to build this site."
