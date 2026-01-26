@@ -6,11 +6,10 @@ interface ExperienceTimelineProps {
 }
 
 export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
-  // Sort by order directly in render to ensure display order
   const sorted = [...experiences].sort((a, b) => a.order - b.order);
 
   return (
-    <div className="relative border-l border-slate-700 ml-3 space-y-12">
+    <div className="relative border-l border-border ml-2 space-y-6">
       {sorted.map((exp, index) => (
         <motion.div 
           key={exp.id}
@@ -18,20 +17,20 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1, duration: 0.5 }}
-          className="relative pl-8 md:pl-12"
+          className="relative pl-6"
+          data-testid={`experience-item-${exp.id}`}
         >
-          {/* Dot indicator */}
-          <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-background" />
+          <div className="absolute -left-[4px] top-1.5 w-2 h-2 rounded-full bg-primary ring-2 ring-background" />
           
-          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
-            <h3 className="text-xl font-bold text-slate-200">
+          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+            <h3 className="text-sm font-semibold text-foreground">
               {exp.role} 
               {exp.company && <span className="text-primary"> @ {exp.company}</span>}
             </h3>
-            <span className="font-mono text-sm text-slate-500 mt-1 sm:mt-0">{exp.period}</span>
+            <span className="font-mono text-xs text-muted-foreground">{exp.period}</span>
           </div>
           
-          <p className="text-slate-400 leading-relaxed max-w-2xl">
+          <p className="text-xs text-muted-foreground leading-relaxed max-w-xl">
             {exp.description}
           </p>
         </motion.div>

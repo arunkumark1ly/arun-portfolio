@@ -13,11 +13,11 @@ export function SectionHeading({ number, title, className = "" }: SectionHeading
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className={`flex items-center gap-4 mb-12 ${className}`}
+      className={`flex items-center gap-3 mb-8 ${className}`}
     >
-      <span className="font-mono text-primary text-xl md:text-2xl">{number}.</span>
-      <h2 className="text-2xl md:text-4xl font-bold text-slate-200">{title}</h2>
-      <div className="h-[1px] bg-slate-700 w-32 md:w-64 ml-4" />
+      <span className="font-mono text-primary text-xs">{number}.</span>
+      <h2 className="text-lg font-semibold text-foreground whitespace-nowrap">{title}</h2>
+      <div className="h-[1px] bg-border flex-grow ml-3" />
     </motion.div>
   );
 }

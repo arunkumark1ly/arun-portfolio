@@ -1,14 +1,7 @@
 import { motion } from "framer-motion";
-import { Github, ExternalLink, Folder } from "lucide-react";
+import { ExternalLink, Folder } from "lucide-react";
 import type { Project } from "@shared/schema";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface ProjectCardProps {
   project: Project;
@@ -23,38 +16,37 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
     >
-      <Card className="h-full bg-card hover:-translate-y-2 transition-transform duration-300 border-none shadow-lg group">
-        <CardHeader className="flex flex-row items-center justify-between pb-2">
-          <Folder className="w-10 h-10 text-primary" />
-          <div className="flex gap-4">
-            {project.link && (
-              <a 
-                href={project.link} 
-                target="_blank" 
-                rel="noreferrer" 
-                className="text-slate-400 hover:text-primary transition-colors"
-                aria-label={`Visit ${project.title}`}
-              >
-                <ExternalLink className="w-5 h-5" />
-              </a>
-            )}
-          </div>
+      <Card className="h-full hover:-translate-y-1 transition-transform duration-200 group" data-testid={`project-card-${project.id}`}>
+        <CardHeader className="flex flex-row items-center justify-between gap-2 pb-2">
+          <Folder className="w-6 h-6 text-primary" />
+          {project.link && (
+            <a 
+              href={project.link} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label={`Visit ${project.title}`}
+              data-testid={`link-project-${project.id}`}
+            >
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          )}
         </CardHeader>
-        <CardContent className="space-y-4">
-          <CardTitle className="text-xl text-slate-200 group-hover:text-primary transition-colors">
+        <CardContent className="space-y-2">
+          <CardTitle className="text-sm text-foreground group-hover:text-primary transition-colors">
             {project.title}
           </CardTitle>
-          <div className="text-sm font-mono text-primary/80 mb-2">{project.role}</div>
-          <p className="text-slate-400 leading-relaxed text-sm">
+          <div className="text-xs font-mono text-primary/80">{project.role}</div>
+          <p className="text-xs text-muted-foreground leading-relaxed">
             {project.description}
           </p>
         </CardContent>
-        <CardFooter className="pt-auto">
-          <div className="flex flex-wrap gap-2 mt-auto">
+        <CardFooter className="pt-2">
+          <div className="flex flex-wrap gap-1">
             {project.techStack.map((tech) => (
               <span 
                 key={tech} 
-                className="text-xs font-mono text-slate-500 mr-2 mb-1"
+                className="text-[10px] font-mono text-muted-foreground bg-muted px-1.5 py-0.5 rounded"
               >
                 {tech}
               </span>

@@ -8,7 +8,6 @@ interface SkillCardProps {
 }
 
 export function SkillCard({ skill, index }: SkillCardProps) {
-  // Dynamic icon component
   const IconComponent = (Icons as any)[skill.icon] || Icons.Code;
 
   return (
@@ -17,13 +16,14 @@ export function SkillCard({ skill, index }: SkillCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05, duration: 0.4 }}
-      className="group relative p-4 rounded-lg bg-card hover:bg-slate-800 transition-colors duration-300 border border-transparent hover:border-primary/20"
+      className="group relative p-2 rounded bg-muted/50 hover:bg-muted transition-colors duration-200"
+      data-testid={`skill-card-${skill.id}`}
     >
-      <div className="flex items-center gap-3">
-        <div className="p-2 rounded bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-300">
-          <IconComponent className="w-6 h-6" />
+      <div className="flex items-center gap-2">
+        <div className="p-1 rounded bg-primary/10 text-primary">
+          <IconComponent className="w-3 h-3" />
         </div>
-        <span className="font-mono text-slate-300 group-hover:text-primary transition-colors">
+        <span className="font-mono text-xs text-muted-foreground group-hover:text-foreground transition-colors">
           {skill.name}
         </span>
       </div>

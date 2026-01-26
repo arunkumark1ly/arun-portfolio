@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertMessageSchema, skills, projects, experience, messages } from './schema';
+import { insertMessageSchema, insertResumeAccessSchema, skills, projects, experience, messages, resumeAccess } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -46,6 +46,17 @@ export const api = {
       input: insertMessageSchema,
       responses: {
         201: z.custom<typeof messages.$inferSelect>(),
+        400: errorSchemas.validation,
+      },
+    },
+  },
+  resumeAccess: {
+    verify: {
+      method: 'POST' as const,
+      path: '/api/resume-access',
+      input: insertResumeAccessSchema,
+      responses: {
+        201: z.custom<typeof resumeAccess.$inferSelect>(),
         400: errorSchemas.validation,
       },
     },

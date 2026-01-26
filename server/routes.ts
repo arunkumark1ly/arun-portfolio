@@ -42,5 +42,21 @@ export async function registerRoutes(
     }
   });
 
+  app.post(api.resumeAccess.verify.path, async (req, res) => {
+    try {
+      const input = api.resumeAccess.verify.input.parse(req.body);
+      const access = await storage.createResumeAccess(input);
+      res.status(201).json(access);
+    } catch (err) {
+      if (err instanceof z.ZodError) {
+        return res.status(400).json({
+          message: err.errors[0].message,
+          field: err.errors[0].path.join('.'),
+        });
+      }
+      throw err;
+    }
+  });
+
   return httpServer;
 }

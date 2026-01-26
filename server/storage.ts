@@ -1,7 +1,8 @@
 import { db } from "./db";
 import {
-  skills, projects, experience, messages,
-  type Skill, type Project, type Experience, type Message, type InsertMessage
+  skills, projects, experience, messages, resumeAccess,
+  type Skill, type Project, type Experience, type Message, type InsertMessage,
+  type ResumeAccess, type InsertResumeAccess
 } from "@shared/schema";
 
 export interface IStorage {
@@ -9,6 +10,7 @@ export interface IStorage {
   getProjects(): Promise<Project[]>;
   getExperience(): Promise<Experience[]>;
   createMessage(message: InsertMessage): Promise<Message>;
+  createResumeAccess(data: InsertResumeAccess): Promise<ResumeAccess>;
   seedData(): Promise<void>;
 }
 
@@ -28,6 +30,11 @@ export class DatabaseStorage implements IStorage {
   async createMessage(insertMessage: InsertMessage): Promise<Message> {
     const [message] = await db.insert(messages).values(insertMessage).returning();
     return message;
+  }
+
+  async createResumeAccess(data: InsertResumeAccess): Promise<ResumeAccess> {
+    const [access] = await db.insert(resumeAccess).values(data).returning();
+    return access;
   }
 
   async seedData(): Promise<void> {
