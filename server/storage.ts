@@ -40,65 +40,103 @@ export class DatabaseStorage implements IStorage {
   async seedData(): Promise<void> {
     const existingSkills = await this.getSkills();
     if (existingSkills.length === 0) {
-      // Seed Skills
       await db.insert(skills).values([
         { name: "Ruby on Rails", category: "Technical", icon: "Gem" },
-        { name: "React.js", category: "Technical", icon: "React" },
+        { name: "React / Next.js", category: "Technical", icon: "Code" },
         { name: "PostgreSQL", category: "Technical", icon: "Database" },
-        { name: "AWS", category: "Technical", icon: "Cloud" },
-        { name: "Agile/Scrum Master", category: "Management", icon: "Users" },
-        { name: "Product Roadmap", category: "Management", icon: "Map" },
-        { name: "Stakeholder Relations", category: "Management", icon: "Handshake" },
-        { name: "JIRA", category: "Management", icon: "ClipboardList" },
+        { name: "AWS / Cloud", category: "Technical", icon: "Cloud" },
+        { name: "Docker / CI/CD", category: "Technical", icon: "Container" },
+        { name: "REST / GraphQL", category: "Technical", icon: "Globe" },
+        { name: "Sidekiq / Redis", category: "Technical", icon: "Zap" },
+        { name: "JavaScript / TypeScript", category: "Technical", icon: "FileCode" },
+        { name: "TailwindCSS", category: "Technical", icon: "Paintbrush" },
+        { name: "Solution Architecture", category: "Management", icon: "Layout" },
+        { name: "Technical Leadership", category: "Management", icon: "Users" },
+        { name: "Agile Delivery", category: "Management", icon: "Target" },
+        { name: "Stakeholder Management", category: "Management", icon: "Handshake" },
+        { name: "Release Governance", category: "Management", icon: "CheckCircle" },
       ]);
 
-      // Seed Experience
       await db.insert(experience).values([
         {
-          role: "Lead Technical Consultant",
-          company: "Current Company",
-          period: "2021 - Present",
-          description: "Leading cross-functional teams and managing complex SaaS project lifecycles. Bridging engineering and product vision.",
+          role: "Co-founder & Solution Architect",
+          company: "ThinkPro Technologies",
+          period: "Jan 2024 - Present",
+          description: "Founded and lead engineering direction, owning solution architecture (HLD/LLD), execution planning, and end-to-end delivery. Architected VoiceHunt.news using Rails API + Next.js with edge caching and performance optimizations.",
           order: 1
         },
         {
-          role: "Senior Software Engineer",
-          company: "Previous Tech Corp",
-          period: "2018 - 2021",
-          description: "Full-stack development using Ruby on Rails and React. Mentored junior developers and optimized CI/CD pipelines.",
+          role: "Technical Lead",
+          company: "CAI Info India Pvt. Ltd.",
+          period: "Feb 2020 - Mar 2023",
+          description: "Led technical execution for enterprise platforms using Ruby on Rails. Owned SDLC including architecture discussions, delivery planning, and production support. Improved performance through query optimization and CI/CD pipelines.",
           order: 2
         },
         {
-          role: "Software Engineer",
-          company: "Startup Inc",
-          period: "2015 - 2018",
-          description: "Developed core features for flagship product. Collaborated with product team on roadmap execution.",
+          role: "Senior Software Engineer",
+          company: "ZiniosEdge",
+          period: "Apr 2018 - Jan 2020",
+          description: "Developed and scaled large CRM platform using Ruby on Rails. Built REST APIs, integrated analytics using MicroStrategy and JSReport, improved query performance by ~30%.",
           order: 3
+        },
+        {
+          role: "Senior Software Engineer",
+          company: "Aspire Software Consultancy",
+          period: "Nov 2016 - Jan 2018",
+          description: "Remote collaboration with UK-based B2B marketplace team (Rightboat). Owned full lifecycle delivery from requirement discussions to release support.",
+          order: 4
+        },
+        {
+          role: "Co-founder & CTO",
+          company: "Code Rabbits Technologies",
+          period: "Dec 2013 - Oct 2016",
+          description: "Founded and led engineering for eCommerce solutions and internal SaaS platform. Designed modular architecture using Ruby on Rails for catalog, cart, checkout, and order workflows.",
+          order: 5
         }
       ]);
 
-      // Seed Projects
       await db.insert(projects).values([
         {
-          title: "SaaS Analytics Platform",
-          description: "End-to-end product ownership of a high-traffic analytics dashboard.",
-          techStack: ["React", "Ruby on Rails", "PostgreSQL"],
-          role: "Lead Technical Consultant",
-          link: "#"
+          title: "VoiceHunt.news",
+          description: "Technology news publication platform with scalable publishing workflow for curated news, blogs, and thought leadership content. Decoupled architecture with edge caching and ISR revalidation.",
+          techStack: ["Ruby on Rails", "Next.js", "PostgreSQL", "Redis", "AWS", "Docker"],
+          role: "Solution Architect",
+          link: "https://voicehunt.news"
         },
         {
-          title: "E-Commerce Migration",
-          description: "Led the migration of a legacy monolithic app to microservices.",
-          techStack: ["AWS", "Docker", "Node.js"],
+          title: "Effortless FinLabs",
+          description: "Hybrid accounting platform with distributed data sync bridging on-prem Tally DB with cloud services. Event-driven workflows using Kafka for financial data processing.",
+          techStack: ["Ruby on Rails", "React", "PostgreSQL", "GCP", "gRPC", "Kafka", "Sidekiq"],
+          role: "Lead Consultant",
+          link: null
+        },
+        {
+          title: "EdCast Platform Modernization",
+          description: "Led multi-version Rails and PostgreSQL upgrades across legacy enterprise systems. Zero-downtime migrations with backward-compatible constraints and phased rollouts.",
+          techStack: ["Ruby on Rails", "PostgreSQL", "React", "RSpec", "Webpack"],
+          role: "Lead Consultant",
+          link: null
+        },
+        {
+          title: "AI-Powered Project Governance",
+          description: "Large-scale project governance platform with domain-driven design, multi-queue Sidekiq architecture, ElasticSearch integration, and enterprise reporting pipelines.",
+          techStack: ["Ruby on Rails", "Angular", "PostgreSQL", "Sidekiq Pro", "ElasticSearch", "ActiveMQ"],
+          role: "Technical Lead",
+          link: null
+        },
+        {
+          title: "Mahindra Retail Campaign Platform",
+          description: "High-volume campaign and messaging platform with coupon lifecycle engine, async messaging using RabbitMQ, and Twilio SMS integration with rate-limiting.",
+          techStack: ["Ruby on Rails", "MySQL", "RabbitMQ", "Sidekiq", "Twilio", "Redis"],
+          role: "Technical Lead",
+          link: null
+        },
+        {
+          title: "CommonLit EdTech Platform",
+          description: "Large-scale educational technology platform with authentication using Devise + Pundit RBAC, Stripe payment workflows, and blue-green deployments on Heroku.",
+          techStack: ["Ruby on Rails", "PostgreSQL", "React", "Stripe", "Heroku", "CircleCI"],
           role: "Senior Software Engineer",
-          link: "#"
-        },
-        {
-          title: "Project Management Tool",
-          description: "Internal tool for tracking agile sprints and velocity.",
-          techStack: ["Vue.js", "Firebase"],
-          role: "Lead Developer",
-          link: "#"
+          link: null
         }
       ]);
     }

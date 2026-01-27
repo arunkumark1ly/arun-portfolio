@@ -7,7 +7,8 @@ import { SkillCard } from "@/components/SkillCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, PenLine } from "lucide-react";
+import { SiStackoverflow } from "react-icons/si";
 
 export default function Home() {
   const { data: skills, isLoading: skillsLoading } = useSkills();
@@ -15,7 +16,6 @@ export default function Home() {
   const { data: experience, isLoading: experienceLoading } = useExperience();
 
   const technicalSkills = skills?.filter(s => s.category === "Technical") || [];
-  const managementSkills = skills?.filter(s => s.category === "Management") || [];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -39,7 +39,7 @@ export default function Home() {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="text-4xl md:text-5xl font-bold text-foreground tracking-tight leading-tight"
           >
-            Arunkumar Kandasamy.
+            ArunKumar Kandasamy.
           </motion.h1>
           
           <motion.h2
@@ -48,16 +48,16 @@ export default function Home() {
             transition={{ duration: 0.4, delay: 0.2 }}
             className="text-2xl md:text-3xl font-medium text-muted-foreground mt-2"
           >
-            I build things for the web.
+            Solution Architect & Tech Lead.
           </motion.h2>
           
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="max-w-md text-sm text-muted-foreground mt-6 leading-relaxed"
+            className="max-w-lg text-sm text-muted-foreground mt-6 leading-relaxed"
           >
-            Lead Technical Consultant with 10+ years of experience in Full-Stack Development and Agile Leadership. Bridging the gap between engineering and product vision.
+            16+ years of experience designing and delivering web platforms and enterprise products. I blend hands-on architecture and engineering leadership with end-to-end technical delivery ownership to ship predictable outcomes.
           </motion.p>
           
           <motion.div
@@ -82,10 +82,13 @@ export default function Home() {
           <div className="grid md:grid-cols-5 gap-10">
             <div className="md:col-span-3 space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
-                Hello! My journey started as a <span className="text-foreground font-medium">Senior Software Engineer</span> and has evolved into a role where I lead technical strategy and product development.
+                Hello! I'm a <span className="text-foreground font-medium">Solution Architect</span> and <span className="text-foreground font-medium">Tech Lead</span> with deep expertise in Ruby on Rails, cloud infrastructure, and distributed systems. My journey started as a software developer and evolved into leading technical strategy and product development.
               </p>
               <p>
-                My focus is building accessible, inclusive products and digital experiences. I've worked at advertising agencies, start-ups, and large corporations.
+                I focus on building scalable, accessible platforms with pragmatic patterns — from API design and background processing to caching and observability. I've worked across startups, consulting firms, and enterprise organizations.
+              </p>
+              <p className="text-primary font-medium">
+                Currently evolving to adopt AI Development — actively learning Machine Learning to integrate intelligent capabilities into modern platforms.
               </p>
               
               <div className="pt-4">
@@ -94,7 +97,7 @@ export default function Home() {
                   <div className="animate-pulse h-20 bg-muted rounded" />
                 ) : (
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
-                    {technicalSkills.slice(0, 9).map((skill, idx) => (
+                    {technicalSkills.map((skill, idx) => (
                       <SkillCard key={skill.id} skill={skill} index={idx} />
                     ))}
                   </div>
@@ -107,7 +110,7 @@ export default function Home() {
                 <div className="absolute inset-0 border border-primary/30 rounded translate-x-2 translate-y-2" />
                 <img 
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&q=80" 
-                  alt="Arunkumar Kandasamy" 
+                  alt="ArunKumar Kandasamy" 
                   className="relative w-full h-full object-cover rounded"
                 />
               </div>
@@ -156,13 +159,13 @@ export default function Home() {
             <p className="font-mono text-primary text-xs mb-2">04. What's Next?</p>
             <h2 className="text-2xl font-bold text-foreground mb-4">Get In Touch</h2>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-              I'm not currently looking for new opportunities, but my inbox is always open. Whether you have a question or just want to say hi, I'll get back to you!
+              I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and architecture. Feel free to reach out!
             </p>
             
-            <a href="mailto:hello@arunkumar.dev" data-testid="link-contact-email">
+            <a href="mailto:k.arun@outlook.com" data-testid="link-contact-email">
               <Button variant="outline" className="font-mono text-xs gap-2">
                 <Mail className="w-3 h-3" />
-                hello@arunkumar.dev
+                k.arun@outlook.com
               </Button>
             </a>
           </motion.div>
@@ -172,18 +175,57 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 text-center border-t border-border">
         <div className="flex justify-center gap-6 mb-4">
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-github">
+          <a 
+            href="https://github.com/arunkumark1ly" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-muted-foreground hover:text-primary transition-colors" 
+            data-testid="link-github"
+            title="GitHub"
+          >
             <Github className="w-4 h-4" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-linkedin">
+          <a 
+            href="https://www.linkedin.com/in/arun1ly/" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-muted-foreground hover:text-primary transition-colors" 
+            data-testid="link-linkedin"
+            title="LinkedIn"
+          >
             <Linkedin className="w-4 h-4" />
           </a>
-          <a href="mailto:hello@arunkumar.dev" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-email">
+          <a 
+            href="https://stackoverflow.com/users/3089625/arunkumar-kandasamy" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-muted-foreground hover:text-primary transition-colors" 
+            data-testid="link-stackoverflow"
+            title="Stack Overflow"
+          >
+            <SiStackoverflow className="w-4 h-4" />
+          </a>
+          <a 
+            href="https://voicehunt.news/authors/arun1ly" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-muted-foreground hover:text-primary transition-colors" 
+            data-testid="link-blog"
+            title="Blog"
+          >
+            <PenLine className="w-4 h-4" />
+          </a>
+          <a 
+            href="mailto:k.arun@outlook.com" 
+            className="text-muted-foreground hover:text-primary transition-colors" 
+            data-testid="link-email"
+            title="Email"
+          >
             <Mail className="w-4 h-4" />
           </a>
         </div>
         <p className="font-mono text-xs text-muted-foreground">
-          Designed & Built by Arunkumar Kandasamy
+          Designed & Built by ArunKumar Kandasamy
         </p>
       </footer>
     </div>

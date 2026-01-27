@@ -1,0 +1,189 @@
+ArunKumar Resume Content
+
+
+Forward-focused Solution Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes. Experienced partnering with Product, Engineering, QA, Support, and Marketing across the SDLC, including beta programs and production releases.
+
+Value Proposition 
+——————————-------
+- Own end-to-end delivery from discovery to production, bridging product intent to technical execution through clear plans, estimates, milestones, and release readiness.
+- Architect scalable Rails-based platforms with pragmatic patterns (API design, background processing, caching, observability) and modern frontend delivery.
+- Improve reliability and performance through query optimization, async architecture, caching strategies, and production troubleshooting.
+- Lead cross-functional execution with strong stakeholder communication, risk/issue management, and continuous improvement.
+
+Areas of Impact 
+—————————------
+- Solution architecture (HLD/LLD), API design (REST/GraphQL), and domain modeling
+- Performance engineering (profiling, caching, query/index optimization, scalability practices)
+- Asynchronous & event-driven systems (Sidekiq, queues, messaging, retries, idempotency)
+- Cloud & DevOps (Docker, CI/CD, release automation, environment strategy, production readiness)
+- Modernization programs (Rails upgrades, refactoring, zero-downtime migrations, test coverage)
+- Technical delivery leadership (planning, execution tracking, dependency management, incident triage, stakeholder updates)
+
+Technical Skills
+—————————-------
+Programming Languages: Ruby, C, C++
+Backend Frameworks: Ruby on Rails (v3.0 – v7.2+), REST API Development (JSON)
+Frontend Frameworks: ReactJS, Angular, Next.js
+UI / Web Technologies: Tailwind CSS, DaisyUI, JavaScript, jQuery, HTML, HAML, CSS, Sass, AJAX
+Real-time & Background Processing: ActionCable / Turbo Streams, Sidekiq, Delayed Job
+Messaging / Integrations: ActiveMQ, External API Integrations
+Databases: PostgreSQL, MySQL, MongoDB
+Testing: RSpec, Cucumber
+Reporting / Visualization: JSReport, D3.js
+Version Control & CI/CD: Git, Docker, Jenkins, Capistrano, CircleCI, GitHub Actions
+Cloud Platforms: AWS, Heroku, Linode
+Project Management Tools: Jira, Confluence, Freedcamp, ClickUp
+Design Tools: Adobe Photoshop, Adobe Illustrator
+Operating Systems: macOS, Ubuntu, Windows
+
+Strategic Wins
+—————————-----
+- Delivered customer-facing releases and production fixes under tight timelines by aligning stakeholders, managing dependencies, and driving release readiness across multiple teams.
+- Led modernization and performance initiatives across Rails platforms through profiling, refactoring, and database tuning, reducing p95 latency by [X%] and lowering slow queries by [Y%].
+- Built and stabilized CI/CD and deployment practices to improve repeatability and reduce manual steps, improving deployment frequency from [X] to [Y] and cutting build time by [Z%].
+
+Professional Experience
+—————————————————------
+
+Co-founder & Solution Architect — ThinkPro Technologies, Chennai
+Jan 2024 – Present | www.thinkpro.tech
+ThinkPro Technologies is an IT consulting firm delivering scalable web platforms and modern engineering solutions.
+* Founded and lead engineering direction at ThinkPro, owning solution architecture (HLD/LLD), execution planning, and end-to-end delivery across internal and client engagements.
+* Architected and built VoiceHunt.news, a technology news publication platform (recently launched) with a scalable publishing workflow for curated news, blogs, and thought leadership content.
+* Designed the platform using Ruby on Rails (CMS/backend) and a modern React + TailwindCSS UI, enabling separation between content operations and frontend delivery.
+* Built API-driven modules for content lifecycle (create/edit/publish), listing/filtering patterns, and SEO-friendly show page rendering for content-heavy traffic.
+* Implemented performance practices including caching and revalidation mechanisms, database access optimization, and improvements for high-read pages (index/show), improving p95 response time by [X%] on key endpoints.
+* Owned DevOps and delivery pipelines using Docker-based environments, CI/CD (Jenkins/GitHub Actions), release checklists, and release automation for predictable deployments.
+* Led delivery communication and execution tracking: milestones, risk/issue management, production readiness, and post-release validation.
+* Drove operational stability including environment configuration, build reliability, monitoring/alerting setup, and production troubleshooting.
+* Senior Consultant at SnapCorp across initiatives including performance improvements for Cornerstone and consulting support for Effortless FinLabs.
+* Mentored engineers and enforced standards through code reviews, architecture guidance, and delivery discipline.
+
+Technical Lead — CAI Info India Pvt. Ltd., Bangalore
+Feb 2020 – Mar 2023 | www.cai.io
+CAI delivers enterprise software solutions and ERP platforms for internal products and client implementations.
+* Worked as a Technical Lead within a senior engineering team, collaborating with senior developers, leads, product stakeholders, and architects to deliver business-critical enterprise platforms.
+* Contributed hands-on to backend engineering using Ruby on Rails, developing and maintaining core modules and REST APIs supporting scalable workflows.
+* Owned technical execution across the SDLC including requirements analysis, architecture discussions, delivery planning, feature delivery, integration testing, release readiness, and production support.
+* Implemented and supported asynchronous processing using Sidekiq/Delayed Job, enabling reliable background execution for long-running tasks.
+* Improved performance through ActiveRecord query optimization, indexing strategies, and refactoring high-latency endpoints, reducing p95 latency by [X%] and cutting DB load by [Y%].
+* Strengthened release stability through CI/CD pipelines (Jenkins/CircleCI), containerization with Docker, and deployment automation using Capistrano.
+* Supported enterprise-grade delivery through secure patterns including role-based access control, environment-specific configuration management, and production issue handling, improving incident MTTR by [X%].
+* Conducted regular code reviews, debugging sessions, design discussions, and incident triage, ensuring stability, maintainability, and long-term scalability.
+
+Senior Software Engineer — ZiniosEdge Information Technologies Pvt. Ltd., Bangalore
+Apr 2018 – Jan 2020 | www.ziniosedge.com
+ZiniosEdge delivers modern enterprise solutions across AR/VR, IoT, and analytics-driven platforms.
+* Developed and scaled a large CRM platform using Ruby on Rails, delivering new modules across customer lifecycle, workflow automation, and reporting.
+* Built and maintained REST APIs, ensuring clean architecture and maintainable service boundaries for business logic.
+* Integrated analytics and reporting workflows using MicroStrategy and JSReport, enabling automated report generation and insights.
+* Designed and optimized database schema in PostgreSQL/MySQL, improving query performance by ~30% through indexing, query refactoring, and data modeling improvements.
+* Worked across full-stack development using JavaScript, HTML, CSS/Sass, delivering stable UI enhancements and feature rollouts.
+* Owned feature delivery end-to-end including development, testing, deployments, and production support, releasing [X+] features/quarter across [Y] stakeholders.
+
+Senior Software Engineer (Remote / Solo Developer) — Aspire Software Consultancy, Bangalore
+Nov 2016 – Jan 2018 | https://aspiresoftwareconsultancy.com/
+Collaborated with a UK-based B2B marketplace team (Rightboat) as a remote engineer.
+* Owned full lifecycle delivery of product enhancements for a B2B marketplace using Ruby on Rails, from requirement discussions to release support.
+* Built backend workflows, optimized database interactions, and improved reliability through bug fixes and performance tuning.
+* Worked directly with stakeholders for requirement clarity, solution design, and delivery timelines.
+* Managed deployments and support cycles, ensuring smooth releases and stable production operations.
+
+Co-founder & CTO — Code Rabbits Technologies Pvt. Ltd., Chennai
+Dec 2013 – Oct 2016 | www.coderabbits.com
+Code Rabbits evolved from digital media services into a SaaS-focused product company building eCommerce solutions.
+* Founded and led engineering execution for eCommerce web/mobile solutions and an internal SaaS eCommerce platform.
+* Designed platform architecture using Ruby on Rails, building modular components for catalog, cart, checkout, orders, and customer workflows.
+* Owned end-to-end engineering delivery including architecture, development standards, code reviews, deployment strategy, and production stability practices.
+* Introduced engineering best practices to improve delivery consistency, code quality, and release readiness across teams.
+* Worked closely with clients and internal stakeholders to deliver scalable product features and ensure long-term maintainability.
+
+Senior Software Developer — Mereo Technologies, Chennai
+Oct 2012 – Aug 2013
+* Designed and developed multiple software projects following engineering standards and architectural guidelines.
+* Collaborated with cross-functional teams to define scope, requirements, and delivery timelines.
+* Supported development, testing, and release activities to ensure stable delivery.
+
+Software Developer — Aubev Technologies, Chennai
+Dec 2010 – Sep 2012
+* Designed, developed, tested, and maintained software solutions following established coding standards and best practices.
+* Debugged and resolved issues through root cause analysis, improving system stability and performance.
+* Supported implementation, testing, documentation, and release cycles across multiple projects.
+
+SEO Analyst — Spoison Consulting Pvt. Ltd., Chennai
+Oct 2009 – Nov 2010
+* Executed SEO and web marketing strategies including on-page/off-page optimization, link building, keyword research, competitor analysis, and traffic monitoring.
+* Generated SEO performance reports and supported clients with web promotion and search visibility improvements.
+* Optimized HTML metadata (titles, keywords, meta tags) and supported SMO initiatives to improve reach and engagement.
+
+
+=====
+
+Education
+
+B-Tech. Electrical and Electronics Engineering.
+Bharath University
+Chennai 
+2005-2009
+
+=====
+
+Notable Projects (Technical & Differentiated)
+
+VoiceHunt.news — Distributed Content & Edge-Cached Publishing Platform
+Role: Solution Architect | Stack: Ruby on Rails, Next.js (SSR, ISR), PostgreSQL, Redis, GraphQL, AWS (CloudFront, S3, SQS, DynamoDB, Lambda@Edge), Docker, Nginx, RSpec, Jest, React Testing Library, New Relic
+* Designed decoupled architecture using Rails API + Next.js SSR/ISR, enabling hybrid rendering and SEO-optimized content delivery.
+* Implemented Edge caching + ISR revalidation using CloudFront + Lambda@Edge, with cache state persisted in DynamoDB and invalidation triggered via SQS + Lambda.
+* Built API layer with GraphQL + REST, optimizing payload size and reducing over-fetching.
+* Implemented backend performance optimizations using ActiveRecord scopes, query planner analysis, Redis-based fragment caching, and materialized counters.
+* Containerized services using Docker + Nginx reverse proxy, deployed on EC2 + RDS, with static assets on S3.
+* Implemented test strategy using RSpec (API + service layers) and Jest + React Testing Library (SSR/ISR hydration + UI regression).
+* Observability via New Relic APM, custom metrics, slow query tracing, and memory profiling; improved cache hit ratio to [X%] and reduced TTFB by [Y%] on high-traffic pages.
+
+Effortless — Hybrid Accounting & Distributed Data Sync Platform
+Role: Lead Software Consultant | Stack: Ruby on Rails, React, PostgreSQL, GCP, gRPC, Windows Service (.NET), Kafka, Sidekiq, REST APIs
+* Designed hybrid sync architecture bridging on-prem Tally DB with cloud services using a Windows-based ETL bridge.
+* Implemented data pipelines using batch processing, delta sync, checksum validation, and idempotent writes.
+* Built ingestion APIs using Rails + gRPC adapters, enabling high-throughput financial data processing.
+* Implemented event-driven workflows using Kafka for downstream processing and audit trails.
+* Designed async processing using Sidekiq + Redis, with retry policies and deduplication logic.
+* Implemented reconciliation workflows for eventual consistency and financial data integrity.
+
+EdCast — Enterprise Platform Modernization & Rails Upgrade Program
+Role: Lead Consultant | Stack: Ruby on Rails, PostgreSQL, React, RSpec, FactoryBot, DatabaseCleaner, RuboCop, Webpack
+* Led multi-version Rails and PostgreSQL upgrades across legacy enterprise systems.
+* Refactored monolithic modules into service-oriented layers using PORO service objects and repository patterns.
+* Migrated PostgreSQL schemas using zero-downtime migrations, backward-compatible constraints, and phased rollouts.
+* Built automated regression coverage using RSpec, FactoryBot, DatabaseCleaner, and contract tests.
+* Improved query performance using EXPLAIN ANALYZE, indexing strategies, and query refactoring.
+
+AI-Powered Project Governance Platform
+Role: Technical Lead | Stack: Ruby on Rails, PostgreSQL, Angular, Sidekiq Pro, ActiveMQ, ElasticSearch, MicroStrategy, JSReport, Jenkins, Prometheus
+* Designed domain-driven core models for large-scale project governance datasets.
+* Implemented multi-queue Sidekiq architecture (priority queues, rate limiting, scheduled jobs, dead-letter queues).
+* Built messaging pipelines using ActiveMQ, with message transformation and idempotent consumers.
+* Integrated ElasticSearch for advanced search and analytics indexing.
+* Built enterprise reporting pipelines using MicroStrategy + JSReport with scheduled and parameterized reports.
+* Implemented CI/CD pipelines using Jenkins, with parallel test execution and artifact versioning.
+* Monitoring via Prometheus metrics + custom job telemetry.
+
+Mahindra Retail — High-Volume Campaign & Messaging Platform
+Role: Technical Lead | Stack: Ruby on Rails, MySQL, RabbitMQ, Sidekiq, Twilio API, AWS EC2, Redis, REST APIs
+* Designed high-throughput coupon lifecycle engine with state-machine-driven workflows.
+* Implemented async messaging using RabbitMQ + Sidekiq, decoupling campaign execution from delivery pipelines.
+* Integrated Twilio SMS APIs with retry-safe delivery and rate-limiting logic.
+* Built analytics pipelines aggregating campaign metrics using Redis-backed counters and batch jobs.
+
+CommonLit — Large-Scale EdTech Platform
+Role: Senior Software Engineer | Stack: Ruby on Rails, PostgreSQL, React, Devise, Pundit, Stripe API, Heroku, CircleCI
+* Implemented authentication and authorization using Devise + Pundit RBAC.
+* Built payment workflows using Stripe APIs with webhook-based event handling.
+* Implemented background processing using multi-threaded job execution.
+* Automated deployments using CircleCI, with blue-green deployment patterns on Heroku.
+
+Rightboat — Distributed Marketplace Platform
+Role: Senior Software Developer | Stack: Ruby on Rails, MySQL, ActiveMQ, Sidekiq, Nokogiri, AWS, Capistrano
+* Built marketplace ingestion pipelines using Nokogiri-based crawlers for external data sources.
+* Implemented async workflows using Sidekiq + ActiveMQ for classification and enrichment pipelines.
+* Automated deployments using Capistrano with AWS-based infrastructure.
+
