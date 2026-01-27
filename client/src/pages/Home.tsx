@@ -7,8 +7,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { SkillCard } from "@/components/SkillCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
+import { ResumeModal } from "@/components/ResumeModal";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Mail, PenLine, ChevronDown } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, PenLine, ChevronDown, Phone, Download } from "lucide-react";
 import { SiStackoverflow } from "react-icons/si";
 import profileImage from "@assets/arunkumar-art_1769490512369.png";
 
@@ -17,12 +18,22 @@ export default function Home() {
   const { data: projects, isLoading: projectsLoading } = useProjects();
   const { data: experience, isLoading: experienceLoading } = useExperience();
   const [showAllSkills, setShowAllSkills] = useState(false);
+  const [showResume, setShowResume] = useState(false);
 
   const technicalSkills = skills?.filter(s => s.category === "Technical") || [];
   const managementSkills = skills?.filter(s => s.category === "Management") || [];
 
   const displayedTechSkills = showAllSkills ? technicalSkills : technicalSkills.slice(0, 9);
   const displayedMgmtSkills = showAllSkills ? managementSkills : managementSkills.slice(0, 4);
+
+  const areasOfImpact = [
+    "Solution architecture (HLD/LLD), API design (REST/GraphQL), and domain modeling",
+    "Performance engineering (profiling, caching, query/index optimization, scalability practices)",
+    "Asynchronous & event-driven systems (Sidekiq, queues, messaging, retries, idempotency)",
+    "Cloud & DevOps (Docker, CI/CD, release automation, environment strategy, production readiness)",
+    "Modernization programs (Rails upgrades, refactoring, zero-downtime migrations, test coverage)",
+    "Technical delivery leadership (planning, execution tracking, dependency management, incident triage, stakeholder updates)"
+  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -79,6 +90,16 @@ export default function Home() {
                 <ArrowRight className="w-3 h-3" />
               </Button>
             </Link>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="font-mono text-xs gap-2" 
+              onClick={() => setShowResume(true)}
+              data-testid="button-download-resume"
+            >
+              <Download className="w-3 h-3" />
+              Resume
+            </Button>
           </motion.div>
         </section>
 
@@ -164,9 +185,30 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Areas of Impact Section */}
+        <section id="impact" className="py-20">
+          <SectionHeading number="02" title="Areas of Impact" />
+          
+          <ul className="space-y-3">
+            {areasOfImpact.map((item, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
+                className="flex items-start gap-3 text-sm text-muted-foreground"
+              >
+                <span className="text-primary mt-1">-</span>
+                <span>{item}</span>
+              </motion.li>
+            ))}
+          </ul>
+        </section>
+
         {/* Experience Section */}
         <section id="experience" className="py-20">
-          <SectionHeading number="02" title="Experience" />
+          <SectionHeading number="03" title="Experience" />
           {experienceLoading ? (
             <div className="space-y-4">
               <div className="h-16 bg-muted animate-pulse rounded" />
@@ -179,7 +221,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <section id="projects" className="py-20">
-          <SectionHeading number="03" title="Projects" />
+          <SectionHeading number="04" title="Projects" />
           
           {projectsLoading ? (
             <div className="grid md:grid-cols-2 gap-4">
@@ -200,80 +242,89 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center max-w-md mx-auto"
+            className="text-center max-w-lg mx-auto"
           >
-            <p className="font-mono text-primary text-xs mb-2">04. What's Next?</p>
+            <p className="font-mono text-primary text-xs mb-2">05. What's Next?</p>
             <h2 className="text-2xl font-bold text-foreground mb-4">Get In Touch</h2>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
               I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and architecture. Feel free to reach out!
             </p>
             
-            <a href="mailto:k.arun@outlook.com" data-testid="link-contact-email">
-              <Button variant="outline" className="font-mono text-xs gap-2">
-                <Mail className="w-3 h-3" />
-                k.arun@outlook.com
-              </Button>
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+              <a href="mailto:k.arun@outlook.com" data-testid="link-contact-email">
+                <Button variant="outline" size="sm" className="font-mono text-xs gap-2">
+                  <Mail className="w-3 h-3" />
+                  k.arun@outlook.com
+                </Button>
+              </a>
+              <a href="tel:+919003457395" data-testid="link-contact-phone">
+                <Button variant="outline" size="sm" className="font-mono text-xs gap-2">
+                  <Phone className="w-3 h-3" />
+                  +91 9003457395 (India)
+                </Button>
+              </a>
+            </div>
+            
+            <div className="flex justify-center gap-6">
+              <a 
+                href="https://github.com/arunkumark1ly" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors" 
+                data-testid="link-github"
+                title="GitHub"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/arun1ly/" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors" 
+                data-testid="link-linkedin"
+                title="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://stackoverflow.com/users/3089625/arunkumar-kandasamy" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors" 
+                data-testid="link-stackoverflow"
+                title="Stack Overflow"
+              >
+                <SiStackoverflow className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://voicehunt.news/authors/arun1ly" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors" 
+                data-testid="link-blog"
+                title="Blog"
+              >
+                <PenLine className="w-5 h-5" />
+              </a>
+            </div>
           </motion.div>
         </section>
       </main>
 
       {/* Footer */}
       <footer className="py-8 text-center border-t border-border">
-        <div className="flex justify-center gap-6 mb-4">
-          <a 
-            href="https://github.com/arunkumark1ly" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-muted-foreground hover:text-primary transition-colors" 
-            data-testid="link-github"
-            title="GitHub"
-          >
-            <Github className="w-4 h-4" />
-          </a>
-          <a 
-            href="https://www.linkedin.com/in/arun1ly/" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-muted-foreground hover:text-primary transition-colors" 
-            data-testid="link-linkedin"
-            title="LinkedIn"
-          >
-            <Linkedin className="w-4 h-4" />
-          </a>
-          <a 
-            href="https://stackoverflow.com/users/3089625/arunkumar-kandasamy" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-muted-foreground hover:text-primary transition-colors" 
-            data-testid="link-stackoverflow"
-            title="Stack Overflow"
-          >
-            <SiStackoverflow className="w-4 h-4" />
-          </a>
-          <a 
-            href="https://voicehunt.news/authors/arun1ly" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-muted-foreground hover:text-primary transition-colors" 
-            data-testid="link-blog"
-            title="Blog"
-          >
-            <PenLine className="w-4 h-4" />
-          </a>
-          <a 
-            href="mailto:k.arun@outlook.com" 
-            className="text-muted-foreground hover:text-primary transition-colors" 
-            data-testid="link-email"
-            title="Email"
-          >
-            <Mail className="w-4 h-4" />
-          </a>
-        </div>
         <p className="font-mono text-xs text-muted-foreground">
           Designed & Built by ArunKumar Kandasamy
         </p>
       </footer>
+
+      <ResumeModal 
+        open={showResume} 
+        onOpenChange={setShowResume}
+        skills={skills || []}
+        experience={experience || []}
+        projects={projects || []}
+      />
     </div>
   );
 }

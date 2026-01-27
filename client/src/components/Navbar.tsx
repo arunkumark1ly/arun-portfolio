@@ -4,11 +4,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ResumeModal } from "@/components/ResumeModal";
+import { useSkills, useProjects, useExperience } from "@/hooks/use-portfolio";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [resumeModalOpen, setResumeModalOpen] = useState(false);
+
+  const { data: skills } = useSkills();
+  const { data: projects } = useProjects();
+  const { data: experience } = useExperience();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -111,7 +116,13 @@ export function Navbar() {
         </AnimatePresence>
       </motion.header>
 
-      <ResumeModal open={resumeModalOpen} onOpenChange={setResumeModalOpen} />
+      <ResumeModal 
+        open={resumeModalOpen} 
+        onOpenChange={setResumeModalOpen}
+        skills={skills || []}
+        experience={experience || []}
+        projects={projects || []}
+      />
     </>
   );
 }
