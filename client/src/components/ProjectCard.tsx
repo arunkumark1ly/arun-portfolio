@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ChevronDown } from "lucide-react";
 import type { Project } from "@shared/schema";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -9,6 +10,10 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
+  const [expanded, setExpanded] = useState(false);
+  const shortDesc = project.description.slice(0, 120);
+  const isLong = project.description.length > 120;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -16,7 +21,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.4 }}
     >
-      <Card className="h-full hover-elevate" data-testid={`project-card-${project.id}`}>
+      <Card className="h-full" data-testid={`project-card-${project.id}`}>
         <CardHeader className="pb-2 flex flex-row items-start justify-between gap-2">
           <div className="flex-1 min-w-0">
             <CardTitle className="text-sm font-medium text-foreground leading-tight">
@@ -38,11 +43,23 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           )}
         </CardHeader>
         <CardContent className="pt-0">
-          <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-            {project.description}
+          <p className="text-xs text-muted-foreground leading-relaxed mb-2">
+            {expanded || !isLong ? project.description : `${shortDesc}...`}
           </p>
+          
+          {isLong && (
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="flex items-center gap-1 text-xs text-primary mb-3 hover:underline"
+              data-testid={`button-expand-project-${project.id}`}
+            >
+              {expanded ? "Show less" : "Show more"}
+              <ChevronDown className={`w-3 h-3 transition-transform ${expanded ? "rotate-180" : ""}`} />
+            </button>
+          )}
+          
           <div className="flex flex-wrap gap-1">
-            {project.techStack.map((tech) => (
+            {project.techStack.slice(0, expanded ? undefined : 5).map((tech) => (
               <span 
                 key={tech} 
                 className="text-[10px] font-mono text-muted-foreground bg-muted px-1.5 py-0.5 rounded"
@@ -50,6 +67,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 {tech}
               </span>
             ))}
+            {!expanded && project.techStack.length > 5 && (
+              <span className="text-[10px] font-mono text-primary">
+                +{project.techStack.length - 5} more
+              </span>
+            )}
           </div>
         </CardContent>
       </Card>
