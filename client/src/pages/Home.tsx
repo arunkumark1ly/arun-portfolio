@@ -362,9 +362,6 @@ export default function Home() {
         <p className="font-mono text-xs text-muted-foreground">
           © {new Date().getFullYear()} ArunKumar Kandasamy. All rights reserved.
         </p>
-        <p className="font-mono text-xs text-muted-foreground mt-2">
-          Built with React, TypeScript & Tailwind CSS
-        </p>
       </footer>
 
       <ResumeModal 
