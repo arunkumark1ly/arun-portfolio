@@ -1,0 +1,27 @@
+Home & About Page Layout
+* Move the profile photo to the Home page first screen (hero section), I believe the space in the content right side.
+* On the About page, remove the photo and utilize the full available width.
+* Since the photo is moved out, use the additional right-side space to realign and expand content for better visual balance and readability.
+Technical Skills Section
+* Remove the “Show all 28 skills” interaction.
+* Display all technical skills by default without truncation.
+Typography Consistency
+* The “Areas of Impact” section typography is currently inconsistent with other pages.
+* Align font size, weight, spacing, and hierarchy to match the typography used across the site.
+Strategic Wins Section
+* Place this section next to “Areas of Impact” in a side-by-side layout where applicable. - a new section titled “Strategic Wins”.
+* Use this content 
+	- Delivered customer-facing releases and production fixes under tight timelines by aligning stakeholders, managing dependencies, and driving release readiness across multiple teams.
+	- Led modernization and performance initiatives across Rails platforms through profiling, refactoring, and database tuning, reducing p95 latency by 32% and lowering slow queries by 45%.
+	- Built and stabilized CI/CD and deployment practices to improve repeatability and reduce manual steps, improving deployment frequency from 1–2/month to 2/week and cutting build time by 35%.
+
+Resume Download Flow
+* Update the resume download behavior:
+    * Instead of immediately downloading the resume on button click, open a modal popup.
+    * Collect Email ID and Phone Number in the popup.
+    * Allow resume download only after valid form submission.
+    * After the form submission - we should allow them to down download 2 format of resume (pdf, .docs) - they can download both /either - keep pdf as default - verify the attachment for files 
+
+Experience section & Projects section - should improve the typography , instead of show as paragraph , try to make it as ballot points 
+
+Mention the same mobile is available at what’s app chant 

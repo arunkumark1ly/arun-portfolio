@@ -9,10 +9,16 @@ interface ProjectCardProps {
   index: number;
 }
 
+function parseDescriptionToBullets(description: string): string[] {
+  const sentences = description.split(/(?<=[.!?])\s+(?=[A-Z])/);
+  return sentences.filter(s => s.trim().length > 0);
+}
+
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const [expanded, setExpanded] = useState(false);
-  const shortDesc = project.description.slice(0, 120);
-  const isLong = project.description.length > 120;
+  const bullets = parseDescriptionToBullets(project.description);
+  const displayedBullets = expanded ? bullets : bullets.slice(0, 2);
+  const hasMore = bullets.length > 2;
 
   return (
     <motion.div
@@ -43,17 +49,22 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           )}
         </CardHeader>
         <CardContent className="pt-0">
-          <p className="text-xs text-muted-foreground leading-relaxed mb-2">
-            {expanded || !isLong ? project.description : `${shortDesc}...`}
-          </p>
+          <ul className="space-y-1 mb-2">
+            {displayedBullets.map((bullet, idx) => (
+              <li key={idx} className="flex items-start gap-2 text-xs text-muted-foreground leading-relaxed">
+                <span className="text-primary mt-0.5 shrink-0">-</span>
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
           
-          {isLong && (
+          {hasMore && (
             <button
               onClick={() => setExpanded(!expanded)}
               className="flex items-center gap-1 text-xs text-primary mb-3 hover:underline"
               data-testid={`button-expand-project-${project.id}`}
             >
-              {expanded ? "Show less" : "Show more"}
+              {expanded ? "Show less" : `Show ${bullets.length - 2} more`}
               <ChevronDown className={`w-3 h-3 transition-transform ${expanded ? "rotate-180" : ""}`} />
             </button>
           )}

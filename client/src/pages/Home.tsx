@@ -9,7 +9,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { ResumeModal } from "@/components/ResumeModal";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Mail, PenLine, ChevronDown, Phone, Download } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, PenLine, Phone, Download, MessageCircle } from "lucide-react";
 import { SiStackoverflow } from "react-icons/si";
 import profileImage from "@assets/arunkumar-art_1769490512369.png";
 
@@ -17,14 +17,10 @@ export default function Home() {
   const { data: skills, isLoading: skillsLoading } = useSkills();
   const { data: projects, isLoading: projectsLoading } = useProjects();
   const { data: experience, isLoading: experienceLoading } = useExperience();
-  const [showAllSkills, setShowAllSkills] = useState(false);
   const [showResume, setShowResume] = useState(false);
 
   const technicalSkills = skills?.filter(s => s.category === "Technical") || [];
   const managementSkills = skills?.filter(s => s.category === "Management") || [];
-
-  const displayedTechSkills = showAllSkills ? technicalSkills : technicalSkills.slice(0, 9);
-  const displayedMgmtSkills = showAllSkills ? managementSkills : managementSkills.slice(0, 4);
 
   const areasOfImpact = [
     "Solution architecture (HLD/LLD), API design (REST/GraphQL), and domain modeling",
@@ -35,136 +31,89 @@ export default function Home() {
     "Technical delivery leadership (planning, execution tracking, dependency management, incident triage, stakeholder updates)"
   ];
 
+  const strategicWins = [
+    "Delivered customer-facing releases and production fixes under tight timelines by aligning stakeholders, managing dependencies, and driving release readiness across multiple teams.",
+    "Led modernization and performance initiatives across Rails platforms through profiling, refactoring, and database tuning, reducing p95 latency by 32% and lowering slow queries by 45%.",
+    "Built and stabilized CI/CD and deployment practices to improve repeatability and reduce manual steps, improving deployment frequency from 1-2/month to 2/week and cutting build time by 35%."
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
 
       <main className="max-w-4xl mx-auto px-6 md:px-8">
         {/* Hero Section */}
-        <section id="hero" className="min-h-screen flex flex-col justify-center py-20">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
-            className="font-mono text-primary text-xs mb-4"
-          >
-            Hi, my name is
-          </motion.p>
-          
-          <motion.h1
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-foreground tracking-tight leading-tight"
-          >
-            ArunKumar Kandasamy.
-          </motion.h1>
-          
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="text-2xl md:text-3xl font-medium text-muted-foreground mt-2"
-          >
-            Solution Architect & Tech Lead.
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            className="max-w-lg text-sm text-muted-foreground mt-6 leading-relaxed"
-          >
-            Forward-focused Solution Architect with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. I blend hands-on architecture and engineering leadership with end-to-end technical delivery ownership to ship predictable outcomes.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-            className="flex gap-3 mt-8"
-          >
-            <Link to="projects" smooth={true} duration={500}>
-              <Button variant="default" size="sm" className="font-mono text-xs gap-2" data-testid="button-view-work">
-                View My Work
-                <ArrowRight className="w-3 h-3" />
-              </Button>
-            </Link>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="font-mono text-xs gap-2" 
-              onClick={() => setShowResume(true)}
-              data-testid="button-download-resume"
-            >
-              <Download className="w-3 h-3" />
-              Resume
-            </Button>
-          </motion.div>
-        </section>
-
-        {/* About Section */}
-        <section id="about" className="py-20">
-          <SectionHeading number="01" title="About" />
-          
-          <div className="grid md:grid-cols-5 gap-10">
-            <div className="md:col-span-3 space-y-4 text-sm text-muted-foreground leading-relaxed">
-              <p>
-                Hello! I'm a <span className="text-foreground font-medium">Solution Architect</span> and <span className="text-foreground font-medium">Tech Lead</span> with deep expertise in Ruby on Rails, cloud infrastructure, and distributed systems.
-              </p>
+        <section id="hero" className="min-h-screen flex items-center py-20">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 w-full">
+            <div className="flex-1">
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+                className="font-mono text-primary text-xs mb-4"
+              >
+                Hi, my name is
+              </motion.p>
               
-              <div className="space-y-2 text-xs">
-                <p className="font-medium text-foreground">Value Proposition:</p>
-                <ul className="list-disc pl-4 space-y-1">
-                  <li>Own end-to-end delivery from discovery to production, bridging product intent to technical execution through clear plans, estimates, milestones, and release readiness.</li>
-                  <li>Architect scalable Rails-based platforms with pragmatic patterns (API design, background processing, caching, observability) and modern frontend delivery.</li>
-                  <li>Improve reliability and performance through query optimization, async architecture, caching strategies, and production troubleshooting.</li>
-                  <li>Lead cross-functional execution with strong stakeholder communication, risk/issue management, and continuous improvement.</li>
-                </ul>
-              </div>
+              <motion.h1
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="text-4xl md:text-5xl font-bold text-foreground tracking-tight leading-tight"
+              >
+                ArunKumar Kandasamy.
+              </motion.h1>
               
-              <p className="text-primary font-medium text-xs border-l-2 border-primary pl-3">
-                Currently evolving to adopt AI Development — actively learning Machine Learning to integrate intelligent capabilities into modern platforms.
-              </p>
+              <motion.h2
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="text-2xl md:text-3xl font-medium text-muted-foreground mt-2"
+              >
+                Solution Architect & Tech Lead.
+              </motion.h2>
               
-              <div className="pt-4">
-                <h4 className="font-mono text-foreground text-xs mb-3">Technical Skills:</h4>
-                {skillsLoading ? (
-                  <div className="animate-pulse h-20 bg-muted rounded" />
-                ) : (
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-0.5">
-                    {displayedTechSkills.map((skill, idx) => (
-                      <SkillCard key={skill.id} skill={skill} index={idx} />
-                    ))}
-                  </div>
-                )}
-                
-                <h4 className="font-mono text-foreground text-xs mb-3 mt-4">Leadership & Management:</h4>
-                {skillsLoading ? (
-                  <div className="animate-pulse h-12 bg-muted rounded" />
-                ) : (
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-0.5">
-                    {displayedMgmtSkills.map((skill, idx) => (
-                      <SkillCard key={skill.id} skill={skill} index={idx} />
-                    ))}
-                  </div>
-                )}
-                
-                {(technicalSkills.length > 9 || managementSkills.length > 4) && (
-                  <button
-                    onClick={() => setShowAllSkills(!showAllSkills)}
-                    className="flex items-center gap-1 text-xs text-primary mt-3 hover:underline"
-                    data-testid="button-toggle-skills"
-                  >
-                    {showAllSkills ? "Show less" : `Show all ${technicalSkills.length + managementSkills.length} skills`}
-                    <ChevronDown className={`w-3 h-3 transition-transform ${showAllSkills ? "rotate-180" : ""}`} />
-                  </button>
-                )}
-              </div>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="max-w-lg text-sm text-muted-foreground mt-6 leading-relaxed"
+              >
+                Forward-focused Solution Architect with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. I blend hands-on architecture and engineering leadership with end-to-end technical delivery ownership to ship predictable outcomes.
+              </motion.p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                className="flex gap-3 mt-8"
+              >
+                <Link to="projects" smooth={true} duration={500}>
+                  <Button variant="default" size="sm" className="font-mono text-xs gap-2" data-testid="button-view-work">
+                    View My Work
+                    <ArrowRight className="w-3 h-3" />
+                  </Button>
+                </Link>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="font-mono text-xs gap-2" 
+                  onClick={() => setShowResume(true)}
+                  data-testid="button-download-resume"
+                >
+                  <Download className="w-3 h-3" />
+                  Resume
+                </Button>
+              </motion.div>
             </div>
             
-            <div className="md:col-span-2 flex justify-center md:justify-end">
-              <div className="relative w-48 h-48">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex justify-center md:justify-end shrink-0"
+            >
+              <div className="relative w-48 h-48 md:w-56 md:h-56">
                 <div className="absolute inset-0 border border-primary/30 rounded translate-x-3 translate-y-3" />
                 <img 
                   src={profileImage} 
@@ -172,6 +121,55 @@ export default function Home() {
                   className="relative w-full h-full object-cover rounded bg-card"
                 />
               </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="py-20">
+          <SectionHeading number="01" title="About" />
+          
+          <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+            <p>
+              Hello! I'm a <span className="text-foreground font-medium">Solution Architect</span> and <span className="text-foreground font-medium">Tech Lead</span> with deep expertise in Ruby on Rails, cloud infrastructure, and distributed systems.
+            </p>
+            
+            <div className="space-y-2 text-xs">
+              <p className="font-medium text-foreground">Value Proposition:</p>
+              <ul className="list-disc pl-4 space-y-1">
+                <li>Own end-to-end delivery from discovery to production, bridging product intent to technical execution through clear plans, estimates, milestones, and release readiness.</li>
+                <li>Architect scalable Rails-based platforms with pragmatic patterns (API design, background processing, caching, observability) and modern frontend delivery.</li>
+                <li>Improve reliability and performance through query optimization, async architecture, caching strategies, and production troubleshooting.</li>
+                <li>Lead cross-functional execution with strong stakeholder communication, risk/issue management, and continuous improvement.</li>
+              </ul>
+            </div>
+            
+            <p className="text-primary font-medium text-xs border-l-2 border-primary pl-3">
+              Currently evolving to adopt AI Development — actively learning Machine Learning to integrate intelligent capabilities into modern platforms.
+            </p>
+            
+            <div className="pt-4">
+              <h4 className="font-mono text-foreground text-xs mb-3">Technical Skills:</h4>
+              {skillsLoading ? (
+                <div className="animate-pulse h-20 bg-muted rounded" />
+              ) : (
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-0.5">
+                  {technicalSkills.map((skill, idx) => (
+                    <SkillCard key={skill.id} skill={skill} index={idx} />
+                  ))}
+                </div>
+              )}
+              
+              <h4 className="font-mono text-foreground text-xs mb-3 mt-4">Leadership & Management:</h4>
+              {skillsLoading ? (
+                <div className="animate-pulse h-12 bg-muted rounded" />
+              ) : (
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-0.5">
+                  {managementSkills.map((skill, idx) => (
+                    <SkillCard key={skill.id} skill={skill} index={idx} />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
           
@@ -185,25 +183,47 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Areas of Impact Section */}
+        {/* Areas of Impact & Strategic Wins Section */}
         <section id="impact" className="py-20">
-          <SectionHeading number="02" title="Areas of Impact" />
-          
-          <ul className="space-y-3">
-            {areasOfImpact.map((item, index) => (
-              <motion.li
-                key={index}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05, duration: 0.3 }}
-                className="flex items-start gap-3 text-sm text-muted-foreground"
-              >
-                <span className="text-primary mt-1">-</span>
-                <span>{item}</span>
-              </motion.li>
-            ))}
-          </ul>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <SectionHeading number="02" title="Areas of Impact" />
+              <ul className="space-y-2">
+                {areasOfImpact.map((item, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
+                    className="flex items-start gap-2 text-xs text-muted-foreground leading-relaxed"
+                  >
+                    <span className="text-primary mt-0.5 shrink-0">-</span>
+                    <span>{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <SectionHeading number="" title="Strategic Wins" />
+              <ul className="space-y-3">
+                {strategicWins.map((item, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05, duration: 0.3 }}
+                    className="flex items-start gap-2 text-xs text-muted-foreground leading-relaxed"
+                  >
+                    <span className="text-primary mt-0.5 shrink-0">-</span>
+                    <span>{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </section>
 
         {/* Experience Section */}
@@ -264,6 +284,11 @@ export default function Home() {
                 </Button>
               </a>
             </div>
+            
+            <p className="text-xs text-muted-foreground mb-4 flex items-center justify-center gap-1">
+              <MessageCircle className="w-3 h-3 text-primary" />
+              Also available on WhatsApp
+            </p>
             
             <div className="flex justify-center gap-6">
               <a 

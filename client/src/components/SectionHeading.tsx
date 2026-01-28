@@ -15,7 +15,7 @@ export function SectionHeading({ number, title, className = "" }: SectionHeading
       transition={{ duration: 0.4 }}
       className={`flex items-center gap-2 mb-8 ${className}`}
     >
-      <span className="font-mono text-primary text-xs">{number}.</span>
+      {number && <span className="font-mono text-primary text-xs">{number}.</span>}
       <h2 className="text-lg font-semibold text-foreground">{title}</h2>
       <div className="h-px bg-border flex-1 ml-4 max-w-[200px]" />
     </motion.div>
