@@ -10,7 +10,7 @@ interface SEOProps {
 
 const DEFAULT_SEO: SEOProps = {
   title: "ArunKumar Kandasamy | Lead Technical Consultant & Product Manager",
-  description: "Forward-focused Solution Architect and Technical Lead with 10+ years driving end-to-end product ownership from discovery to UAT. Expert in Ruby on Rails, React.js, and scalable system design.",
+  description: "Forward-focused Solution Architect with 10+ years driving end-to-end product ownership from discovery to UAT. Expert in Ruby on Rails, React.js, and scalable system design.",
   keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solution Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
   image: "/arunkumar-art_1769490512369.png",
   url: "https://arunkumarkandasamy.com",

@@ -24,7 +24,7 @@ export default function Home() {
   useEffect(() => {
     updateSEO({
       title: "ArunKumar Kandasamy | Lead Technical Consultant & Product Manager",
-      description: "Forward-focused Solution Architect and Technical Lead with 10+ years driving end-to-end product ownership from discovery to UAT. Expert in Ruby on Rails, React.js, and scalable system design.",
+      description: "Forward-focused Solution Architect with 10+ years driving end-to-end product ownership from discovery to UAT. Expert in Ruby on Rails, React.js, and scalable system design.",
       keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solution Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
       url: window.location.origin,
       image: "/arunkumar-art_1769490512369.png"
@@ -84,7 +84,7 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="text-2xl md:text-3xl font-medium text-muted-foreground mt-2"
               >
-                Solution Architect & Tech Lead.
+                Solution Architect.
               </motion.h2>
               
               <motion.p
@@ -145,7 +145,7 @@ export default function Home() {
           
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
             <p>
-              Hello! I'm a <span className="text-foreground font-medium">Solution Architect</span> and <span className="text-foreground font-medium">Tech Lead</span> with deep expertise in Ruby on Rails, cloud infrastructure, and distributed systems.
+              Hello! I'm a <span className="text-foreground font-medium">Solution Architect</span> with deep expertise in Ruby on Rails, cloud infrastructure, and distributed systems.
             </p>
             
             <div className="space-y-2 text-xs">
