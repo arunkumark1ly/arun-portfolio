@@ -24,7 +24,7 @@ export default function Home() {
   useEffect(() => {
     updateSEO({
       title: "ArunKumar Kandasamy | Solution Architect & Product Manager",
-      description: "Forward-focused Solution Architect with 10+ years driving end-to-end product ownership from discovery to UAT. Expert in Ruby on Rails, React.js, and scalable system design.",
+      description: "Forward-focused Solution Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes. Experienced partnering with Product, Engineering, QA, Support, and Marketing across the SDLC, including beta programs and production releases.",
       keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solution Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
       url: window.location.origin,
       image: "/arunkumar-art_1769490512369.png"
@@ -35,18 +35,18 @@ export default function Home() {
   const managementSkills = skills?.filter(s => s.category === "Management") || [];
 
   const areasOfImpact = [
-    "Solution architecture (HLD/LLD), API design (REST/GraphQL), and domain modeling",
-    "Performance engineering (profiling, caching, query/index optimization, scalability practices)",
-    "Asynchronous & event-driven systems (Sidekiq, queues, messaging, retries, idempotency)",
-    "Cloud & DevOps (Docker, CI/CD, release automation, environment strategy, production readiness)",
-    "Modernization programs (Rails upgrades, refactoring, zero-downtime migrations, test coverage)",
-    "Technical delivery leadership (planning, execution tracking, dependency management, incident triage, stakeholder updates)"
+    "System Design: Leading HLD/LLD, system reviews, and trade-off analysis for enterprise-grade platforms.",
+    "Performance Engineering: Reducing p95 latency and optimizing database costs through advanced caching and query profiling.",
+    "Scalable Backend: Designing event-driven workflows (Sidekiq/Kafka) and complex domain models (PostgreSQL).",
+    "Modernization: Leading zero-downtime Rails/Postgres upgrades and monolithic-to-service refactoring.",
+    "Delivery Leadership: Owning the full SDLC: from discovery and risk management to CI/CD and production readiness.",
+    "API Ecosystems: Building secure, versioned REST/GraphQL contracts with RBAC/auth patterns."
   ];
 
   const strategicWins = [
     "Delivered customer-facing releases and production fixes under tight timelines by aligning stakeholders, managing dependencies, and driving release readiness across multiple teams.",
     "Led modernization and performance initiatives across Rails platforms through profiling, refactoring, and database tuning, reducing p95 latency by 32% and lowering slow queries by 45%.",
-    "Built and stabilized CI/CD and deployment practices to improve repeatability and reduce manual steps, improving deployment frequency from 1-2/month to 2/week and cutting build time by 35%."
+    "Built and stabilized CI/CD and deployment practices to improve repeatability and reduce manual steps, improving deployment frequency from 1–2/month to 2/week and cutting build time by 35%."
   ];
 
   return (
@@ -93,7 +93,7 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 className="max-w-none md:max-w-lg text-sm text-muted-foreground mt-6 leading-relaxed"
               >
-                Forward-focused Solution Architect with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. I blend hands-on architecture and engineering leadership with end-to-end technical delivery ownership to ship predictable outcomes.
+                Forward-focused Solution Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.
               </motion.p>
               
               <motion.div
@@ -135,16 +135,16 @@ export default function Home() {
           
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
             <p>
-              Hello! I'm a <span className="text-foreground font-medium">Solution Architect</span> with deep expertise in Ruby on Rails, cloud infrastructure, and distributed systems.
+              Hello! I'm a <span className="text-foreground font-medium">Solution Architect / Tech Lead</span> with deep expertise in Ruby on Rails, cloud infrastructure, and distributed systems.
             </p>
             
             <div className="space-y-2 text-xs">
               <p className="font-medium text-foreground">Value Proposition:</p>
               <ul className="list-disc pl-4 space-y-1">
-                <li>Own end-to-end delivery from discovery to production, bridging product intent to technical execution through clear plans, estimates, milestones, and release readiness.</li>
-                <li>Architect scalable Rails-based platforms with pragmatic patterns (API design, background processing, caching, observability) and modern frontend delivery.</li>
-                <li>Improve reliability and performance through query optimization, async architecture, caching strategies, and production troubleshooting.</li>
-                <li>Lead cross-functional execution with strong stakeholder communication, risk/issue management, and continuous improvement.</li>
+                <li><span className="font-medium text-foreground">Strategic Architecture:</span> Translating complex product roadmaps into scalable, high-performance Ruby on Rails ecosystems that accelerate time-to-market.</li>
+                <li><span className="font-medium text-foreground">Operational Excellence:</span> Improving reliability and uptime through expert-level database tuning, observability (APM), and proactive system hardening.</li>
+                <li><span className="font-medium text-foreground">Technical Stewardship:</span> Bridging the gap between stakeholders and engineering through crisp decision records (ADRs) and Agile delivery ownership.</li>
+                <li><span className="font-medium text-foreground">Scale-First Mentality:</span> Designing API-first, distributed systems that balance immediate feature velocity with long-term architectural integrity.</li>
               </ul>
             </div>
             
