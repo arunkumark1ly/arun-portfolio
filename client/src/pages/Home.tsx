@@ -55,10 +55,10 @@ export default function Home() {
         <Navbar />
       </header>
 
-      <main className="max-w-4xl mx-auto px-6 md:px-8">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Hero Section */}
-        <section id="hero" className="min-h-screen flex items-center py-20" aria-label="Hero section">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 w-full">
+        <section id="hero" className="min-h-screen flex items-center py-12 md:py-20" aria-label="Hero section">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-10 w-full">
             <div className="flex-1">
               <motion.p
                 initial={{ opacity: 0 }}
@@ -91,7 +91,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                className="max-w-lg text-sm text-muted-foreground mt-6 leading-relaxed"
+                className="max-w-none md:max-w-lg text-sm text-muted-foreground mt-6 leading-relaxed"
               >
                 Forward-focused Solution Architect with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. I blend hands-on architecture and engineering leadership with end-to-end technical delivery ownership to ship predictable outcomes.
               </motion.p>
@@ -100,7 +100,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
-                className="flex gap-3 mt-8"
+                className="flex flex-col sm:flex-row gap-3 mt-8"
               >
                 <Link to="projects" smooth={true} duration={500}>
                   <Button variant="default" size="sm" className="font-mono text-xs gap-2" data-testid="button-view-work">
@@ -108,16 +108,6 @@ export default function Home() {
                     <ArrowRight className="w-3 h-3" />
                   </Button>
                 </Link>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="font-mono text-xs gap-2" 
-                  onClick={() => setShowResume(true)}
-                  data-testid="button-download-resume"
-                >
-                  <Download className="w-3 h-3" />
-                  Resume
-                </Button>
               </motion.div>
             </div>
             
@@ -140,7 +130,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20" aria-label="About section">
+        <section id="about" className="py-12 md:py-20" aria-label="About section">
           <SectionHeading number="01" title="About" />
           
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
@@ -167,7 +157,7 @@ export default function Home() {
               {skillsLoading ? (
                 <div className="animate-pulse h-20 bg-muted rounded" />
               ) : (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-0.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-0.5">
                   {technicalSkills.map((skill, idx) => (
                     <SkillCard key={skill.id} skill={skill} index={idx} />
                   ))}
@@ -178,7 +168,7 @@ export default function Home() {
               {skillsLoading ? (
                 <div className="animate-pulse h-12 bg-muted rounded" />
               ) : (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-0.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-0.5">
                   {managementSkills.map((skill, idx) => (
                     <SkillCard key={skill.id} skill={skill} index={idx} />
                   ))}
@@ -198,8 +188,8 @@ export default function Home() {
         </section>
 
         {/* Areas of Impact & Strategic Wins Section */}
-        <section id="impact" className="py-20">
-          <div className="grid md:grid-cols-2 gap-8">
+        <section id="impact" className="py-12 md:py-20">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <div>
               <SectionHeading number="02" title="Areas of Impact" />
               <ul className="space-y-2">
@@ -241,7 +231,7 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-20" aria-label="Experience section">
+        <section id="experience" className="py-12 md:py-20" aria-label="Experience section">
           <SectionHeading number="03" title="Experience" />
           {experienceLoading ? (
             <div className="space-y-4">
@@ -254,15 +244,15 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-20" aria-label="Skills section">
+        <section id="skills" className="py-12 md:py-20" aria-label="Skills section">
           <SectionHeading number="02" title="Skills" />
           
           {projectsLoading ? (
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[1, 2, 3, 4].map(i => <div key={i} className="h-40 bg-muted animate-pulse rounded" />)}
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {projects?.map((project, index) => (
                 <ProjectCard key={project.id} project={project} index={index} />
               ))}
@@ -271,15 +261,15 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-20" aria-label="Projects section">
+        <section id="projects" className="py-12 md:py-20" aria-label="Projects section">
           <SectionHeading number="04" title="Projects" />
           
           {projectsLoading ? (
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[1, 2, 3, 4].map(i => <div key={i} className="h-40 bg-muted animate-pulse rounded" />)}
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {projects?.map((project, index) => (
                 <ProjectCard key={project.id} project={project} index={index} />
               ))}
@@ -288,7 +278,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20" aria-label="Contact section">
+        <section id="contact" className="py-12 md:py-20" aria-label="Contact section">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

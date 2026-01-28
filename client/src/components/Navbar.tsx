@@ -28,6 +28,8 @@ export function Navbar() {
     { name: "Contact", to: "contact" },
   ];
 
+  const blogLink = "https://voicehunt.news/authors/arun1ly";
+
   return (
     <>
       <motion.header
@@ -56,6 +58,15 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <a
+              href={blogLink}
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono text-xs cursor-pointer text-muted-foreground hover:text-primary transition-colors"
+              data-testid="nav-blog"
+            >
+              Blog
+            </a>
             <Button
               variant="outline"
               size="sm"
@@ -98,6 +109,16 @@ export function Navbar() {
                     {link.name}
                   </Link>
                 ))}
+                <a
+                  href={blogLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="block font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+                  data-testid="nav-mobile-blog"
+                >
+                  Blog
+                </a>
                 <Button
                   variant="outline"
                   size="sm"

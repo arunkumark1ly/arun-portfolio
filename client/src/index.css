@@ -182,6 +182,25 @@
   .no-default-hover-elevate {}
   .no-default-active-elevate {}
 
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    body {
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+    
+    section {
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
+    }
+    
+    .min-h-screen {
+      min-height: auto !important;
+      padding-top: 4rem !important;
+      padding-bottom: 4rem !important;
+    }
+  }
+
   .toggle-elevate::before,
   .toggle-elevate-2::before {
     content: "";
