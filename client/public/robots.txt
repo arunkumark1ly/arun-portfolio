@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://arunkumarkandasamy.com/sitemap.xml
+Sitemap: https://arunkumar1ly.vercel.app/sitemap.xml
 
 # Block common bot paths
 Disallow: /api/
