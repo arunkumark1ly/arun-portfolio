@@ -145,7 +145,7 @@ export const projects: Project[] = [
       "Enterprise Platform Modernization & Rails Upgrade Program. Led multi-version Rails and PostgreSQL upgrades across legacy enterprise systems. Refactored monolithic modules into service-oriented layers using PORO service objects and repository patterns. Migrated PostgreSQL schemas using zero-downtime migrations, backward-compatible constraints, and phased rollouts. Built automated regression coverage using RSpec, FactoryBot, DatabaseCleaner, and contract tests. Improved query performance using EXPLAIN ANALYZE, indexing strategies, and query refactoring.",
     techStack: ["Ruby on Rails", "PostgreSQL", "React", "RSpec", "FactoryBot", "DatabaseCleaner", "RuboCop", "Webpack"],
     role: "Lead Consultant",
-    link: "https://www.edcast.com/user/login",
+    link: "https://www.cornerstoneondemand.com/edcast/",
   },
   {
     id: 4,
