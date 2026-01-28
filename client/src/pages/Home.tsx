@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { useSkills, useProjects, useExperience } from "@/hooks/use-portfolio";
@@ -12,12 +12,24 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail, PenLine, Phone, Download, MessageCircle } from "lucide-react";
 import { SiStackoverflow } from "react-icons/si";
 import profileImage from "@assets/arunkumar-art_1769490512369.png";
+import { updateSEO } from "@/lib/seo";
 
 export default function Home() {
   const { data: skills, isLoading: skillsLoading } = useSkills();
   const { data: projects, isLoading: projectsLoading } = useProjects();
   const { data: experience, isLoading: experienceLoading } = useExperience();
   const [showResume, setShowResume] = useState(false);
+
+  // Initialize SEO on component mount
+  useEffect(() => {
+    updateSEO({
+      title: "ArunKumar Kandasamy | Lead Technical Consultant & Product Manager",
+      description: "Forward-focused Solution Architect and Technical Lead with 10+ years driving end-to-end product ownership from discovery to UAT. Expert in Ruby on Rails, React.js, and scalable system design.",
+      keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solution Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
+      url: window.location.origin,
+      image: "/arunkumar-art_1769490512369.png"
+    });
+  }, []);
 
   const technicalSkills = skills?.filter(s => s.category === "Technical") || [];
   const managementSkills = skills?.filter(s => s.category === "Management") || [];
@@ -39,11 +51,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
 
       <main className="max-w-4xl mx-auto px-6 md:px-8">
         {/* Hero Section */}
-        <section id="hero" className="min-h-screen flex items-center py-20">
+        <section id="hero" className="min-h-screen flex items-center py-20" aria-label="Hero section">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 w-full">
             <div className="flex-1">
               <motion.p
@@ -126,7 +140,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20">
+        <section id="about" className="py-20" aria-label="About section">
           <SectionHeading number="01" title="About" />
           
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
@@ -227,7 +241,7 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-20">
+        <section id="experience" className="py-20" aria-label="Experience section">
           <SectionHeading number="03" title="Experience" />
           {experienceLoading ? (
             <div className="space-y-4">
@@ -239,8 +253,25 @@ export default function Home() {
           )}
         </section>
 
+        {/* Skills Section */}
+        <section id="skills" className="py-20" aria-label="Skills section">
+          <SectionHeading number="02" title="Skills" />
+          
+          {projectsLoading ? (
+            <div className="grid md:grid-cols-2 gap-4">
+              {[1, 2, 3, 4].map(i => <div key={i} className="h-40 bg-muted animate-pulse rounded" />)}
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-4">
+              {projects?.map((project, index) => (
+                <ProjectCard key={project.id} project={project} index={index} />
+              ))}
+            </div>
+          )}
+        </section>
+
         {/* Projects Section */}
-        <section id="projects" className="py-20">
+        <section id="projects" className="py-20" aria-label="Projects section">
           <SectionHeading number="04" title="Projects" />
           
           {projectsLoading ? (
@@ -257,7 +288,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20">
+        <section id="contact" className="py-20" aria-label="Contact section">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -339,7 +370,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 text-center border-t border-border">
         <p className="font-mono text-xs text-muted-foreground">
-          Designed & Built by ArunKumar Kandasamy
+          © {new Date().getFullYear()} ArunKumar Kandasamy. All rights reserved.
+        </p>
+        <p className="font-mono text-xs text-muted-foreground mt-2">
+          Built with React, TypeScript & Tailwind CSS
         </p>
       </footer>
 
