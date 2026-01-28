@@ -26,15 +26,6 @@
           "value": "1; mode=block"
         }
       ]
-    },
-    {
-      "source": "/(.*\\.(pdf|docx))",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/octet-stream"
-        }
-      ]
     }
   ]
 }
