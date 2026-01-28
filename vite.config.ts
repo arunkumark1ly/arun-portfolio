@@ -37,4 +37,5 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+  assetsInclude: ['**/*.pdf', '**/*.docx'],
 });
