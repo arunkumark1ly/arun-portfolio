@@ -23,7 +23,7 @@ export default function Home() {
   // Initialize SEO on component mount
   useEffect(() => {
     updateSEO({
-      title: "ArunKumar Kandasamy | Lead Technical Consultant & Product Manager",
+      title: "ArunKumar Kandasamy | Solution Architect & Product Manager",
       description: "Forward-focused Solution Architect with 10+ years driving end-to-end product ownership from discovery to UAT. Expert in Ruby on Rails, React.js, and scalable system design.",
       keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solution Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
       url: window.location.origin,
