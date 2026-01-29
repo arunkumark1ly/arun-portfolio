@@ -281,10 +281,10 @@ export default function Home() {
                   k.arun@outlook.com
                 </Button>
               </a>
-              <a href="tel:+919003457395" data-testid="link-contact-phone">
+              <a href="tel:+919630740047" data-testid="link-contact-phone">
                 <Button variant="outline" size="sm" className="font-mono text-xs gap-2">
                   <Phone className="w-3 h-3" />
-                  +91 9003457395 (India)
+                  +91 9630740047 (India)
                 </Button>
               </a>
             </div>
