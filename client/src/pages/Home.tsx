@@ -245,7 +245,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <section id="projects" className="py-12 md:py-20" aria-label="Projects section">
-          <SectionHeading number="03" title="Projects" />
+          <SectionHeading number="04" title="Projects" />
           
           {projectsLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -268,7 +268,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center max-w-lg mx-auto"
           >
-            <p className="font-mono text-primary text-xs mb-2">04. What's Next?</p>
+            <p className="font-mono text-primary text-xs mb-2">05. What's Next?</p>
             <h2 className="text-2xl font-bold text-foreground mb-4">Get In Touch</h2>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
               I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and architecture. Feel free to reach out!
