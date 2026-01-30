@@ -9,9 +9,9 @@ interface SEOProps {
 }
 
 const DEFAULT_SEO: SEOProps = {
-  title: "ArunKumar Kandasamy | Solution Architect & Product Manager",
-  description: "Forward-focused Solution Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes. Experienced partnering with Product, Engineering, QA, Support, and Marketing across the SDLC, including beta programs and production releases.",
-  keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solution Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
+  title: "ArunKumar Kandasamy | Solutions Architect & Product Manager",
+  description: "Forward-focused Solutions Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes. Experienced partnering with Product, Engineering, QA, Support, and Marketing across the SDLC, including beta programs and production releases.",
+  keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
   image: "/arunkumar-art_1769490512369.png",
   url: "https://arunkumarkandasamy.com",
   type: "website",
@@ -99,7 +99,7 @@ function addStructuredData(seo: SEOProps) {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "ArunKumar Kandasamy",
-    "jobTitle": "Solution Architect & Product Manager",
+    "jobTitle": "Solutions Architect & Product Manager",
     "description": seo.description,
     "url": seo.url,
     "image": seo.image,
@@ -111,7 +111,7 @@ function addStructuredData(seo: SEOProps) {
     "knowsAbout": [
       "Ruby on Rails",
       "React.js",
-      "Solution Architecture",
+      "Solutions Architecture",
       "Product Management",
       "Agile Leadership",
       "Cloud Computing",

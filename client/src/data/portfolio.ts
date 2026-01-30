@@ -21,7 +21,7 @@ export const skills: Skill[] = [
   { id: 18, name: "Jenkins / CircleCI", category: "Technical", icon: "Settings" },
   { id: 19, name: "Redis / ElasticSearch", category: "Technical", icon: "Search" },
   { id: 20, name: "C / C++", category: "Technical", icon: "Binary" },
-  { id: 21, name: "Solution Architecture (HLD/LLD)", category: "Management", icon: "Layout" },
+  { id: 21, name: "Solutions Architecture (HLD/LLD)", category: "Management", icon: "Layout" },
   { id: 22, name: "Technical Leadership", category: "Management", icon: "Users" },
   { id: 23, name: "Agile/Scrum Delivery", category: "Management", icon: "Target" },
   { id: 24, name: "Stakeholder Management", category: "Management", icon: "Handshake" },
@@ -34,11 +34,11 @@ export const skills: Skill[] = [
 export const experience: Experience[] = [
   {
     id: 1,
-    role: "Co-founder & Solution Architect",
+    role: "Co-founder & Solutions Architect",
     company: "ThinkPro Technologies",
     period: "Jan 2024 - Present",
     description:
-      "Founded and lead engineering direction at ThinkPro, owning solution architecture (HLD/LLD), execution planning, and end-to-end delivery across internal and client engagements. Architected and built VoiceHunt.news, a technology news publication platform with scalable publishing workflow. Designed the platform using Ruby on Rails (CMS/backend) and React + TailwindCSS UI. Built API-driven modules for content lifecycle, listing/filtering patterns, and SEO-friendly rendering. Implemented performance practices including caching, database optimization, and improvements for high-read pages. Owned DevOps and delivery pipelines using Docker, CI/CD, and release automation. Senior Consultant at SnapCorp across performance improvements and consulting support. Mentored engineers through code reviews and architecture guidance.",
+      "Founded and lead engineering direction at ThinkPro, owning solutions architecture (HLD/LLD), execution planning, and end-to-end delivery across internal and client engagements. Architected and built VoiceHunt.news, a technology news publication platform with scalable publishing workflow. Designed the platform using Ruby on Rails (CMS/backend) and React + TailwindCSS UI. Built API-driven modules for content lifecycle, listing/filtering patterns, and SEO-friendly rendering. Implemented performance practices including caching, database optimization, and improvements for high-read pages. Owned DevOps and delivery pipelines using Docker, CI/CD, and release automation. Senior Consultant at SnapCorp across performance improvements and consulting support. Mentored engineers through code reviews and architecture guidance.",
     order: 1,
   },
   {
@@ -126,7 +126,7 @@ export const projects: Project[] = [
       "React Testing Library",
       "New Relic"
     ],
-    role: "Solution Architect",
+    role: "Solutions Architect",
     link: "https://voicehunt.news",
   },
   {

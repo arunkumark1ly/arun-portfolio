@@ -11,7 +11,7 @@ import { ResumeModal } from "@/components/ResumeModal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail, PenLine, Phone, Download, MessageCircle } from "lucide-react";
 import { SiStackoverflow } from "react-icons/si";
-import profileImage from "@assets/arunkumar-art_1769490512369.png";
+import profileImage from "@assets/arunkumar-k.png";
 import { updateSEO } from "@/lib/seo";
 
 export default function Home() {
@@ -23,9 +23,9 @@ export default function Home() {
   // Initialize SEO on component mount
   useEffect(() => {
     updateSEO({
-      title: "ArunKumar Kandasamy | Solution Architect & Product Manager",
-      description: "Forward-focused Solution Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes. Experienced partnering with Product, Engineering, QA, Support, and Marketing across the SDLC, including beta programs and production releases.",
-      keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solution Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
+      title: "ArunKumar Kandasamy | Solutions Architect & Product Manager",
+      description: "Forward-focused Solutions Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes. Experienced partnering with Product, Engineering, QA, Support, and Marketing across the SDLC, including beta programs and production releases.",
+      keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
       url: window.location.origin,
       image: "/arunkumar-art_1769490512369.png"
     });
@@ -84,7 +84,7 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="text-2xl md:text-3xl font-medium text-muted-foreground mt-2"
               >
-                Solution Architect.
+                Solutions Architect.
               </motion.h2>
               
               <motion.p
@@ -93,7 +93,7 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 className="max-w-none md:max-w-lg text-sm text-muted-foreground mt-6 leading-relaxed"
               >
-                Forward-focused Solution Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.
+                Forward-focused Solutions Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.
               </motion.p>
               
               <motion.div
@@ -135,7 +135,7 @@ export default function Home() {
           
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
             <p>
-              Hello! I'm a <span className="text-foreground font-medium">Solution Architect / Tech Lead</span> with deep expertise in Ruby on Rails, cloud infrastructure, and distributed systems.
+              Hello! I'm a <span className="text-foreground font-medium">Solutions Architect / Tech Lead</span> with deep expertise in Ruby on Rails, cloud infrastructure, and distributed systems.
             </p>
             
             <div className="space-y-2 text-xs">

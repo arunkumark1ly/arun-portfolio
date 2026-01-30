@@ -1,7 +1,7 @@
 ArunKumar Resume Content
 
 
-Forward-focused Solution Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes. Experienced partnering with Product, Engineering, QA, Support, and Marketing across the SDLC, including beta programs and production releases.
+Forward-focused Solutions Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes. Experienced partnering with Product, Engineering, QA, Support, and Marketing across the SDLC, including beta programs and production releases.
 
 Value Proposition 
 ——————————-------
@@ -12,7 +12,7 @@ Value Proposition
 
 Areas of Impact 
 —————————------
-- Solution architecture (HLD/LLD), API design (REST/GraphQL), and domain modeling
+- Solutions Architecture (HLD/LLD), API design (REST/GraphQL), and domain modeling
 - Performance engineering (profiling, caching, query/index optimization, scalability practices)
 - Asynchronous & event-driven systems (Sidekiq, queues, messaging, retries, idempotency)
 - Cloud & DevOps (Docker, CI/CD, release automation, environment strategy, production readiness)
@@ -45,10 +45,10 @@ Strategic Wins
 Professional Experience
 —————————————————------
 
-Co-founder & Solution Architect — ThinkPro Technologies, Chennai
+Co-founder & Solutions Architect — ThinkPro Technologies, Chennai
 Jan 2024 – Present | www.thinkpro.tech
 ThinkPro Technologies is an IT consulting firm delivering scalable web platforms and modern engineering solutions.
-* Founded and lead engineering direction at ThinkPro, owning solution architecture (HLD/LLD), execution planning, and end-to-end delivery across internal and client engagements.
+* Founded and lead engineering direction at ThinkPro, owning Solutions Architecture (HLD/LLD), execution planning, and end-to-end delivery across internal and client engagements.
 * Architected and built VoiceHunt.news, a technology news publication platform (recently launched) with a scalable publishing workflow for curated news, blogs, and thought leadership content.
 * Designed the platform using Ruby on Rails (CMS/backend) and a modern React + TailwindCSS UI, enabling separation between content operations and frontend delivery.
 * Built API-driven modules for content lifecycle (create/edit/publish), listing/filtering patterns, and SEO-friendly show page rendering for content-heavy traffic.
@@ -131,7 +131,7 @@ Chennai
 Notable Projects (Technical & Differentiated)
 
 VoiceHunt.news — Distributed Content & Edge-Cached Publishing Platform
-Role: Solution Architect | Stack: Ruby on Rails, Next.js (SSR, ISR), PostgreSQL, Redis, GraphQL, AWS (CloudFront, S3, SQS, DynamoDB, Lambda@Edge), Docker, Nginx, RSpec, Jest, React Testing Library, New Relic
+Role: Solutions Architect | Stack: Ruby on Rails, Next.js (SSR, ISR), PostgreSQL, Redis, GraphQL, AWS (CloudFront, S3, SQS, DynamoDB, Lambda@Edge), Docker, Nginx, RSpec, Jest, React Testing Library, New Relic
 * Designed decoupled architecture using Rails API + Next.js SSR/ISR, enabling hybrid rendering and SEO-optimized content delivery.
 * Implemented Edge caching + ISR revalidation using CloudFront + Lambda@Edge, with cache state persisted in DynamoDB and invalidation triggered via SQS + Lambda.
 * Built API layer with GraphQL + REST, optimizing payload size and reducing over-fetching.

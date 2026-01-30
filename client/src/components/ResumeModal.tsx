@@ -21,7 +21,7 @@ export function ResumeModal({ open, onOpenChange, skills, experience, projects }
   const sortedExperience = [...experience].sort((a, b) => a.order - b.order);
 
   const areasOfImpact = [
-    "Solution architecture (HLD/LLD), API design (REST/GraphQL), and domain modeling",
+    "Solutions architecture (HLD/LLD), API design (REST/GraphQL), and domain modeling",
     "Performance engineering (profiling, caching, query/index optimization, scalability practices)",
     "Asynchronous & event-driven systems (Sidekiq, queues, messaging, retries, idempotency)",
     "Cloud & DevOps (Docker, CI/CD, release automation, environment strategy, production readiness)",
