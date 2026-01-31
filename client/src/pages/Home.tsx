@@ -24,7 +24,7 @@ export default function Home() {
   useEffect(() => {
     updateSEO({
       title: "ArunKumar Kandasamy | Solutions Architect & Product Manager",
-      description: "Forward-focused Solutions Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.",
+      description: "With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.",
       keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
       url: window.location.origin,
       image: "/arunkumar-art_1769490512369.png"
@@ -88,17 +88,17 @@ export default function Home() {
                 className="text-2xl md:text-3xl font-medium text-muted-foreground mt-2"
               >
                 <div className="space-y-1">
-              <div className="flex flex-wrap items-center gap-2 text-2xl md:text-3xl font-medium text-muted-foreground">
-                <span>Technical Lead & Solution Architect</span>
+              <div className="flex flex-wrap items-center gap-2 text-lg md:text-xl font-medium text-muted-foreground">
+                <span>Technical Lead & Solutions Architect</span>
                 <span className="text-primary">|</span>
                 <span>Engineering Leadership</span>
               </div>
-              <div className="flex flex-wrap items-center gap-2 text-lg md:text-xl font-medium text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-2 text-base md:text-lg font-medium text-muted-foreground">
                 <span>Scalable Backends</span>
                 <span className="text-primary/60">—</span>
-                <span className="font-mono text-sm bg-muted px-2 py-1 rounded">RoR, React & Next.js, AWS</span>
+                <span className="font-mono text-xs bg-muted px-2 py-1 rounded">RoR, React & Next.js, AWS</span>
               </div>
-              <div className="flex flex-wrap items-center gap-2 text-lg md:text-xl font-medium text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-2 text-base md:text-lg font-medium text-muted-foreground">
                 <span>Driving Predictable SDLC Outcomes</span>
                 <span className="text-primary/60">—</span>
                 <span className="text-primary font-semibold">Co-founder @ ThinkPro Technologies</span>
@@ -112,7 +112,7 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 className="max-w-none md:max-w-lg text-sm text-muted-foreground mt-6 leading-relaxed"
               >
-                Forward-focused Solutions Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.
+                With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.
               </motion.p>
               
               <motion.div
@@ -154,7 +154,7 @@ export default function Home() {
           
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
             <p>
-              Hello! I'm <span className="text-foreground font-medium">Arun</span>, a Chennai-based Solution Architect, ex-founder, and long-time Rails tinkerer with deep expertise in building scalable web platforms.
+              Hello! I'm <span className="text-foreground font-medium">Arun</span>, a Chennai-based Solution Architect, and long-time Rails tinkerer with deep expertise in building scalable web platforms.
             </p>
             
               <p className="font-medium text-foreground">My Philosophy:</p>
