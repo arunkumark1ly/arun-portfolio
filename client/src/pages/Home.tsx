@@ -23,11 +23,15 @@ export default function Home() {
   // Initialize SEO on component mount
   useEffect(() => {
     updateSEO({
-      title: "Technical Lead & Solutions Architect | Engineering Leadership | Co-founder @ ThinkPro Technologies",
+      title: "ArunKumar Kandasamy - Technical Lead & Solutions Architect",
       description: "With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.",
       keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
       url: window.location.origin,
-      image: "https://arunkumarkandasamy.com/arunkumar-k.png"
+      image: "https://arunkumarkandasamy.com/arunkumar-k.png",
+      imageWidth: 1200,
+      imageHeight: 630,
+      imageType: "image/png",
+      imageAlt: "ArunKumar Kandasamy - Technical Lead & Solutions Architect"
     });
   }, []);
 

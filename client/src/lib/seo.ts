@@ -3,16 +3,24 @@ interface SEOProps {
   description?: string;
   keywords?: string;
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageType?: string;
+  imageAlt?: string;
   url?: string;
   type?: string;
   author?: string;
 }
 
 const DEFAULT_SEO: SEOProps = {
-  title: "Technical Lead & Solutions Architect | Engineering Leadership | Co-founder @ ThinkPro Technologies",
+  title: "ArunKumar Kandasamy - Technical Lead & Solutions Architect",
   description: "With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.",
   keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
   image: "https://arunkumarkandasamy.com/arunkumar-k.png",
+  imageWidth: 1200,
+  imageHeight: 630,
+  imageType: "image/png",
+  imageAlt: "ArunKumar Kandasamy - Technical Lead & Solutions Architect",
   url: "https://arunkumarkandasamy.com",
   type: "website",
   author: "ArunKumar Kandasamy"
@@ -33,6 +41,10 @@ export function updateSEO(props: SEOProps = {}) {
   updateMetaProperty('og:title', seo.title);
   updateMetaProperty('og:description', seo.description);
   updateMetaProperty('og:image', seo.image);
+  updateMetaProperty('og:image:width', seo.imageWidth?.toString());
+  updateMetaProperty('og:image:height', seo.imageHeight?.toString());
+  updateMetaProperty('og:image:type', seo.imageType);
+  updateMetaProperty('og:image:alt', seo.imageAlt);
   updateMetaProperty('og:url', seo.url);
   updateMetaProperty('og:type', seo.type);
   updateMetaProperty('og:site_name', 'ArunKumar Kandasamy');
@@ -42,6 +54,7 @@ export function updateSEO(props: SEOProps = {}) {
   updateMetaTag('twitter:title', seo.title);
   updateMetaTag('twitter:description', seo.description);
   updateMetaTag('twitter:image', seo.image);
+  updateMetaTag('twitter:image:alt', seo.imageAlt);
   updateMetaTag('twitter:creator', '@arunkumarkandasamy');
   
   // Update canonical URL
