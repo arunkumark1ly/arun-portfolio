@@ -28,6 +28,7 @@ export default function Home() {
       keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
       url: window.location.origin,
       image: "https://arunkumarkandasamy.com/arunkumar-k.png",
+      imageSecureUrl: "https://arunkumarkandasamy.com/arunkumar-k.png",
       imageWidth: 1200,
       imageHeight: 630,
       imageType: "image/png",
