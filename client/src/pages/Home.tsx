@@ -24,7 +24,7 @@ export default function Home() {
   useEffect(() => {
     updateSEO({
       title: "ArunKumar Kandasamy | Solutions Architect & Product Manager",
-      description: "Forward-focused Solutions Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes. Experienced partnering with Product, Engineering, QA, Support, and Marketing across the SDLC, including beta programs and production releases.",
+      description: "Forward-focused Solutions Architect / Tech Lead with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.",
       keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
       url: window.location.origin,
       image: "/arunkumar-art_1769490512369.png"
@@ -35,19 +35,22 @@ export default function Home() {
   const managementSkills = skills?.filter(s => s.category === "Management") || [];
 
   const areasOfImpact = [
-    "System Design: Leading HLD/LLD, system reviews, and trade-off analysis for enterprise-grade platforms.",
-    "Performance Engineering: Reducing p95 latency and optimizing database costs through advanced caching and query profiling.",
-    "Scalable Backend: Designing event-driven workflows (Sidekiq/Kafka) and complex domain models (PostgreSQL).",
-    "Modernization: Leading zero-downtime Rails/Postgres upgrades and monolithic-to-service refactoring.",
-    "Delivery Leadership: Owning the full SDLC: from discovery and risk management to CI/CD and production readiness.",
-    "API Ecosystems: Building secure, versioned REST/GraphQL contracts with RBAC/auth patterns."
-  ];
+  "Ruby on Rails (v3 → v7.2), REST & GraphQL APIs, RBAC",
+  "React / Next.js / Angular, Tailwind CSS",
+  "PostgreSQL, MySQL, MongoDB, Redis",
+  "Sidekiq, Kafka, ActiveMQ",
+  "AWS, Heroku, Linode",
+  "Docker, GitHub Actions, Jenkins, CircleCI"
+];
 
   const strategicWins = [
-    "Delivered customer-facing releases and production fixes under tight timelines by aligning stakeholders, managing dependencies, and driving release readiness across multiple teams.",
-    "Led modernization and performance initiatives across Rails platforms through profiling, refactoring, and database tuning, reducing p95 latency by 32% and lowering slow queries by 45%.",
-    "Built and stabilized CI/CD and deployment practices to improve repeatability and reduce manual steps, improving deployment frequency from 1–2/month to 2/week and cutting build time by 35%."
-  ];
+  "Cut p95 latency by ~32% and reduced slow queries by 45% across enterprise platforms",
+  "Rebuilt CI/CD pipelines to shrink build times by 35% and double deployment frequency",
+  "Ran multi-version Rails upgrades for large teams without a single rollback",
+  "Modernised a legacy HR platform, doubling deploy speed and trimming cloud spend by 20%",
+  "Built hybrid data sync (on-prem Tally → cloud) processing millions of financial rows daily",
+  "VoiceHunt.news: Rails + Next.js platform with 91% cache hits and 52% lower TTFB"
+];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -84,7 +87,23 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="text-2xl md:text-3xl font-medium text-muted-foreground mt-2"
               >
-                Solutions Architect.
+                <div className="space-y-1">
+              <div className="flex flex-wrap items-center gap-2 text-2xl md:text-3xl font-medium text-muted-foreground">
+                <span>Technical Lead & Solution Architect</span>
+                <span className="text-primary">|</span>
+                <span>Engineering Leadership</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 text-lg md:text-xl font-medium text-muted-foreground">
+                <span>Scalable Backends</span>
+                <span className="text-primary/60">—</span>
+                <span className="font-mono text-sm bg-muted px-2 py-1 rounded">RoR, React & Next.js, AWS</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 text-lg md:text-xl font-medium text-muted-foreground">
+                <span>Driving Predictable SDLC Outcomes</span>
+                <span className="text-primary/60">—</span>
+                <span className="text-primary font-semibold">Co-founder @ ThinkPro Technologies</span>
+              </div>
+            </div>
               </motion.h2>
               
               <motion.p
@@ -135,18 +154,33 @@ export default function Home() {
           
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
             <p>
-              Hello! I'm a <span className="text-foreground font-medium">Solutions Architect / Tech Lead</span> with deep expertise in Ruby on Rails, cloud infrastructure, and distributed systems.
+              Hello! I'm <span className="text-foreground font-medium">Arun</span>, a Chennai-based Solution Architect, ex-founder, and long-time Rails tinkerer with deep expertise in building scalable web platforms.
             </p>
             
-            <div className="space-y-2 text-xs">
-              <p className="font-medium text-foreground">Value Proposition:</p>
-              <ul className="list-disc pl-4 space-y-1">
-                <li><span className="font-medium text-foreground">Strategic Architecture:</span> Translating complex product roadmaps into scalable, high-performance Ruby on Rails ecosystems that accelerate time-to-market.</li>
-                <li><span className="font-medium text-foreground">Operational Excellence:</span> Improving reliability and uptime through expert-level database tuning, observability (APM), and proactive system hardening.</li>
-                <li><span className="font-medium text-foreground">Technical Stewardship:</span> Bridging the gap between stakeholders and engineering through crisp decision records (ADRs) and Agile delivery ownership.</li>
-                <li><span className="font-medium text-foreground">Scale-First Mentality:</span> Designing API-first, distributed systems that balance immediate feature velocity with long-term architectural integrity.</li>
-              </ul>
-            </div>
+              <p className="font-medium text-foreground">My Philosophy:</p>
+              <p className="italic text-muted-foreground">
+                "Good architecture, to me, is a promise kept to the future. That shows up in how I work: design first, APIs and domains that age well, and delivery systems that work just as reliably on Mondays as they do on release day."
+              </p>
+              
+              <p className="font-medium text-foreground mt-4">What defines my work:</p>
+              <div className="space-y-2">
+                <div className="flex items-start gap-2">
+                  <span className="text-primary">🚀</span>
+                  <span><span className="font-medium text-foreground">Performance as a feature</span> — profiling, indexing, smart caching, and DB tuning that regularly deliver 30%+ latency improvements</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-primary">🔍</span>
+                  <span><span className="font-medium text-foreground">Operational truth</span> — APM dashboards, clean logs, and alerts that actually help at 2 a.m.</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-primary">🤝</span>
+                  <span><span className="font-medium text-foreground">Clarity over chaos</span> — short written decision records and sprint plans that align product, QA, and engineering</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-primary">🔄</span>
+                  <span><span className="font-medium text-foreground">Change without drama</span> — zero-downtime Rails & Postgres upgrades, legacy modernisation, monolith split-outs, and container moves</span>
+                </div>
+              </div>
             
             <p className="text-primary font-medium text-xs border-l-2 border-primary pl-3">
               Currently evolving to adopt AI Development — actively learning Machine Learning to integrate intelligent capabilities into modern platforms.
@@ -271,7 +305,7 @@ export default function Home() {
             <p className="font-mono text-primary text-xs mb-2">05. What's Next?</p>
             <h2 className="text-2xl font-bold text-foreground mb-4">Get In Touch</h2>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-              I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and architecture. Feel free to reach out!
+              👋 Have a puzzle, a performance headache, or a system that needs to stay fast and boring in production? Let's connect and explore options.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
