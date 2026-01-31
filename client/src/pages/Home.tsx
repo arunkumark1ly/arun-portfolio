@@ -154,7 +154,7 @@ export default function Home() {
           
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
             <p>
-              Hello! I'm <span className="text-foreground font-medium">Arun</span>, a Chennai-based Solution Architect, and long-time Rails tinkerer with deep expertise in building scalable web platforms.
+              A Chennai-based Solution Architect, and long-time Rails tinkerer with deep expertise in building scalable web platforms.
             </p>
             
               <p className="font-medium text-foreground">My Philosophy:</p>
