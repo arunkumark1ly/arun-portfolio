@@ -14,7 +14,7 @@ interface SEOProps {
 }
 
 const DEFAULT_SEO: SEOProps = {
-  title: "ArunKumar Kandasamy - Technical Lead & Solutions Architect",
+  title: "ArunKumar Kandasamy - Engineering Lead",
   description: "With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.",
   keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
   image: "https://arunkumarkandasamy.com/arunkumar-k.png",
@@ -22,7 +22,7 @@ const DEFAULT_SEO: SEOProps = {
   imageWidth: 1200,
   imageHeight: 630,
   imageType: "image/png",
-  imageAlt: "ArunKumar Kandasamy - Technical Lead & Solutions Architect",
+  imageAlt: "ArunKumar Kandasamy - Engineering Lead",
   url: "https://arunkumarkandasamy.com",
   type: "website",
   author: "ArunKumar Kandasamy"
@@ -119,7 +119,7 @@ function addStructuredData(seo: SEOProps) {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "ArunKumar Kandasamy",
-    "jobTitle": "Solutions Architect & Product Manager",
+    "jobTitle": "Engineering Lead",
     "description": seo.description,
     "url": seo.url,
     "image": seo.image,

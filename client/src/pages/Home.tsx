@@ -23,7 +23,7 @@ export default function Home() {
   // Initialize SEO on component mount
   useEffect(() => {
     updateSEO({
-      title: "ArunKumar Kandasamy - Technical Lead & Solutions Architect",
+      title: "ArunKumar Kandasamy - Engineering Lead",
       description: "With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.",
       keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
       url: window.location.origin,
@@ -32,7 +32,7 @@ export default function Home() {
       imageWidth: 1200,
       imageHeight: 630,
       imageType: "image/png",
-      imageAlt: "ArunKumar Kandasamy - Technical Lead & Solutions Architect"
+      imageAlt: "ArunKumar Kandasamy - Engineering Lead"
     });
   }, []);
 
@@ -85,30 +85,42 @@ export default function Home() {
               >
                 ArunKumar Kandasamy.
               </motion.h1>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.16 }}
+                className="mt-3 flex flex-wrap items-center gap-2"
+              >
+                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-primary">
+                  Engineering Lead
+                </span>
+                <span className="h-1 w-1 rounded-full bg-primary/60" />
+                <span className="text-sm md:text-base font-semibold text-foreground">
+                  ThinkPro Technologies
+                </span>
+              </motion.div>
               
               <motion.h2
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="text-2xl md:text-3xl font-medium text-muted-foreground mt-2"
+                className="mt-4"
               >
-                <div className="space-y-1">
-              <div className="flex flex-wrap items-center gap-2 text-lg md:text-xl font-medium text-muted-foreground">
-                <span>Technical Lead & Solutions Architect</span>
-                <span className="text-primary">|</span>
-                <span>Engineering Leadership</span>
-              </div>
-              <div className="flex flex-wrap items-center gap-2 text-base md:text-lg font-medium text-muted-foreground">
-                <span>Scalable Backends</span>
-                <span className="text-primary/60">—</span>
-                <span className="font-mono text-xs bg-muted px-2 py-1 rounded">RoR, React & Next.js, AWS</span>
-              </div>
-              <div className="flex flex-wrap items-center gap-2 text-base md:text-lg font-medium text-muted-foreground">
-                <span>Driving Predictable SDLC Outcomes</span>
-                <span className="text-primary/60">—</span>
-                <span className="text-primary font-semibold">Co-founder @ ThinkPro Technologies</span>
-              </div>
-            </div>
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xl md:text-2xl font-semibold tracking-tight text-muted-foreground">
+                    <span className="text-foreground">Scalable Systems</span>
+                    <span className="text-primary/50">|</span>
+                    <span>Driving Predictable Delivery</span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 text-sm md:text-base text-muted-foreground">
+                    <span className="font-medium">Ruby on Rails, React, Next.js</span>
+                    <span className="text-primary/60">—</span>
+                    <span className="font-mono text-xs bg-muted border border-border px-2.5 py-1 rounded-md shadow-sm">
+                      Cloud (AWS)
+                    </span>
+                  </div>
+                </div>
               </motion.h2>
               
               <motion.p
@@ -314,10 +326,10 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-              <a href="mailto:k.arun@outlook.com" data-testid="link-contact-email">
+              <a href="mailto:kandasamy1ly@gmail.com" data-testid="link-contact-email">
                 <Button variant="outline" size="sm" className="font-mono text-xs gap-2">
                   <Mail className="w-3 h-3" />
-                  k.arun@outlook.com
+                  kandasamy1ly@gmail.com
                 </Button>
               </a>
               <a href="tel:+919360740047" data-testid="link-contact-phone">

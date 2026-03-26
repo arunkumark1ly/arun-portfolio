@@ -34,11 +34,11 @@ export const skills: Skill[] = [
 export const experience: Experience[] = [
   {
     id: 1,
-    role: "Co-founder & Solutions Architect",
+    role: "Engineering Lead",
     company: "ThinkPro Technologies",
     period: "Jan 2024 - Present",
     description:
-      "Founded and lead engineering direction at ThinkPro, owning solutions architecture (HLD/LLD), execution planning, and end-to-end delivery across internal and client engagements. Architected and built VoiceHunt.news, a technology news publication platform (recently launched) with a scalable publishing workflow for curated news, blogs, and thought leadership content. Designed the platform using Ruby on Rails (CMS/backend) and a modern Next.js + TailwindCSS UI, enabling separation between content operations and frontend delivery. Built API-driven modules for content lifecycle (create/edit/publish), listing/filtering patterns, and SEO-friendly show page rendering for content-heavy traffic. Implemented performance practices including caching and revalidation mechanisms, database access optimization, and improvements for high-read pages (index/show), improving p95 response time by 41% on key endpoints. Owned DevOps and delivery pipelines using Docker-based environments, CI/CD (Jenkins/GitHub Actions), release checklists, and release automation for predictable deployments. Led delivery communication and execution tracking: milestones, risk/issue management, production readiness, and post-release validation. Drove operational stability including environment configuration, build reliability, monitoring/alerting setup, and production troubleshooting. Consulted for Cornerstone OnDemand and Effortless FinLabs, leading legacy application modernization to the latest technology ecosystem and driving measurable performance improvements. Mentored engineers and enforced standards through code reviews, architecture guidance, and delivery discipline.",
+      "Lead engineering direction at ThinkPro, owning solutions architecture (HLD/LLD), execution planning, and end-to-end delivery across internal and client engagements. Architected and built VoiceHunt.news, a technology news publication platform (recently launched) with a scalable publishing workflow for curated news, blogs, and thought leadership content. Designed the platform using Ruby on Rails (CMS/backend) and a modern Next.js + TailwindCSS UI, enabling separation between content operations and frontend delivery. Built API-driven modules for content lifecycle (create/edit/publish), listing/filtering patterns, and SEO-friendly show page rendering for content-heavy traffic. Implemented performance practices including caching and revalidation mechanisms, database access optimization, and improvements for high-read pages (index/show), improving p95 response time by 41% on key endpoints. Owned DevOps and delivery pipelines using Docker-based environments, CI/CD (Jenkins/GitHub Actions), release checklists, and release automation for predictable deployments. Led delivery communication and execution tracking: milestones, risk/issue management, production readiness, and post-release validation. Drove operational stability including environment configuration, build reliability, monitoring/alerting setup, and production troubleshooting. Consulted for Cornerstone OnDemand and Effortless FinLabs, leading legacy application modernization to the latest technology ecosystem and driving measurable performance improvements. Mentored engineers and enforced standards through code reviews, architecture guidance, and delivery discipline.",
     order: 1,
   },
   {
@@ -126,7 +126,7 @@ export const projects: Project[] = [
       "React Testing Library",
       "New Relic"
     ],
-    role: "Solutions Architect",
+    role: "Engineering Lead",
     link: "https://voicehunt.news",
   },
   {
