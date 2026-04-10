@@ -21,14 +21,16 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const blogLink = "https://voicehunt.news/authors/arun1ly";
+
   const navLinks = [
     { name: "About", to: "about" },
     { name: "Experience", to: "experience" },
     { name: "Projects", to: "projects" },
+    { name: "Blog", href: blogLink },
+    { name: "Book a Conversation", to: "book-conversation" },
     { name: "Contact", to: "contact" },
   ];
-
-  const blogLink = "https://voicehunt.news/authors/arun1ly";
 
   return (
     <>
@@ -46,27 +48,31 @@ export function Navbar() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link, i) => (
-              <Link
-                key={link.name}
-                to={link.to}
-                smooth={true}
-                duration={500}
-                className="font-mono text-xs cursor-pointer text-muted-foreground hover:text-primary transition-colors"
-                data-testid={`nav-${link.to}`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <a
-              href={blogLink}
-              target="_blank"
-              rel="noreferrer"
-              className="font-mono text-xs cursor-pointer text-muted-foreground hover:text-primary transition-colors"
-              data-testid="nav-blog"
-            >
-              Blog
-            </a>
+            {navLinks.map((link) =>
+              "href" in link ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-mono text-xs cursor-pointer text-muted-foreground hover:text-primary transition-colors"
+                  data-testid="nav-blog"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  className="font-mono text-xs cursor-pointer text-muted-foreground hover:text-primary transition-colors"
+                  data-testid={`nav-${link.to}`}
+                >
+                  {link.name}
+                </Link>
+              ),
+            )}
             <Button
               variant="outline"
               size="sm"
@@ -96,29 +102,33 @@ export function Navbar() {
               className="md:hidden bg-background border-b border-border overflow-hidden"
             >
               <div className="px-6 py-4 space-y-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.to}
-                    smooth={true}
-                    duration={500}
-                    onClick={() => setIsOpen(false)}
-                    className="block font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
-                    data-testid={`nav-mobile-${link.to}`}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-                <a
-                  href={blogLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={() => setIsOpen(false)}
-                  className="block font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
-                  data-testid="nav-mobile-blog"
-                >
-                  Blog
-                </a>
+                {navLinks.map((link) =>
+                  "href" in link ? (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="block font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+                      data-testid="nav-mobile-blog"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.name}
+                      to={link.to}
+                      smooth={true}
+                      duration={500}
+                      onClick={() => setIsOpen(false)}
+                      className="block font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+                      data-testid={`nav-mobile-${link.to}`}
+                    >
+                      {link.name}
+                    </Link>
+                  ),
+                )}
                 <Button
                   variant="outline"
                   size="sm"

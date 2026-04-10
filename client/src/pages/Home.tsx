@@ -8,6 +8,7 @@ import { SkillCard } from "@/components/SkillCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { ResumeModal } from "@/components/ResumeModal";
+import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail, PenLine, Phone, Download, MessageCircle } from "lucide-react";
 import { SiStackoverflow } from "react-icons/si";
@@ -309,6 +310,39 @@ export default function Home() {
               ))}
             </div>
           )}
+        </section>
+
+        {/* Book a Conversation Section */}
+        <section
+          id="book-conversation"
+          className="py-12 md:py-16"
+          aria-label="Book a conversation section"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.35 }}
+            className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
+          >
+            <div className="grid lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+              <div className="border-b border-border p-6 sm:p-8 lg:border-b-0 lg:border-r">
+                <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">
+                  05. Book a Conversation
+                </p>
+                <h2 className="mt-3 text-2xl font-bold text-foreground">
+                  Reserve a time to talk through your next build.
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  If you want to discuss architecture, Rails modernization, delivery strategy, or performance work, you can book a slot directly here without interrupting the existing contact options below.
+                </p>
+              </div>
+
+              <div className="bg-background/40 p-3 sm:p-4">
+                <CalendlyEmbed />
+              </div>
+            </div>
+          </motion.div>
         </section>
 
         {/* Contact Section */}
