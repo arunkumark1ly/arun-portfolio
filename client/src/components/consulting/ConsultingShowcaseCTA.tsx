@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function FreelanceShowcaseCTA() {
+export function ConsultingShowcaseCTA() {
   return (
     <section className="py-24 px-6 md:px-10 bg-card/30 border-t border-border">
       <motion.div
@@ -14,14 +14,14 @@ export function FreelanceShowcaseCTA() {
         className="max-w-5xl mx-auto text-center"
       >
         <p className="font-mono text-[10px] text-primary tracking-widest uppercase mb-4">
-          Interested in working together?
+          Discuss a consulting engagement
         </p>
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-          Let&apos;s build something great.
+          Let&apos;s deliver something production-ready.
         </h2>
         <p className="text-sm text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
-          I&apos;m open to freelance engagements, new opportunities, and interesting
-          technical challenges.
+          I&apos;m available for independent consulting engagements — modern frontend
+          solutions, technical execution, and end-to-end delivery ownership.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <a href="mailto:k.arun@outlook.com" data-testid="link-cta-email">

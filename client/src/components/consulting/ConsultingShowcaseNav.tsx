@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 
-export function FreelanceShowcaseNav() {
+export function ConsultingShowcaseNav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
       <div className="max-w-5xl mx-auto px-6 md:px-10 h-14 flex items-center justify-between">

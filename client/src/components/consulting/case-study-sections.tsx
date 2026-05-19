@@ -7,7 +7,7 @@ import {
   Monitor,
   Smartphone,
 } from "lucide-react";
-import type { FreelanceProject } from "@/types/freelance";
+import type { ConsultingProject } from "@/types/consulting";
 import { fadeUp } from "./animations";
 import { getFeatureIcon, getTechIcon } from "./icon-map";
 
@@ -18,7 +18,7 @@ export function sectionLabel(caseIndex: number, section: number, title: string) 
 }
 
 interface SectionProps {
-  project: FreelanceProject;
+  project: ConsultingProject;
   caseIndex: number;
 }
 

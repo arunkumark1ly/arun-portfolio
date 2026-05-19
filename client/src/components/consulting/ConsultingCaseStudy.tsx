@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { ArrowUpRight, Globe } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import type { FreelanceProject } from "@/types/freelance";
+import type { ConsultingProject } from "@/types/consulting";
 import { fadeUp } from "./animations";
 import {
   CaseStudyDeployment,
@@ -14,12 +14,12 @@ import {
   CaseStudyTechStack,
 } from "./case-study-sections";
 
-interface FreelanceCaseStudyProps {
-  project: FreelanceProject;
+interface ConsultingCaseStudyProps {
+  project: ConsultingProject;
   caseIndex: number;
 }
 
-export function FreelanceCaseStudy({ project, caseIndex }: FreelanceCaseStudyProps) {
+export function ConsultingCaseStudy({ project, caseIndex }: ConsultingCaseStudyProps) {
   return (
     <article id={project.slug} className="scroll-mt-20">
       <section className="relative py-24 px-6 md:px-10 overflow-hidden border-b border-border">
@@ -37,11 +37,11 @@ export function FreelanceCaseStudy({ project, caseIndex }: FreelanceCaseStudyPro
               variant="outline"
               className="font-mono text-[10px] text-primary border-primary/40 px-3 py-1 tracking-widest uppercase"
             >
-              Case Study
+              Consulting Engagement
             </Badge>
             {project.featured && (
               <Badge variant="secondary" className="font-mono text-[10px] px-3 py-1">
-                Featured
+                Featured Engagement
               </Badge>
             )}
           </motion.div>

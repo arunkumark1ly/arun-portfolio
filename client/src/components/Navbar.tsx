@@ -83,9 +83,9 @@ export function Navbar() {
                 </Link>
               ),
             )}
-            <WouterLink href="/freelance">
-              <span className="font-mono text-xs cursor-pointer text-primary hover:text-primary/80 transition-colors flex items-center gap-1" data-testid="nav-freelance">
-                Freelance
+            <WouterLink href="/consulting">
+              <span className="font-mono text-xs cursor-pointer text-primary hover:text-primary/80 transition-colors flex items-center gap-1" data-testid="nav-consulting">
+                Consulting
                 <ExternalLink className="w-2.5 h-2.5" />
               </span>
             </WouterLink>
@@ -145,13 +145,13 @@ export function Navbar() {
                     </Link>
                   ),
                 )}
-                <WouterLink href="/freelance">
+                <WouterLink href="/consulting">
                   <span
                     className="flex font-mono text-sm text-primary hover:text-primary/80 transition-colors items-center gap-1.5"
                     onClick={() => setIsOpen(false)}
-                    data-testid="nav-mobile-freelance"
+                    data-testid="nav-mobile-consulting"
                   >
-                    Freelance Showcase
+                    Consulting Work
                     <ExternalLink className="w-3 h-3" />
                   </span>
                 </WouterLink>

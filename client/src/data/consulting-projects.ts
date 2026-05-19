@@ -1,41 +1,41 @@
-import type { FreelanceProject } from "@/types/freelance";
+import type { ConsultingProject } from "@/types/consulting";
 
 /**
- * Freelance portfolio registry — add new projects here.
+ * Consulting engagements registry — add new projects here.
  *
- * To add a project:
+ * To add an engagement:
  * 1. Copy the legacy-apparels object below
  * 2. Assign a unique `slug`, set `order`, and mark one as `featured` if desired
- * 3. The showcase page and catalog update automatically
+ * 3. The consulting page and catalog update automatically
  */
-export const freelanceProjects: FreelanceProject[] = [
+export const consultingProjects: ConsultingProject[] = [
   {
     slug: "legacy-apparels",
     name: "The Legacy",
     nameAccent: "Apparels",
     tagline:
-      "A fashion-forward apparel brand website — independently designed, engineered, and deployed from zero to production.",
+      "A fashion-forward apparel brand website — independently designed, engineered, and deployed from concept to production.",
     website: "https://thelegacyapparels.com",
     websiteDisplay: "thelegacyapparels.com",
     category: "Fashion / Apparel",
-    role: "Frontend Dev & Deployment",
-    engagementType: "Independent Freelance",
+    role: "Technical Consultant — Frontend & Deployment",
+    engagementType: "Independent Consulting",
     featured: true,
     order: 1,
     story: {
-      headline: "A complete freelance engagement — independently executed.",
+      headline: "An independent consulting engagement — delivered end-to-end.",
       paragraphs: [
-        "The Legacy Apparels needed a modern, elegant web presence to reflect their brand identity in the fashion and apparel space. I was brought on as the sole developer to take this from concept to production.",
-        "I owned the entire delivery chain — translating brand requirements into a polished UI, crafting responsive layouts with Tailwind CSS, and engineering the cloud deployment infrastructure using Terraform and AWS S3.",
-        "No team. No handoffs. Just end-to-end ownership of frontend development and production deployment — the kind of independent execution that demonstrates real full-cycle capability.",
+        "The Legacy Apparels needed a modern, elegant web presence to reflect their brand identity in the fashion and apparel space. I was engaged as the sole technical consultant to take this from concept to production.",
+        "I owned the entire delivery chain — translating business requirements into a polished UI, crafting responsive layouts with Tailwind CSS, and engineering cloud deployment infrastructure using Terraform and AWS S3.",
+        "No team. No handoffs. Full ownership of frontend engineering, product execution, and production deployment — demonstrating the kind of independent consulting delivery clients can rely on.",
       ],
       deliverables: [
         "Responsive multi-device layout (mobile, tablet, desktop)",
         "Modern fashion-forward visual style with Tailwind CSS",
-        "Smooth browsing and hover interaction experience",
+        "Smooth browsing and polished interaction experience",
         "Terraform scripts for reproducible infrastructure",
         "AWS S3 static website bucket with public access policy",
-        "Production deployment configuration and handoff",
+        "Production deployment configuration and client handoff",
       ],
     },
     design: {
@@ -94,22 +94,22 @@ export const freelanceProjects: FreelanceProject[] = [
     },
     highlights: [
       {
-        title: "Independent Ownership",
+        title: "Independent Execution",
         description:
-          "Sole contributor — from first line of code to live deployment with zero handoffs.",
+          "Sole consultant — from first line of code to live deployment with zero handoffs.",
       },
       {
-        title: "Frontend Engineering",
+        title: "Technical Consulting",
         description:
-          "Semantic HTML, utility-first Tailwind CSS, and vanilla JS delivering smooth UX.",
+          "Semantic HTML, utility-first Tailwind CSS, and vanilla JS delivering production-ready UX.",
       },
       {
-        title: "Deployment Capability",
+        title: "Deployment Expertise",
         description:
           "Production-grade IaC using Terraform to provision and manage AWS S3 static hosting.",
       },
       {
-        title: "Clean UI Execution",
+        title: "UI Craftsmanship",
         description:
           "Responsive, mobile-first layouts with consistent spacing, hierarchy, and polish.",
       },
@@ -121,14 +121,14 @@ export const freelanceProjects: FreelanceProject[] = [
   },
 ];
 
-export function getFreelanceProjects(): FreelanceProject[] {
-  return [...freelanceProjects].sort((a, b) => a.order - b.order);
+export function getConsultingProjects(): ConsultingProject[] {
+  return [...consultingProjects].sort((a, b) => a.order - b.order);
 }
 
-export function getFreelanceProject(slug: string): FreelanceProject | undefined {
-  return getFreelanceProjects().find((p) => p.slug === slug);
+export function getConsultingProject(slug: string): ConsultingProject | undefined {
+  return getConsultingProjects().find((p) => p.slug === slug);
 }
 
-export function getFeaturedFreelanceProject(): FreelanceProject | undefined {
-  return getFreelanceProjects().find((p) => p.featured) ?? getFreelanceProjects()[0];
+export function getFeaturedConsultingProject(): ConsultingProject | undefined {
+  return getConsultingProjects().find((p) => p.featured) ?? getConsultingProjects()[0];
 }

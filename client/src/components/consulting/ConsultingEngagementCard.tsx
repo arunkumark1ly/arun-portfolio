@@ -1,20 +1,20 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Globe, Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import type { FreelanceProject } from "@/types/freelance";
+import type { ConsultingProject } from "@/types/consulting";
 import { fadeUp } from "./animations";
 
-interface FreelanceProjectPreviewCardProps {
-  project: FreelanceProject;
+interface ConsultingEngagementCardProps {
+  project: ConsultingProject;
   index: number;
   isActive?: boolean;
 }
 
-export function FreelanceProjectPreviewCard({
+export function ConsultingEngagementCard({
   project,
   index,
   isActive = false,
-}: FreelanceProjectPreviewCardProps) {
+}: ConsultingEngagementCardProps) {
   const displayName = project.nameAccent
     ? `${project.name} ${project.nameAccent}`
     : project.name;
@@ -32,7 +32,7 @@ export function FreelanceProjectPreviewCard({
           ? "border-primary/50 ring-1 ring-primary/20"
           : "border-border hover:border-primary/40"
       }`}
-      data-testid={`freelance-card-${project.slug}`}
+      data-testid={`consulting-card-${project.slug}`}
     >
       <div className="flex items-start justify-between gap-3 mb-4">
         <div className="flex flex-wrap items-center gap-2">
@@ -45,7 +45,7 @@ export function FreelanceProjectPreviewCard({
               className="font-mono text-[9px] border-primary/40 text-primary gap-1 px-2 py-0"
             >
               <Star className="w-2.5 h-2.5 fill-primary" />
-              Featured
+              Featured Engagement
             </Badge>
           )}
         </div>

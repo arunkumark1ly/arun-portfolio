@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { ArrowDown, Briefcase } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import type { FreelanceProject } from "@/types/freelance";
+import type { ConsultingProject } from "@/types/consulting";
 
-interface FreelanceCollectionHeroProps {
-  projects: FreelanceProject[];
+interface ConsultingCollectionHeroProps {
+  projects: ConsultingProject[];
 }
 
-export function FreelanceCollectionHero({ projects }: FreelanceCollectionHeroProps) {
+export function ConsultingCollectionHero({ projects }: ConsultingCollectionHeroProps) {
   const featured = projects.find((p) => p.featured) ?? projects[0];
   const projectCount = projects.length;
   const featuredAnchor = featured ? `#${featured.slug}` : "#case-studies";
@@ -30,10 +30,10 @@ export function FreelanceCollectionHero({ projects }: FreelanceCollectionHeroPro
             variant="outline"
             className="font-mono text-[10px] text-primary border-primary/40 px-3 py-1 tracking-widest uppercase"
           >
-            Freelance Portfolio
+            Independent Consulting
           </Badge>
           <Badge variant="secondary" className="font-mono text-[10px] px-3 py-1">
-            {projectCount} {projectCount === 1 ? "Project" : "Projects"}
+            {projectCount} {projectCount === 1 ? "Engagement" : "Engagements"}
           </Badge>
         </motion.div>
 
@@ -43,7 +43,7 @@ export function FreelanceCollectionHero({ projects }: FreelanceCollectionHeroPro
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight mb-3"
         >
-          Freelance Projects
+          Consulting
         </motion.h1>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ export function FreelanceCollectionHero({ projects }: FreelanceCollectionHeroPro
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-4xl md:text-6xl font-bold tracking-tight text-primary leading-tight mb-8"
         >
-          Showcase
+          Engagements
         </motion.h1>
 
         <motion.p
@@ -60,9 +60,9 @@ export function FreelanceCollectionHero({ projects }: FreelanceCollectionHeroPro
           transition={{ duration: 0.5, delay: 0.35 }}
           className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          A curated collection of independent freelance engagements — end-to-end
-          ownership from UI craft to production deployment. Each case study
-          documents a complete client delivery.
+          Independent technical consulting engagements — from product thinking and UI
+          craftsmanship to modern frontend engineering and production deployment. Each
+          case study documents a complete client delivery.
         </motion.p>
 
         <motion.div
@@ -77,22 +77,40 @@ export function FreelanceCollectionHero({ projects }: FreelanceCollectionHeroPro
               Explore Case Studies
             </Button>
           </a>
-          <a href="#project-catalog" data-testid="link-project-catalog">
+          <a href="#engagement-catalog" data-testid="link-engagement-catalog">
             <Button variant="outline" size="sm" className="font-mono text-xs gap-2">
-              View All Projects
+              View All Engagements
               <ArrowDown className="w-3 h-3" />
             </Button>
           </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.6 }}
+          className="mt-10 flex flex-wrap justify-center gap-2"
+        >
+          {["Technical execution", "UI craftsmanship", "Product thinking", "Production deployment"].map(
+            (cap) => (
+              <span
+                key={cap}
+                className="font-mono text-[10px] text-muted-foreground border border-border rounded-full px-3 py-1"
+              >
+                {cap}
+              </span>
+            ),
+          )}
         </motion.div>
 
         {featured && (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.65 }}
-            className="mt-10 font-mono text-[10px] text-muted-foreground"
+            transition={{ duration: 0.4, delay: 0.75 }}
+            className="mt-6 font-mono text-[10px] text-muted-foreground"
           >
-            Featured:{" "}
+            Featured engagement:{" "}
             <span className="text-primary">
               {featured.name}
               {featured.nameAccent ? ` ${featured.nameAccent}` : ""}

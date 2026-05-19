@@ -1,35 +1,35 @@
-export type FreelanceFeatureIcon =
+export type ConsultingFeatureIcon =
   | "smartphone"
   | "layers"
   | "monitor"
   | "code2"
   | "cloud";
 
-export type FreelanceTechIcon = "code2" | "layers" | "cloud";
+export type ConsultingTechIcon = "code2" | "layers" | "cloud";
 
-export interface FreelanceProjectFeature {
+export interface ConsultingProjectFeature {
   title: string;
   description: string;
-  icon: FreelanceFeatureIcon;
+  icon: ConsultingFeatureIcon;
 }
 
-export interface FreelanceProjectTech {
+export interface ConsultingProjectTech {
   label: string;
-  icon: FreelanceTechIcon;
+  icon: ConsultingTechIcon;
   color: string;
 }
 
-export interface FreelanceProjectDeploymentStep {
+export interface ConsultingProjectDeploymentStep {
   title: string;
   description: string;
 }
 
-export interface FreelanceProjectHighlight {
+export interface ConsultingProjectHighlight {
   title: string;
   description: string;
 }
 
-export interface FreelanceProject {
+export interface ConsultingProject {
   slug: string;
   name: string;
   /** Optional accent line shown below the primary title in case-study hero */
@@ -50,15 +50,15 @@ export interface FreelanceProject {
   design: {
     title: string;
     description: string;
-    features: FreelanceProjectFeature[];
+    features: ConsultingProjectFeature[];
   };
-  techStack: FreelanceProjectTech[];
+  techStack: ConsultingProjectTech[];
   deployment: {
     title: string;
     description: string;
-    steps: FreelanceProjectDeploymentStep[];
+    steps: ConsultingProjectDeploymentStep[];
   };
-  highlights: FreelanceProjectHighlight[];
+  highlights: ConsultingProjectHighlight[];
   preview: {
     iframeUrl: string;
     enableIframe: boolean;
