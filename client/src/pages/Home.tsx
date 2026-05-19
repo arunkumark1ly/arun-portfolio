@@ -10,10 +10,13 @@ import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { ResumeModal } from "@/components/ResumeModal";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Mail, PenLine, Phone, Download, MessageCircle } from "lucide-react";
+import { Link as WouterLink } from "wouter";
+import { ArrowRight, Github, Linkedin, Mail, PenLine, Phone, Download, MessageCircle, Briefcase } from "lucide-react";
 import { SiStackoverflow } from "react-icons/si";
 import profileImage from "@assets/arunkumar-k.png";
-import { updateSEO } from "@/lib/seo";
+import { FaqSection } from "@/components/FaqSection";
+import { absoluteUrl } from "@/lib/site-config";
+import { HOME_FAQS, updateSEO } from "@/lib/seo";
 
 export default function Home() {
   const { data: skills, isLoading: skillsLoading } = useSkills();
@@ -25,15 +28,16 @@ export default function Home() {
   useEffect(() => {
     updateSEO({
       title: "ArunKumar Kandasamy - Engineering Lead",
-      description: "With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.",
-      keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
-      url: window.location.origin,
-      image: "https://arunkumarkandasamy.com/arunkumar-k.png",
-      imageSecureUrl: "https://arunkumarkandasamy.com/arunkumar-k.png",
-      imageWidth: 1200,
-      imageHeight: 630,
-      imageType: "image/png",
-      imageAlt: "ArunKumar Kandasamy - Engineering Lead"
+      description:
+        "With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.",
+      keywords:
+        "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
+      url: absoluteUrl("/"),
+      path: "/",
+      structuredData: {
+        includeProfilePage: true,
+        faqs: [...HOME_FAQS],
+      },
     });
   }, []);
 
@@ -145,6 +149,12 @@ export default function Home() {
                     <ArrowRight className="w-3 h-3" />
                   </Button>
                 </Link>
+                <WouterLink href="/consulting">
+                  <Button variant="outline" size="sm" className="font-mono text-xs gap-2" data-testid="button-consulting-case-studies">
+                    <Briefcase className="w-3 h-3" />
+                    Consulting Case Studies
+                  </Button>
+                </WouterLink>
               </motion.div>
             </div>
             
@@ -156,11 +166,17 @@ export default function Home() {
             >
               <div className="relative w-48 h-48 md:w-56 md:h-56">
                 <div className="absolute inset-0 border border-primary/30 rounded translate-x-3 translate-y-3" />
-                <img 
-                  src={profileImage} 
-                  alt="ArunKumar Kandasamy" 
-                  className="relative w-full h-full object-cover rounded bg-card"
-                />
+                <picture>
+                  <source srcSet="/arunkumar-k.webp" type="image/webp" />
+                  <img
+                    src={profileImage}
+                    alt="ArunKumar Kandasamy — Engineering Lead and technical consultant"
+                    width={224}
+                    height={224}
+                    className="relative w-full h-full object-cover rounded bg-card"
+                    fetchPriority="high"
+                  />
+                </picture>
               </div>
             </motion.div>
           </div>
@@ -171,6 +187,9 @@ export default function Home() {
           <SectionHeading number="01" title="About" />
           
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-foreground font-medium leading-relaxed border-l-2 border-primary pl-3">
+              Professional summary: Chennai-based Engineering Lead and independent technical consultant with 16+ years delivering Ruby on Rails, React, and cloud platforms — from architecture and hands-on engineering to predictable release governance.
+            </p>
             <p>
               A Chennai-based Solution Architect, and long-time Rails tinkerer with deep expertise in building scalable web platforms.
             </p>
@@ -180,25 +199,13 @@ export default function Home() {
                 "Good architecture, to me, is a promise kept to the future. That shows up in how I work: design first, APIs and domains that age well, and delivery systems that work just as reliably on Mondays as they do on release day."
               </p>
               
-              <p className="font-medium text-foreground mt-4">What defines my work:</p>
-              <div className="space-y-2">
-                <div className="flex items-start gap-2">
-                  <span className="text-primary">🚀</span>
-                  <span><span className="font-medium text-foreground">Performance as a feature</span> — profiling, indexing, smart caching, and DB tuning that regularly deliver 30%+ latency improvements</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary">🔍</span>
-                  <span><span className="font-medium text-foreground">Operational truth</span> — APM dashboards, clean logs, and alerts that actually help at 2 a.m.</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary">🤝</span>
-                  <span><span className="font-medium text-foreground">Clarity over chaos</span> — short written decision records and sprint plans that align product, QA, and engineering</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-primary">🔄</span>
-                  <span><span className="font-medium text-foreground">Change without drama</span> — zero-downtime Rails & Postgres upgrades, legacy modernisation, monolith split-outs, and container moves</span>
-                </div>
-              </div>
+                            <p className="font-medium text-foreground mt-4">What defines my work:</p>
+              <ul className="space-y-2 list-disc pl-5">
+                <li><span className="font-medium text-foreground">Performance as a feature</span> — profiling, indexing, smart caching, and DB tuning that regularly deliver 30%+ latency improvements</li>
+                <li><span className="font-medium text-foreground">Operational truth</span> — APM dashboards, clean logs, and alerts that actually help at 2 a.m.</li>
+                <li><span className="font-medium text-foreground">Clarity over chaos</span> — short written decision records and sprint plans that align product, QA, and engineering</li>
+                <li><span className="font-medium text-foreground">Change without drama</span> — zero-downtime Rails & Postgres upgrades, legacy modernisation, monolith split-outs, and container moves</li>
+              </ul>
             
             <p className="text-primary font-medium text-xs border-l-2 border-primary pl-3">
               Currently evolving to adopt AI Development — actively learning Machine Learning to integrate intelligent capabilities into modern platforms.
@@ -240,7 +247,7 @@ export default function Home() {
         </section>
 
         {/* Areas of Impact & Strategic Wins Section */}
-        <section id="impact" className="py-12 md:py-20">
+        <section id="impact" className="py-12 md:py-20" aria-label="Areas of impact and strategic wins">
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <div>
               <SectionHeading number="02" title="Areas of Impact" />
@@ -310,6 +317,13 @@ export default function Home() {
               ))}
             </div>
           )}
+          <p className="mt-6 text-sm text-muted-foreground">
+            Independent consulting case studies with full delivery narratives are on the{" "}
+            <WouterLink href="/consulting" className="text-primary hover:underline font-medium">
+              consulting engagements page
+            </WouterLink>
+            .
+          </p>
         </section>
 
         {/* Book a Conversation Section */}
@@ -345,6 +359,8 @@ export default function Home() {
           </motion.div>
         </section>
 
+        <FaqSection faqs={HOME_FAQS} sectionNumber="06" />
+
         {/* Contact Section */}
         <section id="contact" className="py-12 md:py-20" aria-label="Contact section">
           <motion.div
@@ -353,7 +369,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center max-w-lg mx-auto"
           >
-            <p className="font-mono text-primary text-xs mb-2">05. What's Next?</p>
+            <p className="font-mono text-primary text-xs mb-2">07. What's Next?</p>
             <h2 className="text-2xl font-bold text-foreground mb-4">Get In Touch</h2>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
               👋 Have a puzzle, a performance headache, or a system that needs to stay fast and boring in production? Let's connect and explore options.
@@ -386,6 +402,7 @@ export default function Home() {
                 rel="noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors" 
                 data-testid="link-github"
+                aria-label="GitHub profile"
                 title="GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -396,6 +413,7 @@ export default function Home() {
                 rel="noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors" 
                 data-testid="link-linkedin"
+                aria-label="LinkedIn profile"
                 title="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -406,6 +424,7 @@ export default function Home() {
                 rel="noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors" 
                 data-testid="link-stackoverflow"
+                aria-label="Stack Overflow profile"
                 title="Stack Overflow"
               >
                 <SiStackoverflow className="w-5 h-5" />
@@ -416,6 +435,7 @@ export default function Home() {
                 rel="noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors" 
                 data-testid="link-blog"
+                aria-label="VoiceHunt blog"
                 title="Blog"
               >
                 <PenLine className="w-5 h-5" />

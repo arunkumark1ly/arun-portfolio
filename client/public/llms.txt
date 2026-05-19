@@ -1,0 +1,28 @@
+# ArunKumar Kandasamy — Engineering Lead & Technical Consultant
+
+> Portfolio: https://arunkumar1ly.vercel.app/
+> Consulting case studies: https://arunkumar1ly.vercel.app/consulting
+> Contact: kandasamy1ly@gmail.com
+
+## About
+
+ArunKumar Kandasamy is a Chennai-based Engineering Lead with 16+ years of experience designing and delivering web platforms and enterprise products. He combines hands-on architecture and engineering (Ruby on Rails, React, Next.js, cloud, distributed systems) with end-to-end technical delivery ownership.
+
+## Expertise
+
+- Ruby on Rails, React, Next.js, Tailwind CSS
+- Solutions architecture, technical consulting, product thinking
+- PostgreSQL, Redis, AWS, Docker, CI/CD
+- Performance optimization, Agile and hybrid delivery leadership
+
+## Consulting Engagements
+
+- The Legacy Apparels (https://thelegacyapparels.com) — Fashion/apparel brand website; frontend engineering and AWS S3 deployment via Terraform.
+
+## Profiles
+
+- LinkedIn: https://www.linkedin.com/in/arun1ly/
+- GitHub: https://github.com/arunkumark1ly
+- Stack Overflow: https://stackoverflow.com/users/3089625/arunkumar-kandasamy
+- VoiceHunt: https://voicehunt.news/authors/arun1ly
+- Resume PDF: https://arunkumar1ly.vercel.app/arunkumar-kandasamy-resume.pdf

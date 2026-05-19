@@ -5,14 +5,26 @@ import { ConsultingCollectionHero } from "@/components/consulting/ConsultingColl
 import { ConsultingEngagementCatalog } from "@/components/consulting/ConsultingEngagementCatalog";
 import { ConsultingShowcaseCTA } from "@/components/consulting/ConsultingShowcaseCTA";
 import { ConsultingShowcaseNav } from "@/components/consulting/ConsultingShowcaseNav";
+import { absoluteUrl } from "@/lib/site-config";
+import { updateSEO } from "@/lib/seo";
+
+const CONSULTING_DESCRIPTION =
+  "Independent technical consulting engagements — modern frontend engineering, UI craftsmanship, product thinking, and production deployment. Case studies document end-to-end client delivery from concept to production.";
 
 export default function ConsultingShowcase() {
   const projects = getConsultingProjects();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title =
-      "Independent Consulting Engagements | ArunKumar Kandasamy";
+    updateSEO({
+      title: "Independent Consulting Engagements | ArunKumar Kandasamy",
+      description: CONSULTING_DESCRIPTION,
+      url: absoluteUrl("/consulting"),
+      path: "/consulting",
+      structuredData: {
+        includeCreativeWorks: true,
+      },
+    });
   }, []);
 
   return (

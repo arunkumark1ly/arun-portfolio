@@ -4,6 +4,9 @@ Allow: /
 # Sitemap
 Sitemap: https://arunkumar1ly.vercel.app/sitemap.xml
 
+# AI / LLM discovery
+# See https://arunkumar1ly.vercel.app/llms.txt
+
 # Block common bot paths
 Disallow: /api/
 Disallow: /admin/

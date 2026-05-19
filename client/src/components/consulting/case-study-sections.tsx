@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import {
   CheckCircle2,
   Cloud,
@@ -161,6 +163,8 @@ export function CaseStudyDeployment({ project, caseIndex }: SectionProps) {
 
 
 export function CaseStudyPreview({ project, caseIndex }: SectionProps) {
+  const [showPreview, setShowPreview] = useState(false);
+
   if (!project.preview.enableIframe) return null;
   const url = project.preview.iframeUrl;
 
@@ -177,6 +181,39 @@ export function CaseStudyPreview({ project, caseIndex }: SectionProps) {
           </p>
         </motion.div>
 
+        {!showPreview ? (
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={1}
+            className="flex flex-col items-center justify-center gap-4 py-20 rounded-lg border border-dashed border-border bg-card/50"
+          >
+            <p className="font-mono text-xs text-muted-foreground text-center max-w-sm">
+              Preview loads {project.websiteDisplay} on demand to keep this page fast.
+            </p>
+            <Button
+              size="sm"
+              className="font-mono text-xs gap-2"
+              onClick={() => setShowPreview(true)}
+              data-testid={`button-load-preview-${project.slug}`}
+            >
+              <Globe className="w-3.5 h-3.5" />
+              Load Live Preview
+            </Button>
+            <a
+              href={project.website}
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono text-xs text-primary hover:underline flex items-center gap-1"
+            >
+              Open {project.websiteDisplay}
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </motion.div>
+        ) : (
+        <>
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={1} className="group relative mb-8">
           <div className="rounded-t-lg bg-muted/60 border border-border border-b-0 px-4 py-2.5 flex items-center gap-2">
             <div className="flex gap-1.5">
@@ -240,6 +277,8 @@ export function CaseStudyPreview({ project, caseIndex }: SectionProps) {
             </p>
           </div>
         </motion.div>
+        </>
+        )}
       </div>
     </section>
   );

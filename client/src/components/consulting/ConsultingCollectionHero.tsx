@@ -41,17 +41,10 @@ export function ConsultingCollectionHero({ projects }: ConsultingCollectionHeroP
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight mb-3"
+          className="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-8"
         >
-          Consulting
-        </motion.h1>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-4xl md:text-6xl font-bold tracking-tight text-primary leading-tight mb-8"
-        >
-          Engagements
+          <span className="text-foreground">Independent Consulting </span>
+          <span className="text-primary">Engagements</span>
         </motion.h1>
 
         <motion.p
