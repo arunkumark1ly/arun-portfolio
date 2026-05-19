@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { Link as WouterLink } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ExternalLink } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ResumeModal } from "@/components/ResumeModal";
 import { useSkills, useProjects, useExperience } from "@/hooks/use-portfolio";
@@ -22,10 +21,14 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const blogLink = "https://voicehunt.news/authors/arun1ly";
+
   const navLinks = [
     { name: "About", to: "about" },
     { name: "Experience", to: "experience" },
     { name: "Projects", to: "projects" },
+    { name: "Blog", href: blogLink },
+    { name: "Book a Conversation", to: "book-conversation" },
     { name: "Contact", to: "contact" },
   ];
 
@@ -36,33 +39,49 @@ export function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.4 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-          scrolled ? "bg-background/95 backdrop-blur-sm border-b border-border" : "bg-transparent"
+          scrolled
+            ? "bg-background/95 backdrop-blur-sm border-b border-border"
+            : "bg-transparent"
         }`}
       >
         <div className="max-w-4xl mx-auto px-6 md:px-8 h-14 flex items-center justify-between">
-          <Link to="hero" smooth={true} duration={500} className="cursor-pointer">
-            <span className="font-mono text-primary font-semibold text-sm">AK</span>
+          <Link
+            to="hero"
+            smooth={true}
+            duration={500}
+            className="cursor-pointer"
+          >
+            <span className="font-mono text-primary font-semibold text-sm">
+              AK
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link, i) => (
-              <Link
-                key={link.name}
-                to={link.to}
-                smooth={true}
-                duration={500}
-                className="font-mono text-xs cursor-pointer text-muted-foreground hover:text-primary transition-colors"
-                data-testid={`nav-${link.to}`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <WouterLink href="/freelance">
-              <span className="font-mono text-xs cursor-pointer text-primary hover:text-primary/80 transition-colors flex items-center gap-1" data-testid="nav-freelance">
-                Freelance
-                <ExternalLink className="w-2.5 h-2.5" />
-              </span>
-            </WouterLink>
+            {navLinks.map((link) =>
+              "href" in link ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-mono text-xs cursor-pointer text-muted-foreground hover:text-primary transition-colors"
+                  data-testid="nav-blog"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  className="font-mono text-xs cursor-pointer text-muted-foreground hover:text-primary transition-colors"
+                  data-testid={`nav-${link.to}`}
+                >
+                  {link.name}
+                </Link>
+              ),
+            )}
             <Button
               variant="outline"
               size="sm"
@@ -74,9 +93,9 @@ export function Navbar() {
             </Button>
           </nav>
 
-          <button 
-            onClick={() => setIsOpen(!isOpen)} 
-            className="md:hidden text-foreground p-1" 
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-foreground p-1"
             data-testid="button-mobile-menu"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -92,29 +111,33 @@ export function Navbar() {
               className="md:hidden bg-background border-b border-border overflow-hidden"
             >
               <div className="px-6 py-4 space-y-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.to}
-                    smooth={true}
-                    duration={500}
-                    onClick={() => setIsOpen(false)}
-                    className="block font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
-                    data-testid={`nav-mobile-${link.to}`}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-                <WouterLink href="/freelance">
-                  <span
-                    className="block font-mono text-sm text-primary hover:text-primary/80 transition-colors flex items-center gap-1.5"
-                    onClick={() => setIsOpen(false)}
-                    data-testid="nav-mobile-freelance"
-                  >
-                    Freelance Showcase
-                    <ExternalLink className="w-3 h-3" />
-                  </span>
-                </WouterLink>
+                {navLinks.map((link) =>
+                  "href" in link ? (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="block font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+                      data-testid="nav-mobile-blog"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.name}
+                      to={link.to}
+                      smooth={true}
+                      duration={500}
+                      onClick={() => setIsOpen(false)}
+                      className="block font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+                      data-testid={`nav-mobile-${link.to}`}
+                    >
+                      {link.name}
+                    </Link>
+                  ),
+                )}
                 <Button
                   variant="outline"
                   size="sm"
@@ -133,8 +156,8 @@ export function Navbar() {
         </AnimatePresence>
       </motion.header>
 
-      <ResumeModal 
-        open={resumeModalOpen} 
+      <ResumeModal
+        open={resumeModalOpen}
         onOpenChange={setResumeModalOpen}
         skills={skills || []}
         experience={experience || []}

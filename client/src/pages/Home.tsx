@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { useSkills, useProjects, useExperience } from "@/hooks/use-portfolio";
@@ -8,10 +8,12 @@ import { SkillCard } from "@/components/SkillCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { ResumeModal } from "@/components/ResumeModal";
+import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail, PenLine, Phone, Download, MessageCircle } from "lucide-react";
 import { SiStackoverflow } from "react-icons/si";
-import profileImage from "@assets/arunkumar-art_1769490512369.png";
+import profileImage from "@assets/arunkumar-k.png";
+import { updateSEO } from "@/lib/seo";
 
 export default function Home() {
   const { data: skills, isLoading: skillsLoading } = useSkills();
@@ -19,32 +21,53 @@ export default function Home() {
   const { data: experience, isLoading: experienceLoading } = useExperience();
   const [showResume, setShowResume] = useState(false);
 
+  // Initialize SEO on component mount
+  useEffect(() => {
+    updateSEO({
+      title: "ArunKumar Kandasamy - Engineering Lead",
+      description: "With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.",
+      keywords: "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
+      url: window.location.origin,
+      image: "https://arunkumarkandasamy.com/arunkumar-k.png",
+      imageSecureUrl: "https://arunkumarkandasamy.com/arunkumar-k.png",
+      imageWidth: 1200,
+      imageHeight: 630,
+      imageType: "image/png",
+      imageAlt: "ArunKumar Kandasamy - Engineering Lead"
+    });
+  }, []);
+
   const technicalSkills = skills?.filter(s => s.category === "Technical") || [];
   const managementSkills = skills?.filter(s => s.category === "Management") || [];
 
   const areasOfImpact = [
-    "Solution architecture (HLD/LLD), API design (REST/GraphQL), and domain modeling",
-    "Performance engineering (profiling, caching, query/index optimization, scalability practices)",
-    "Asynchronous & event-driven systems (Sidekiq, queues, messaging, retries, idempotency)",
-    "Cloud & DevOps (Docker, CI/CD, release automation, environment strategy, production readiness)",
-    "Modernization programs (Rails upgrades, refactoring, zero-downtime migrations, test coverage)",
-    "Technical delivery leadership (planning, execution tracking, dependency management, incident triage, stakeholder updates)"
-  ];
+  "Ruby on Rails (v3 → v7.2), REST & GraphQL APIs, RBAC",
+  "React / Next.js / Angular, Tailwind CSS",
+  "PostgreSQL, MySQL, MongoDB, Redis",
+  "Sidekiq, Kafka, ActiveMQ",
+  "AWS, Heroku, Linode",
+  "Docker, GitHub Actions, Jenkins, CircleCI"
+];
 
   const strategicWins = [
-    "Delivered customer-facing releases and production fixes under tight timelines by aligning stakeholders, managing dependencies, and driving release readiness across multiple teams.",
-    "Led modernization and performance initiatives across Rails platforms through profiling, refactoring, and database tuning, reducing p95 latency by 32% and lowering slow queries by 45%.",
-    "Built and stabilized CI/CD and deployment practices to improve repeatability and reduce manual steps, improving deployment frequency from 1-2/month to 2/week and cutting build time by 35%."
-  ];
+  "Cut p95 latency by ~32% and reduced slow queries by 45% across enterprise platforms",
+  "Rebuilt CI/CD pipelines to shrink build times by 35% and double deployment frequency",
+  "Ran multi-version Rails upgrades for large teams without a single rollback",
+  "Modernised a legacy HR platform, doubling deploy speed and trimming cloud spend by 20%",
+  "Built hybrid data sync (on-prem Tally → cloud) processing millions of financial rows daily",
+  "VoiceHunt.news: Rails + Next.js platform with 91% cache hits and 52% lower TTFB"
+];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
 
-      <main className="max-w-4xl mx-auto px-6 md:px-8">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Hero Section */}
-        <section id="hero" className="min-h-screen flex items-center py-20">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 w-full">
+        <section id="hero" className="min-h-screen flex items-center py-12 md:py-20" aria-label="Hero section">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-10 w-full">
             <div className="flex-1">
               <motion.p
                 initial={{ opacity: 0 }}
@@ -63,30 +86,58 @@ export default function Home() {
               >
                 ArunKumar Kandasamy.
               </motion.h1>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.16 }}
+                className="mt-3 flex flex-wrap items-center gap-2"
+              >
+                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-primary">
+                  Engineering Lead
+                </span>
+                <span className="h-1 w-1 rounded-full bg-primary/60" />
+                <span className="text-sm md:text-base font-semibold text-foreground">
+                  ThinkPro Technologies
+                </span>
+              </motion.div>
               
               <motion.h2
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="text-2xl md:text-3xl font-medium text-muted-foreground mt-2"
+                className="mt-4"
               >
-                Solution Architect & Tech Lead.
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xl md:text-2xl font-semibold tracking-tight text-muted-foreground">
+                    <span className="text-foreground">Scalable Systems</span>
+                    <span className="text-primary/50">|</span>
+                    <span>Driving Predictable Delivery</span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 text-sm md:text-base text-muted-foreground">
+                    <span className="font-medium">Ruby on Rails, React, Next.js</span>
+                    <span className="text-primary/60">—</span>
+                    <span className="font-mono text-xs bg-muted border border-border px-2.5 py-1 rounded-md shadow-sm">
+                      Cloud (AWS)
+                    </span>
+                  </div>
+                </div>
               </motion.h2>
               
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                className="max-w-lg text-sm text-muted-foreground mt-6 leading-relaxed"
+                className="max-w-none md:max-w-lg text-sm text-muted-foreground mt-6 leading-relaxed"
               >
-                Forward-focused Solution Architect with 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. I blend hands-on architecture and engineering leadership with end-to-end technical delivery ownership to ship predictable outcomes.
+                With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.
               </motion.p>
               
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 }}
-                className="flex gap-3 mt-8"
+                className="flex flex-col sm:flex-row gap-3 mt-8"
               >
                 <Link to="projects" smooth={true} duration={500}>
                   <Button variant="default" size="sm" className="font-mono text-xs gap-2" data-testid="button-view-work">
@@ -94,16 +145,6 @@ export default function Home() {
                     <ArrowRight className="w-3 h-3" />
                   </Button>
                 </Link>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="font-mono text-xs gap-2" 
-                  onClick={() => setShowResume(true)}
-                  data-testid="button-download-resume"
-                >
-                  <Download className="w-3 h-3" />
-                  Resume
-                </Button>
               </motion.div>
             </div>
             
@@ -126,23 +167,38 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20">
+        <section id="about" className="py-12 md:py-20" aria-label="About section">
           <SectionHeading number="01" title="About" />
           
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
             <p>
-              Hello! I'm a <span className="text-foreground font-medium">Solution Architect</span> and <span className="text-foreground font-medium">Tech Lead</span> with deep expertise in Ruby on Rails, cloud infrastructure, and distributed systems.
+              A Chennai-based Solution Architect, and long-time Rails tinkerer with deep expertise in building scalable web platforms.
             </p>
             
-            <div className="space-y-2 text-xs">
-              <p className="font-medium text-foreground">Value Proposition:</p>
-              <ul className="list-disc pl-4 space-y-1">
-                <li>Own end-to-end delivery from discovery to production, bridging product intent to technical execution through clear plans, estimates, milestones, and release readiness.</li>
-                <li>Architect scalable Rails-based platforms with pragmatic patterns (API design, background processing, caching, observability) and modern frontend delivery.</li>
-                <li>Improve reliability and performance through query optimization, async architecture, caching strategies, and production troubleshooting.</li>
-                <li>Lead cross-functional execution with strong stakeholder communication, risk/issue management, and continuous improvement.</li>
-              </ul>
-            </div>
+              <p className="font-medium text-foreground">My Philosophy:</p>
+              <p className="italic text-muted-foreground">
+                "Good architecture, to me, is a promise kept to the future. That shows up in how I work: design first, APIs and domains that age well, and delivery systems that work just as reliably on Mondays as they do on release day."
+              </p>
+              
+              <p className="font-medium text-foreground mt-4">What defines my work:</p>
+              <div className="space-y-2">
+                <div className="flex items-start gap-2">
+                  <span className="text-primary">🚀</span>
+                  <span><span className="font-medium text-foreground">Performance as a feature</span> — profiling, indexing, smart caching, and DB tuning that regularly deliver 30%+ latency improvements</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-primary">🔍</span>
+                  <span><span className="font-medium text-foreground">Operational truth</span> — APM dashboards, clean logs, and alerts that actually help at 2 a.m.</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-primary">🤝</span>
+                  <span><span className="font-medium text-foreground">Clarity over chaos</span> — short written decision records and sprint plans that align product, QA, and engineering</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-primary">🔄</span>
+                  <span><span className="font-medium text-foreground">Change without drama</span> — zero-downtime Rails & Postgres upgrades, legacy modernisation, monolith split-outs, and container moves</span>
+                </div>
+              </div>
             
             <p className="text-primary font-medium text-xs border-l-2 border-primary pl-3">
               Currently evolving to adopt AI Development — actively learning Machine Learning to integrate intelligent capabilities into modern platforms.
@@ -153,7 +209,7 @@ export default function Home() {
               {skillsLoading ? (
                 <div className="animate-pulse h-20 bg-muted rounded" />
               ) : (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-0.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-0.5">
                   {technicalSkills.map((skill, idx) => (
                     <SkillCard key={skill.id} skill={skill} index={idx} />
                   ))}
@@ -164,7 +220,7 @@ export default function Home() {
               {skillsLoading ? (
                 <div className="animate-pulse h-12 bg-muted rounded" />
               ) : (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-0.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-0.5">
                   {managementSkills.map((skill, idx) => (
                     <SkillCard key={skill.id} skill={skill} index={idx} />
                   ))}
@@ -184,8 +240,8 @@ export default function Home() {
         </section>
 
         {/* Areas of Impact & Strategic Wins Section */}
-        <section id="impact" className="py-20">
-          <div className="grid md:grid-cols-2 gap-8">
+        <section id="impact" className="py-12 md:py-20">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <div>
               <SectionHeading number="02" title="Areas of Impact" />
               <ul className="space-y-2">
@@ -227,7 +283,7 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-20">
+        <section id="experience" className="py-12 md:py-20" aria-label="Experience section">
           <SectionHeading number="03" title="Experience" />
           {experienceLoading ? (
             <div className="space-y-4">
@@ -240,15 +296,15 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-20">
+        <section id="projects" className="py-12 md:py-20" aria-label="Projects section">
           <SectionHeading number="04" title="Projects" />
           
           {projectsLoading ? (
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[1, 2, 3, 4].map(i => <div key={i} className="h-40 bg-muted animate-pulse rounded" />)}
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {projects?.map((project, index) => (
                 <ProjectCard key={project.id} project={project} index={index} />
               ))}
@@ -256,8 +312,41 @@ export default function Home() {
           )}
         </section>
 
+        {/* Book a Conversation Section */}
+        <section
+          id="book-conversation"
+          className="py-12 md:py-16"
+          aria-label="Book a conversation section"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.35 }}
+            className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
+          >
+            <div className="grid lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+              <div className="border-b border-border p-6 sm:p-8 lg:border-b-0 lg:border-r">
+                <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">
+                  05. Book a Conversation
+                </p>
+                <h2 className="mt-3 text-2xl font-bold text-foreground">
+                  Reserve a time to talk through your next build.
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  If you want to discuss architecture, Rails modernization, delivery strategy, or performance work, you can book a slot directly here without interrupting the existing contact options below.
+                </p>
+              </div>
+
+              <div className="bg-background/40 p-3 sm:p-4">
+                <CalendlyEmbed />
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
         {/* Contact Section */}
-        <section id="contact" className="py-20">
+        <section id="contact" className="py-12 md:py-20" aria-label="Contact section">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -267,20 +356,20 @@ export default function Home() {
             <p className="font-mono text-primary text-xs mb-2">05. What's Next?</p>
             <h2 className="text-2xl font-bold text-foreground mb-4">Get In Touch</h2>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-              I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and architecture. Feel free to reach out!
+              👋 Have a puzzle, a performance headache, or a system that needs to stay fast and boring in production? Let's connect and explore options.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-              <a href="mailto:k.arun@outlook.com" data-testid="link-contact-email">
+              <a href="mailto:kandasamy1ly@gmail.com" data-testid="link-contact-email">
                 <Button variant="outline" size="sm" className="font-mono text-xs gap-2">
                   <Mail className="w-3 h-3" />
-                  k.arun@outlook.com
+                  kandasamy1ly@gmail.com
                 </Button>
               </a>
-              <a href="tel:+919003457395" data-testid="link-contact-phone">
+              <a href="tel:+919360740047" data-testid="link-contact-phone">
                 <Button variant="outline" size="sm" className="font-mono text-xs gap-2">
                   <Phone className="w-3 h-3" />
-                  +91 9003457395 (India)
+                  +91 9360740047 (India)
                 </Button>
               </a>
             </div>
@@ -339,7 +428,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 text-center border-t border-border">
         <p className="font-mono text-xs text-muted-foreground">
-          Designed & Built by ArunKumar Kandasamy
+          © {new Date().getFullYear()} ArunKumar Kandasamy. All rights reserved.
         </p>
       </footer>
 

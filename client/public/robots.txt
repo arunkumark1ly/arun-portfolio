@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://arunkumar1ly.vercel.app/sitemap.xml
+
+# Block common bot paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
