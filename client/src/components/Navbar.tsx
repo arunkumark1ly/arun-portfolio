@@ -147,7 +147,7 @@ export function Navbar() {
                 )}
                 <WouterLink href="/freelance">
                   <span
-                    className="block font-mono text-sm text-primary hover:text-primary/80 transition-colors flex items-center gap-1.5"
+                    className="flex font-mono text-sm text-primary hover:text-primary/80 transition-colors items-center gap-1.5"
                     onClick={() => setIsOpen(false)}
                     data-testid="nav-mobile-freelance"
                   >
