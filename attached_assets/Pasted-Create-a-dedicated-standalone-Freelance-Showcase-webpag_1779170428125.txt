@@ -1,0 +1,109 @@
+Create a dedicated standalone “Freelance Showcase” webpage within my personal resume/portfolio website for my independently executed frontend project: The Legacy Apparels (thelegacyapparels.com).
+
+Important Architecture Requirement:
+My current portfolio website is primarily a single-page application, where most sections exist on one landing page. However, this freelance showcase must NOT be embedded as another section inside the single-page layout.
+
+Instead:
+
+* Create this as a completely separate dedicated page within the same domain/website
+* Add proper navigation/redirection from the main portfolio page
+* The experience should feel like opening a premium case study or featured project presentation
+* Maintain overall branding consistency with the main portfolio website while giving this page its own unique visual identity
+
+Project Information:
+
+* Project Name: The Legacy Apparels
+* Website: thelegacyapparels.com
+* Category: Fashion / Apparel Brand Website
+* Project Type: Independent Freelance Project
+* Role: Frontend Developer & Deployment Engineer
+
+Project Scope:
+This was a lightweight frontend-focused freelance project independently handled from UI implementation to deployment.
+
+Main Focus Areas:
+
+* Responsive frontend development
+* Modern UI styling
+* Smooth browsing experience
+* Cloud deployment setup
+
+Tech Stack:
+
+* HTML
+* Tailwind CSS
+* JavaScript
+* Terraform
+* AWS S3 Hosting
+
+Deployment Details:
+
+* Infrastructure provisioning using Terraform
+* Static website hosting in AWS S3
+* Production deployment configuration
+
+Page Design Expectations:
+
+* This page should feel like a premium project case study
+* Do NOT design it like a standard resume project page
+* Use immersive storytelling-driven layout
+* Include large hero visuals and mockup previews
+* Add smooth animations and transitions
+* Maintain elegant spacing and typography
+* Use subtle fashion/luxury-inspired aesthetics aligned with the apparel domain
+
+Suggested Page Structure:
+
+1. Hero Banner
+    * Large visual introduction
+    * Project branding
+    * Elegant CTA buttons
+    * Live website link
+2. Project Story
+    * Brief explanation of the freelance engagement
+    * Independent execution narrative
+3. Design & Frontend Experience
+    * UI/UX focus
+    * Responsive implementation
+    * Tailwind CSS craftsmanship
+4. Deployment & Infrastructure
+    * Terraform setup
+    * AWS S3 hosting workflow
+    * Production deployment approach
+5. Visual Showcase
+    * Desktop and mobile previews
+    * Interactive hover animations
+    * Modern browser mockups
+6. Key Highlights
+    * Independent ownership
+    * Frontend engineering
+    * Deployment capability
+    * Clean UI execution
+
+UI/UX Requirements:
+
+* Premium modern portfolio aesthetic
+* Minimal and clean interface
+* Fashion-inspired visual presentation
+* Smooth page transitions
+* Responsive mobile-first layout
+* Elegant hover effects
+* Subtle gradients and polished cards
+* Corporate-quality frontend presentation
+
+Navigation Requirements:
+
+* Add navigation entry from the main website
+* Ensure seamless transition between the single-page portfolio and this dedicated showcase page
+* Preserve consistent branding, typography, and color palette
+
+Tone:
+
+* Professional
+* Premium
+* Elegant
+* Modern
+* Creative frontend developer presentation
+
+Goal:
+When recruiters or clients open this page, it should immediately feel like a polished standalone case study that demonstrates my ability to independently build, style, and deploy modern frontend experiences with strong attention to visual quality and presentation.

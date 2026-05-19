@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { Link as WouterLink } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ResumeModal } from "@/components/ResumeModal";
 import { useSkills, useProjects, useExperience } from "@/hooks/use-portfolio";
@@ -56,6 +57,12 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <WouterLink href="/freelance">
+              <span className="font-mono text-xs cursor-pointer text-primary hover:text-primary/80 transition-colors flex items-center gap-1" data-testid="nav-freelance">
+                Freelance
+                <ExternalLink className="w-2.5 h-2.5" />
+              </span>
+            </WouterLink>
             <Button
               variant="outline"
               size="sm"
@@ -98,6 +105,16 @@ export function Navbar() {
                     {link.name}
                   </Link>
                 ))}
+                <WouterLink href="/freelance">
+                  <span
+                    className="block font-mono text-sm text-primary hover:text-primary/80 transition-colors flex items-center gap-1.5"
+                    onClick={() => setIsOpen(false)}
+                    data-testid="nav-mobile-freelance"
+                  >
+                    Freelance Showcase
+                    <ExternalLink className="w-3 h-3" />
+                  </span>
+                </WouterLink>
                 <Button
                   variant="outline"
                   size="sm"
