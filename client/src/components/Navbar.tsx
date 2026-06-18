@@ -45,7 +45,7 @@ export function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-4xl mx-auto px-6 md:px-8 h-14 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 h-14 flex items-center justify-between">
           <Link
             to="hero"
             smooth={true}
@@ -117,7 +117,7 @@ export function Navbar() {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden bg-background border-b border-border overflow-hidden"
             >
-              <div className="px-6 py-4 space-y-4">
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-4 space-y-4">
                 {navLinks.map((link) =>
                   "href" in link ? (
                     <a

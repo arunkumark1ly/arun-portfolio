@@ -3,7 +3,7 @@ export const SITE_URL = "https://arunkumar1ly.vercel.app";
 
 export const SITE_NAME = "ArunKumar Kandasamy";
 
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/arunkumar-k.png`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/arunkumar-kandasamy.webp`;
 
 export const PROFILE_LINKS = {
   linkedin: "https://www.linkedin.com/in/arun1ly/",

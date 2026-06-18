@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-scroll";
 import { useSkills, useProjects, useExperience } from "@/hooks/use-portfolio";
 import { Navbar } from "@/components/Navbar";
+import { HeroSection } from "@/components/HeroSection";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SkillCard } from "@/components/SkillCard";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -11,9 +11,8 @@ import { ResumeModal } from "@/components/ResumeModal";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { Button } from "@/components/ui/button";
 import { Link as WouterLink } from "wouter";
-import { ArrowRight, Github, Linkedin, Mail, PenLine, Phone, Download, MessageCircle, Briefcase } from "lucide-react";
+import { Github, Linkedin, Mail, PenLine, Phone, MessageCircle } from "lucide-react";
 import { SiStackoverflow } from "react-icons/si";
-import profileImage from "@assets/arunkumar-k.png";
 import { FaqSection } from "@/components/FaqSection";
 import { absoluteUrl } from "@/lib/site-config";
 import { HOME_FAQS, updateSEO } from "@/lib/seo";
@@ -84,119 +83,8 @@ export default function Home() {
         <Navbar />
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
-        {/* Hero Section */}
-        <section id="hero" className="min-h-screen flex items-center py-12 md:py-20" aria-label="Hero section">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-10 w-full">
-            <div className="flex-1">
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4 }}
-                className="font-mono text-primary text-xs mb-4"
-              >
-                Hi, my name is
-              </motion.p>
-              
-              <motion.h1
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="text-4xl md:text-5xl font-bold text-foreground tracking-tight leading-tight"
-              >
-                ArunKumar Kandasamy.
-              </motion.h1>
-
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.16 }}
-                className="mt-3 flex flex-wrap items-center gap-2"
-              >
-                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-primary">
-                  Principal Software Engineer
-                </span>
-                <span className="h-1 w-1 rounded-full bg-primary/60" />
-                <span className="text-sm md:text-base font-semibold text-foreground">
-                  ThinkPro Technologies
-                </span>
-              </motion.div>
-              
-              <motion.h2
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                className="mt-4"
-              >
-                <div className="space-y-2">
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xl md:text-2xl font-semibold tracking-tight text-muted-foreground">
-                    <span className="text-foreground">Scalable Systems</span>
-                    <span className="text-primary/50">|</span>
-                    <span>Driving Predictable Delivery</span>
-                  </div>
-                  <div className="flex flex-wrap items-center gap-2 text-sm md:text-base text-muted-foreground">
-                    <span className="font-medium">Ruby on Rails, React, Next.js</span>
-                    <span className="text-primary/60">—</span>
-                    <span className="font-mono text-xs bg-muted border border-border px-2.5 py-1 rounded-md shadow-sm">
-                      Cloud (AWS)
-                    </span>
-                  </div>
-                </div>
-              </motion.h2>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-                className="max-w-none md:max-w-lg text-sm text-muted-foreground mt-6 leading-relaxed"
-              >
-                With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.
-              </motion.p>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-3 mt-8"
-              >
-                <Link to="projects" smooth={true} duration={500}>
-                  <Button variant="default" size="sm" className="font-mono text-xs gap-2" data-testid="button-view-work">
-                    View My Work
-                    <ArrowRight className="w-3 h-3" />
-                  </Button>
-                </Link>
-                <WouterLink href="/consulting">
-                  <Button variant="outline" size="sm" className="font-mono text-xs gap-2" data-testid="button-consulting-case-studies">
-                    <Briefcase className="w-3 h-3" />
-                    Consulting Case Studies
-                  </Button>
-                </WouterLink>
-              </motion.div>
-            </div>
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex justify-center md:justify-end shrink-0"
-            >
-              <div className="relative w-48 h-48 md:w-56 md:h-56">
-                <div className="absolute inset-0 border border-primary/30 rounded translate-x-3 translate-y-3" />
-                <picture>
-                  <source srcSet="/arunkumar-k.webp" type="image/webp" />
-                  <img
-                    src={profileImage}
-                    alt="ArunKumar Kandasamy — Principal Software Engineer and technical consultant"
-                    width={224}
-                    height={224}
-                    className="relative w-full h-full object-cover rounded bg-card"
-                    fetchPriority="high"
-                  />
-                </picture>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
+        <HeroSection />
 
         {/* About Section */}
         <section id="about" className="py-12 md:py-20" aria-label="About section">
