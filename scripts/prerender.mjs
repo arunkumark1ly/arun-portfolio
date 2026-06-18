@@ -1,5 +1,6 @@
 /**
  * Post-build prerender for / and /consulting — improves crawlability and AI extraction.
+ * Uses bundled Chromium locally and @sparticuz/chromium on Linux (Vercel/GitHub Actions).
  */
 import { spawn } from "node:child_process";
 import fs from "node:fs";
@@ -51,6 +52,33 @@ function startPreview() {
   });
 }
 
+async function launchBrowser() {
+  const sandboxArgs = ["--no-sandbox", "--disable-setuid-sandbox"];
+
+  if (process.platform === "linux") {
+    try {
+      const chromium = await import("@sparticuz/chromium");
+      const puppeteerCore = await import("puppeteer-core");
+      return puppeteerCore.default.launch({
+        args: [...chromium.default.args, ...sandboxArgs],
+        defaultViewport: chromium.default.defaultViewport,
+        executablePath: await chromium.default.executablePath(),
+        headless: true,
+      });
+    } catch (error) {
+      console.warn(
+        "Linux Chromium unavailable, falling back to bundled Puppeteer:",
+        error instanceof Error ? error.message : error,
+      );
+    }
+  }
+
+  return puppeteer.launch({
+    headless: true,
+    args: sandboxArgs,
+  });
+}
+
 async function prerenderRoute(browser, routePath, outFile) {
   const page = await browser.newPage();
   await page.goto(`${baseUrl}${routePath}`, { waitUntil: "networkidle0", timeout: 60000 });
@@ -73,18 +101,24 @@ async function main() {
   const preview = await startPreview();
   await wait(1500);
 
-  const browser = await puppeteer.launch({ headless: true });
-
+  let browser;
   try {
+    browser = await launchBrowser();
     for (const route of routes) {
       await prerenderRoute(browser, route.path, route.outFile);
     }
+    console.log("Prerender complete.");
+  } catch (error) {
+    console.warn(
+      "Prerender skipped — deployment will continue with the Vite SPA build.",
+      error instanceof Error ? error.message : error,
+    );
   } finally {
-    await browser.close();
+    if (browser) {
+      await browser.close();
+    }
     preview.kill("SIGTERM");
   }
-
-  console.log("Prerender complete.");
 }
 
 main().catch((err) => {

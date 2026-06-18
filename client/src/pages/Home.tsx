@@ -27,7 +27,7 @@ export default function Home() {
   // Initialize SEO on component mount
   useEffect(() => {
     updateSEO({
-      title: "ArunKumar Kandasamy - Engineering Lead",
+      title: "ArunKumar Kandasamy - Principal Software Engineer",
       description:
         "With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.",
       keywords:
@@ -42,7 +42,23 @@ export default function Home() {
   }, []);
 
   const technicalSkills = skills?.filter(s => s.category === "Technical") || [];
+  const aiAutomationSkills = skills?.filter(s => s.category === "AI & Automation") || [];
   const managementSkills = skills?.filter(s => s.category === "Management") || [];
+
+  const aiEngineeringPractices = [
+    {
+      lead: "AI-assisted software engineering",
+      body: "Implemented practices across Ruby on Rails application development and DevOps workflows by leveraging Claude, Cursor IDE, and LLM-based coding assistants for architecture design, code generation, refactoring, test automation, and technical documentation.",
+    },
+    {
+      lead: "Dockerized CI/CD automation",
+      body: "Integrated AI capabilities into Dockerized environments and GitHub Actions to optimize CI/CD pipelines, automate code quality checks, security scanning, release validations, and deployment processes — significantly improving development velocity, deployment reliability, and operational efficiency.",
+    },
+    {
+      lead: "Prompt engineering & AI code review",
+      body: "Established prompt-engineering and AI code-review guidelines to maintain consistency, security, and quality standards across AI-assisted contributions to production Rails services.",
+    },
+  ];
 
   const areasOfImpact = [
   "Ruby on Rails (v3 → v7.2), REST & GraphQL APIs, RBAC",
@@ -98,7 +114,7 @@ export default function Home() {
                 className="mt-3 flex flex-wrap items-center gap-2"
               >
                 <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-primary">
-                  Engineering Lead
+                  Principal Software Engineer
                 </span>
                 <span className="h-1 w-1 rounded-full bg-primary/60" />
                 <span className="text-sm md:text-base font-semibold text-foreground">
@@ -170,7 +186,7 @@ export default function Home() {
                   <source srcSet="/arunkumar-k.webp" type="image/webp" />
                   <img
                     src={profileImage}
-                    alt="ArunKumar Kandasamy — Engineering Lead and technical consultant"
+                    alt="ArunKumar Kandasamy — Principal Software Engineer and technical consultant"
                     width={224}
                     height={224}
                     className="relative w-full h-full object-cover rounded bg-card"
@@ -185,13 +201,9 @@ export default function Home() {
         {/* About Section */}
         <section id="about" className="py-12 md:py-20" aria-label="About section">
           <SectionHeading number="01" title="About" />
-          
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
             <p className="text-sm text-foreground font-medium leading-relaxed border-l-2 border-primary pl-3">
-              Professional summary: Chennai-based Engineering Lead and independent technical consultant with 16+ years delivering Ruby on Rails, React, and cloud platforms — from architecture and hands-on engineering to predictable release governance.
-            </p>
-            <p>
-              A Chennai-based Solution Architect, and long-time Rails tinkerer with deep expertise in building scalable web platforms.
+              Professional summary: Chennai-based Principal Software Engineer and independent technical consultant with 16+ years delivering Ruby on Rails, React, and cloud platforms — from architecture and hands-on engineering to predictable release governance.
             </p>
             
               <p className="font-medium text-foreground">My Philosophy:</p>
@@ -206,10 +218,30 @@ export default function Home() {
                 <li><span className="font-medium text-foreground">Clarity over chaos</span> — short written decision records and sprint plans that align product, QA, and engineering</li>
                 <li><span className="font-medium text-foreground">Change without drama</span> — zero-downtime Rails & Postgres upgrades, legacy modernisation, monolith split-outs, and container moves</li>
               </ul>
-            
-            <p className="text-primary font-medium text-xs border-l-2 border-primary pl-3">
-              Currently evolving to adopt AI Development — actively learning Machine Learning to integrate intelligent capabilities into modern platforms.
-            </p>
+
+            <div className="mt-6 rounded-xl border border-primary/25 bg-primary/5 p-5 sm:p-6">
+              <h4 className="font-mono text-primary text-xs uppercase tracking-[0.2em] mb-4">
+                AI-Augmented Engineering Practices
+              </h4>
+              <ul className="space-y-4">
+                {aiEngineeringPractices.map((item, index) => (
+                  <motion.li
+                    key={item.lead}
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.06, duration: 0.3 }}
+                    className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed"
+                  >
+                    <span className="text-primary mt-1 shrink-0 text-base leading-none">•</span>
+                    <span>
+                      <span className="font-semibold text-foreground">{item.lead}:</span>{" "}
+                      {item.body}
+                    </span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
             
             <div className="pt-4">
               <h4 className="font-mono text-foreground text-xs mb-3">Technical Skills:</h4>
@@ -218,6 +250,17 @@ export default function Home() {
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-0.5">
                   {technicalSkills.map((skill, idx) => (
+                    <SkillCard key={skill.id} skill={skill} index={idx} />
+                  ))}
+                </div>
+              )}
+              
+              <h4 className="font-mono text-foreground text-xs mb-3 mt-4">AI & Automation Tools:</h4>
+              {skillsLoading ? (
+                <div className="animate-pulse h-8 bg-muted rounded" />
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-0.5">
+                  {aiAutomationSkills.map((skill, idx) => (
                     <SkillCard key={skill.id} skill={skill} index={idx} />
                   ))}
                 </div>

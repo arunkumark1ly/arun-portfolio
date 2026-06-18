@@ -21,6 +21,9 @@ export const skills: Skill[] = [
   { id: 18, name: "Jenkins / CircleCI", category: "Technical", icon: "Settings" },
   { id: 19, name: "Redis / ElasticSearch", category: "Technical", icon: "Search" },
   { id: 20, name: "C / C++", category: "Technical", icon: "Binary" },
+  { id: 29, name: "Claude", category: "AI & Automation", icon: "Bot" },
+  { id: 30, name: "Cursor IDE", category: "AI & Automation", icon: "Terminal" },
+  { id: 31, name: "LLM-based coding Assistants", category: "AI & Automation", icon: "Sparkles" },
   { id: 21, name: "Solutions Architecture (HLD/LLD)", category: "Management", icon: "Layout" },
   { id: 22, name: "Technical Leadership", category: "Management", icon: "Users" },
   { id: 23, name: "Agile/Scrum Delivery", category: "Management", icon: "Target" },
@@ -34,7 +37,7 @@ export const skills: Skill[] = [
 export const experience: Experience[] = [
   {
     id: 1,
-    role: "Engineering Lead",
+    role: "Principal Software Engineer",
     company: "ThinkPro Technologies",
     period: "Jan 2024 - Present",
     description:
@@ -126,7 +129,7 @@ export const projects: Project[] = [
       "React Testing Library",
       "New Relic"
     ],
-    role: "Engineering Lead",
+    role: "Principal Software Engineer",
     link: "https://voicehunt.news",
   },
   {

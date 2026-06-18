@@ -30,7 +30,7 @@ const DEFAULT_DESCRIPTION =
   "With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.";
 
 export const DEFAULT_SEO: SEOProps = {
-  title: "ArunKumar Kandasamy - Engineering Lead",
+  title: "ArunKumar Kandasamy - Principal Software Engineer",
   description: DEFAULT_DESCRIPTION,
   keywords:
     "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
@@ -39,7 +39,7 @@ export const DEFAULT_SEO: SEOProps = {
   imageWidth: 1200,
   imageHeight: 630,
   imageType: "image/png",
-  imageAlt: "ArunKumar Kandasamy - Engineering Lead",
+  imageAlt: "ArunKumar Kandasamy - Principal Software Engineer",
   url: absoluteUrl("/"),
   path: "/",
   type: "website",
@@ -53,7 +53,7 @@ export const HOME_FAQS = [
   {
     question: "What is ArunKumar Kandasamy's professional focus?",
     answer:
-      "ArunKumar Kandasamy is an Engineering Lead and technical consultant with 16+ years of experience in Ruby on Rails, React, Next.js, cloud architecture, and end-to-end technical delivery for enterprise and SaaS platforms.",
+      "ArunKumar Kandasamy is a Principal Software Engineer and technical consultant with 16+ years of experience in Ruby on Rails, React, Next.js, cloud architecture, and end-to-end technical delivery for enterprise and SaaS platforms.",
   },
   {
     question: "What consulting services does Arun offer?",

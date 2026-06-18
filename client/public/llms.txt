@@ -1,28 +1,26 @@
-# ArunKumar Kandasamy — Engineering Lead & Technical Consultant
+# ArunKumar Kandasamy — Principal Software Engineer & Technical Consultant
 
-> Portfolio: https://arunkumar1ly.vercel.app/
-> Consulting case studies: https://arunkumar1ly.vercel.app/consulting
-> Contact: kandasamy1ly@gmail.com
+Site: https://arunkumar1ly.vercel.app
+Consulting case studies: https://arunkumar1ly.vercel.app/consulting
+Resume (PDF): https://arunkumar1ly.vercel.app/arunkumar-kandasamy-resume.pdf
+LinkedIn: https://linkedin.com/in/arun1ly
+GitHub: https://github.com/arunkumark1ly
 
-## About
+ArunKumar Kandasamy is a Chennai-based Principal Software Engineer with 16+ years of experience designing and delivering web platforms and enterprise products. He combines hands-on architecture and engineering (Ruby on Rails, React, Next.js, cloud, distributed systems) with end-to-end technical delivery ownership.
 
-ArunKumar Kandasamy is a Chennai-based Engineering Lead with 16+ years of experience designing and delivering web platforms and enterprise products. He combines hands-on architecture and engineering (Ruby on Rails, React, Next.js, cloud, distributed systems) with end-to-end technical delivery ownership.
+## AI-Augmented Engineering Practices
 
-## Expertise
+- Implemented AI-assisted software engineering practices across Ruby on Rails application development and DevOps workflows using Claude, Cursor IDE, and LLM-based coding assistants for architecture design, code generation, refactoring, test automation, and technical documentation.
+- Integrated AI capabilities into Dockerized environments and GitHub Actions to optimize CI/CD pipelines, automate code quality checks, security scanning, release validations, and deployment processes.
+- Established prompt-engineering and AI code-review guidelines to maintain consistency, security, and quality standards across AI-assisted contributions to production Rails services.
 
-- Ruby on Rails, React, Next.js, Tailwind CSS
-- Solutions architecture, technical consulting, product thinking
-- PostgreSQL, Redis, AWS, Docker, CI/CD
-- Performance optimization, Agile and hybrid delivery leadership
+## Core focus
 
-## Consulting Engagements
+- Ruby on Rails, React, Next.js, PostgreSQL, Redis, AWS
+- Solutions architecture (HLD/LLD), performance engineering, CI/CD
+- Independent consulting: frontend engineering, UI/UX, Terraform/AWS deployment
 
-- The Legacy Apparels (https://thelegacyapparels.com) — Fashion/apparel brand website; frontend engineering and AWS S3 deployment via Terraform.
+## Pages
 
-## Profiles
-
-- LinkedIn: https://www.linkedin.com/in/arun1ly/
-- GitHub: https://github.com/arunkumark1ly
-- Stack Overflow: https://stackoverflow.com/users/3089625/arunkumar-kandasamy
-- VoiceHunt: https://voicehunt.news/authors/arun1ly
-- Resume PDF: https://arunkumar1ly.vercel.app/arunkumar-kandasamy-resume.pdf
+- / — Portfolio home (about, experience, projects, contact)
+- /consulting — Freelance and consulting case studies
