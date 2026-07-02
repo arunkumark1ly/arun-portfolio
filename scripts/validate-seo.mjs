@@ -19,9 +19,9 @@ const checks = [
   {
     file: "index.html",
     required: [
-      "<title>ArunKumar Kandasamy - Principal Software Engineer</title>",
+      "<title>ArunKumar Kandasamy - Engineering Lead</title>",
       'rel="canonical" href="https://arunkumar1ly.vercel.app/"',
-      "Principal Software Engineer with 16+ years",
+      "Engineering Lead with 16+ years",
       "AI-augmented engineering",
       '"@type":"FAQPage"',
       "og:locale",

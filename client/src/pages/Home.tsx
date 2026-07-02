@@ -95,7 +95,7 @@ export default function Home() {
           <SectionHeading number="01" title="About" />
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
             <p className="text-sm text-foreground font-medium leading-relaxed border-l-2 border-primary pl-3">
-              Professional summary: Chennai-based Principal Software Engineer and independent technical consultant with 16+ years delivering Ruby on Rails, React, and cloud platforms — from architecture and hands-on engineering to predictable release governance.
+              Professional summary: Chennai-based Engineering Lead and independent technical consultant with 16+ years delivering Ruby on Rails, React, and cloud platforms — from architecture and hands-on engineering to predictable release governance.
             </p>
             
               <p className="font-medium text-foreground">My Philosophy:</p>

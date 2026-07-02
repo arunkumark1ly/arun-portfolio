@@ -1,4 +1,4 @@
-# ArunKumar Kandasamy — Principal Software Engineer & Technical Consultant
+# ArunKumar Kandasamy — Engineering Lead & Technical Consultant
 
 Site: https://arunkumar1ly.vercel.app
 Consulting case studies: https://arunkumar1ly.vercel.app/consulting
@@ -6,7 +6,7 @@ Resume (PDF): https://arunkumar1ly.vercel.app/arunkumar-kandasamy-resume.pdf
 LinkedIn: https://linkedin.com/in/arun1ly
 GitHub: https://github.com/arunkumark1ly
 
-ArunKumar Kandasamy is a Chennai-based Principal Software Engineer with 16+ years of experience designing and delivering web platforms and enterprise products. He combines hands-on architecture and engineering (Ruby on Rails, React, Next.js, cloud, distributed systems) with end-to-end technical delivery ownership.
+ArunKumar Kandasamy is a Chennai-based Engineering Lead with 16+ years of experience designing and delivering web platforms and enterprise products. He combines hands-on architecture and engineering (Ruby on Rails, React, Next.js, cloud, distributed systems) with end-to-end technical delivery ownership.
 
 ## AI-Augmented Engineering Practices
 

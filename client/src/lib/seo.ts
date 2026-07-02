@@ -29,13 +29,13 @@ export interface SEOProps {
 }
 
 /** Single source of truth — keep index.html meta in sync when editing these. */
-export const HOME_TITLE = "ArunKumar Kandasamy - Principal Software Engineer";
+export const HOME_TITLE = "ArunKumar Kandasamy - Engineering Lead";
 
 export const HOME_META_DESCRIPTION =
-  "Principal Software Engineer with 16+ years of experience building scalable platforms, cloud-native systems, and AI-augmented engineering practices. Deep technical expertise and delivery leadership for predictable, high-performing products.";
+  "Engineering Lead with 16+ years of experience building scalable platforms, cloud-native systems, and AI-augmented engineering practices. Deep technical expertise and delivery leadership for predictable, high-performing products.";
 
 export const HOME_KEYWORDS =
-  "Principal Software Engineer, AI-augmented engineering, Ruby on Rails Expert, React.js Developer, Next.js, Solutions Architect, Cloud Architecture, Technical Consulting, Full-Stack Development, Scalable Systems, CI/CD, ThinkPro Technologies";
+  "Engineering Lead, AI-augmented engineering, Ruby on Rails Expert, React.js Developer, Next.js, Solutions Architect, Cloud Architecture, Technical Consulting, Full-Stack Development, Scalable Systems, CI/CD, ThinkPro Ventures";
 
 export const CONSULTING_TITLE =
   "Independent Consulting Engagements | ArunKumar Kandasamy";
@@ -59,7 +59,7 @@ export const DEFAULT_SEO: SEOProps = {
   imageWidth: 1122,
   imageHeight: 1402,
   imageType: "image/webp",
-  imageAlt: "ArunKumar Kandasamy - Principal Software Engineer",
+  imageAlt: "ArunKumar Kandasamy - Engineering Lead",
   url: absoluteUrl("/"),
   path: "/",
   type: "website",
@@ -73,7 +73,7 @@ export const HOME_FAQS = [
   {
     question: "What is ArunKumar Kandasamy's professional focus?",
     answer:
-      "ArunKumar Kandasamy is a Principal Software Engineer and technical consultant with 16+ years of experience in Ruby on Rails, React, Next.js, cloud architecture, and end-to-end technical delivery for enterprise and SaaS platforms.",
+      "ArunKumar Kandasamy is a Engineering Lead and technical consultant with 16+ years of experience in Ruby on Rails, React, Next.js, cloud architecture, and end-to-end technical delivery for enterprise and SaaS platforms.",
   },
   {
     question: "What consulting services does Arun offer?",

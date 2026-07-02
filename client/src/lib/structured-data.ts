@@ -21,7 +21,7 @@ export function buildPersonSchema(description?: string) {
     "@type": "Person",
     "@id": PERSON_ID,
     name: SITE_NAME,
-    jobTitle: "Principal Software Engineer",
+    jobTitle: "Engineering Lead",
     description,
     url: `${SITE_URL}/`,
     image: DEFAULT_OG_IMAGE,
@@ -63,7 +63,7 @@ export function buildPersonSchema(description?: string) {
     ],
     worksFor: {
       "@type": "Organization",
-      name: "ThinkPro Technologies",
+      name: "ThinkPro Ventures",
     },
   };
 }
@@ -102,7 +102,7 @@ export function buildProfilePageSchema(description?: string) {
     "@type": "ProfilePage",
     "@id": `${SITE_URL}/#profilepage`,
     url: `${SITE_URL}/`,
-    name: `${SITE_NAME} — Principal Software Engineer`,
+    name: `${SITE_NAME} — Engineering Lead`,
     description,
     mainEntity: { "@id": PERSON_ID },
     isPartOf: { "@id": WEBSITE_ID },

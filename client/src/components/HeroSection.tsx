@@ -35,7 +35,7 @@ function HeroPortrait({ className }: { className?: string }) {
       >
         <img
           src="/arunkumar-kandasamy.webp"
-          alt="ArunKumar Kandasamy — Principal Software Engineer"
+          alt="ArunKumar Kandasamy — Engineering Lead"
           width={320}
           height={400}
           className="h-[280px] w-[224px] rounded-2xl object-cover object-[center_12%] shadow-[0_24px_60px_-12px_rgba(0,0,0,0.18)] ring-1 ring-black/[0.04] sm:h-[350px] sm:w-[280px] lg:h-[400px] lg:w-[320px]"
@@ -66,7 +66,7 @@ export function HeroSection() {
             className="space-y-4"
           >
             <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#B77A3D]">
-              Principal Software Engineer
+              Engineering Lead
             </p>
             <h1 className="text-[2.35rem] font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-6xl xl:text-[4.25rem]">
               ArunKumar
@@ -83,8 +83,8 @@ export function HeroSection() {
             className="space-y-6"
           >
             <p className="text-sm font-medium tracking-wide text-muted-foreground sm:text-base">
-              Principal Software Engineer{" "}
-              <span className="text-[#B77A3D]/70">•</span> ThinkPro Technologies
+              Engineering Lead{" "}
+              <span className="text-[#B77A3D]/70">•</span> ThinkPro Ventures
             </p>
 
             <div className="space-y-2">
@@ -107,7 +107,7 @@ export function HeroSection() {
             </div>
 
             <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-[1.05rem] sm:leading-7">
-              Principal Software Engineer with 16+ years of experience building scalable
+              Engineering Lead with 16+ years of experience building scalable
               platforms, cloud-native systems, and AI-augmented engineering practices. I
               combine deep technical expertise with delivery leadership to build predictable,
               high-performing products.
