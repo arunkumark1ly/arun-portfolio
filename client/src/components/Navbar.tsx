@@ -22,7 +22,7 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const blogLink = "https://voicehunt.news/authors/arun1ly";
+  const blogLink = "https://techi.news/authors/arun1ly";
 
   const navLinks = [
     { name: "About", to: "about" },

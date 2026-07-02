@@ -9,7 +9,7 @@ export const PROFILE_LINKS = {
   linkedin: "https://www.linkedin.com/in/arun1ly/",
   github: "https://github.com/arunkumark1ly",
   stackoverflow: "https://stackoverflow.com/users/3089625/arunkumar-kandasamy",
-  voicehunt: "https://voicehunt.news/authors/arun1ly",
+  voicehunt: "https://techi.news/authors/arun1ly",
   resumePdf: `${SITE_URL}/arunkumar-kandasamy-resume.pdf`,
   email: "kandasamy1ly@gmail.com",
 } as const;

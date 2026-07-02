@@ -130,7 +130,7 @@ export const projects: Project[] = [
       "New Relic"
     ],
     role: "Engineering Lead",
-    link: "https://voicehunt.news",
+    link: "https://techi.news",
   },
   {
     id: 2,

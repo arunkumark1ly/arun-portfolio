@@ -365,7 +365,7 @@ export default function Home() {
                 <SiStackoverflow className="w-5 h-5" />
               </a>
               <a 
-                href="https://voicehunt.news/authors/arun1ly" 
+                href="https://techi.news/authors/arun1ly" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors" 
