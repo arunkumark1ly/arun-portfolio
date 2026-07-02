@@ -10,7 +10,6 @@ const root = path.resolve(__dirname, "..");
 const distDir = path.join(root, "dist");
 
 const STALE_PATTERNS = [
-  "Engineering Lead",
   "Lead Technical Consultant",
   "Blend hands-on architecture and engineering leadership",
 ];

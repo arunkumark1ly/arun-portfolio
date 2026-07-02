@@ -6,7 +6,6 @@ import { spawn } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import puppeteer from "puppeteer";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -52,28 +51,35 @@ function startPreview() {
   });
 }
 
+function useLinuxChromium() {
+  return process.platform === "linux";
+}
+
+function isStrictPrerenderEnvironment() {
+  return useLinuxChromium() || process.env.VERCEL === "1";
+}
+
 async function launchBrowser() {
   const sandboxArgs = ["--no-sandbox", "--disable-setuid-sandbox"];
 
-  if (process.platform === "linux") {
-    try {
-      const chromium = await import("@sparticuz/chromium");
-      const puppeteerCore = await import("puppeteer-core");
-      return puppeteerCore.default.launch({
+  if (useLinuxChromium()) {
+    const chromium = await import("@sparticuz/chromium");
+    const puppeteerCore = await import("puppeteer-core");
+
+    chromium.default.setGraphicsMode = false;
+
+    return puppeteerCore.default.launch({
+      args: await puppeteerCore.default.defaultArgs({
         args: [...chromium.default.args, ...sandboxArgs],
-        defaultViewport: chromium.default.defaultViewport,
-        executablePath: await chromium.default.executablePath(),
-        headless: true,
-      });
-    } catch (error) {
-      console.warn(
-        "Linux Chromium unavailable, falling back to bundled Puppeteer:",
-        error instanceof Error ? error.message : error,
-      );
-    }
+        headless: "shell",
+      }),
+      executablePath: await chromium.default.executablePath(),
+      headless: "shell",
+    });
   }
 
-  return puppeteer.launch({
+  const puppeteer = await import("puppeteer");
+  return puppeteer.default.launch({
     headless: true,
     args: sandboxArgs,
   });
@@ -109,9 +115,14 @@ async function main() {
     }
     console.log("Prerender complete.");
   } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    if (isStrictPrerenderEnvironment()) {
+      console.error("Prerender failed on serverless environment:", message);
+      process.exit(1);
+    }
     console.warn(
       "Prerender skipped — deployment will continue with the Vite SPA build.",
-      error instanceof Error ? error.message : error,
+      message,
     );
   } finally {
     if (browser) {
