@@ -6,6 +6,7 @@ import {
   SITE_URL,
   absoluteUrl,
 } from "@/lib/site-config";
+
 interface SeoLike {
   title?: string;
   description?: string;
@@ -13,6 +14,7 @@ interface SeoLike {
 
 const PERSON_ID = `${SITE_URL}/#person`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
+const PROFESSIONAL_SERVICE_ID = `${SITE_URL}/#consulting-service`;
 
 export function buildPersonSchema(description?: string) {
   return {
@@ -24,6 +26,20 @@ export function buildPersonSchema(description?: string) {
     url: `${SITE_URL}/`,
     image: DEFAULT_OG_IMAGE,
     email: PROFILE_LINKS.email,
+    telephone: "+91-9360-740047",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Chennai",
+      addressCountry: "IN",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "professional inquiries",
+      email: PROFILE_LINKS.email,
+      telephone: "+91-9360-740047",
+      availableLanguage: ["English", "Tamil"],
+      areaServed: "Worldwide",
+    },
     sameAs: [
       PROFILE_LINKS.linkedin,
       PROFILE_LINKS.github,
@@ -40,6 +56,10 @@ export function buildPersonSchema(description?: string) {
       "Cloud Computing",
       "Full-Stack Development",
       "Frontend Engineering",
+      "AI-augmented engineering",
+      "Claude",
+      "Cursor IDE",
+      "LLM-based coding assistants",
     ],
     worksFor: {
       "@type": "Organization",
@@ -90,6 +110,48 @@ export function buildProfilePageSchema(description?: string) {
   };
 }
 
+export function buildBreadcrumbSchema(path: string) {
+  const items: { name: string; url: string }[] = [
+    { name: "Home", url: absoluteUrl("/") },
+  ];
+
+  if (path === "/consulting") {
+    items.push({
+      name: "Consulting Engagements",
+      url: absoluteUrl("/consulting"),
+    });
+  }
+
+  return {
+    "@type": "BreadcrumbList",
+    "@id": `${absoluteUrl(path)}#breadcrumb`,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function buildProfessionalServiceSchema(description?: string) {
+  return {
+    "@type": "ProfessionalService",
+    "@id": PROFESSIONAL_SERVICE_ID,
+    name: "Independent Technical Consulting",
+    description,
+    url: absoluteUrl("/consulting"),
+    provider: { "@id": PERSON_ID },
+    areaServed: "Worldwide",
+    serviceType: [
+      "Frontend Engineering",
+      "Technical Architecture",
+      "Production Deployment",
+      "UI/UX Implementation",
+    ],
+  };
+}
+
 export function buildCreativeWorkSchemas() {
   return getConsultingProjects().map((project) => {
     const displayName = project.nameAccent
@@ -131,6 +193,7 @@ export function buildStructuredDataGraph(
     pageName?: string;
     includeProfilePage?: boolean;
     includeCreativeWorks?: boolean;
+    includeBreadcrumbs?: boolean;
     faqs?: { question: string; answer: string }[];
   } = {},
 ) {
@@ -147,7 +210,12 @@ export function buildStructuredDataGraph(
     graph.push(buildProfilePageSchema(seo.description));
   }
 
+  if (options.includeBreadcrumbs && path !== "/") {
+    graph.push(buildBreadcrumbSchema(path));
+  }
+
   if (options.includeCreativeWorks) {
+    graph.push(buildProfessionalServiceSchema(seo.description));
     graph.push(...buildCreativeWorkSchemas());
   }
 

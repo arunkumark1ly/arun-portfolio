@@ -3,6 +3,18 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": "vite",
+  "redirects": [
+    {
+      "source": "/freelance",
+      "destination": "/consulting",
+      "permanent": true
+    },
+    {
+      "source": "/freelance/:path*",
+      "destination": "/consulting/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

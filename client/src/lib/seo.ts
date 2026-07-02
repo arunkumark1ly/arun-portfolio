@@ -1,5 +1,6 @@
 import {
   DEFAULT_OG_IMAGE,
+  PROFILE_LINKS,
   SITE_NAME,
   absoluteUrl,
 } from "@/lib/site-config";
@@ -22,18 +23,37 @@ export interface SEOProps {
   structuredData?: {
     includeProfilePage?: boolean;
     includeCreativeWorks?: boolean;
+    includeBreadcrumbs?: boolean;
     faqs?: { question: string; answer: string }[];
   };
 }
 
-const DEFAULT_DESCRIPTION =
-  "With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.";
+/** Single source of truth — keep index.html meta in sync when editing these. */
+export const HOME_TITLE = "ArunKumar Kandasamy - Principal Software Engineer";
+
+export const HOME_META_DESCRIPTION =
+  "Principal Software Engineer with 16+ years of experience building scalable platforms, cloud-native systems, and AI-augmented engineering practices. Deep technical expertise and delivery leadership for predictable, high-performing products.";
+
+export const HOME_KEYWORDS =
+  "Principal Software Engineer, AI-augmented engineering, Ruby on Rails Expert, React.js Developer, Next.js, Solutions Architect, Cloud Architecture, Technical Consulting, Full-Stack Development, Scalable Systems, CI/CD, ThinkPro Technologies";
+
+export const CONSULTING_TITLE =
+  "Independent Consulting Engagements | ArunKumar Kandasamy";
+
+export const CONSULTING_META_DESCRIPTION =
+  "Independent technical consulting engagements — modern frontend engineering, UI craftsmanship, product thinking, and production deployment. Case studies document end-to-end client delivery from concept to production.";
+
+export const CONSULTING_KEYWORDS =
+  "Independent consulting, technical consultant, frontend engineering, UI/UX implementation, Terraform AWS deployment, freelance case studies, ArunKumar Kandasamy";
+
+export const THEME_COLOR = "#B77A3D";
+
+export const TWITTER_SITE = "@arunkumarkandasamy";
 
 export const DEFAULT_SEO: SEOProps = {
-  title: "ArunKumar Kandasamy - Principal Software Engineer",
-  description: DEFAULT_DESCRIPTION,
-  keywords:
-    "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
+  title: HOME_TITLE,
+  description: HOME_META_DESCRIPTION,
+  keywords: HOME_KEYWORDS,
   image: DEFAULT_OG_IMAGE,
   imageSecureUrl: DEFAULT_OG_IMAGE,
   imageWidth: 1122,
@@ -82,6 +102,12 @@ export const HOME_FAQS = [
   },
 ] as const;
 
+const REL_ME_LINKS = [
+  PROFILE_LINKS.linkedin,
+  PROFILE_LINKS.github,
+  PROFILE_LINKS.stackoverflow,
+] as const;
+
 export function updateSEO(props: SEOProps = {}) {
   const seo = { ...DEFAULT_SEO, ...props };
   const path = props.path ?? (seo.url?.replace(/https?:\/\/[^/]+/, "") || "/");
@@ -92,6 +118,7 @@ export function updateSEO(props: SEOProps = {}) {
   updateMetaTag("description", seo.description);
   updateMetaTag("keywords", seo.keywords);
   updateMetaTag("author", seo.author);
+  updateMetaTag("theme-color", THEME_COLOR);
 
   updateMetaProperty("og:title", seo.title);
   updateMetaProperty("og:description", seo.description);
@@ -104,6 +131,7 @@ export function updateSEO(props: SEOProps = {}) {
   updateMetaProperty("og:url", seo.url);
   updateMetaProperty("og:type", seo.type);
   updateMetaProperty("og:site_name", SITE_NAME);
+  updateMetaProperty("og:locale", "en_IN");
 
   updateMetaTag("twitter:card", "summary_large_image");
   updateMetaTag("twitter:title", seo.title);
@@ -111,10 +139,12 @@ export function updateSEO(props: SEOProps = {}) {
   updateMetaTag("twitter:image", seo.image);
   updateMetaTag("twitter:image:src", seo.image);
   updateMetaTag("twitter:image:alt", seo.imageAlt);
-  updateMetaTag("twitter:creator", "@arunkumarkandasamy");
+  updateMetaTag("twitter:creator", TWITTER_SITE);
+  updateMetaTag("twitter:site", TWITTER_SITE);
 
   updateMetaTag("image", seo.image);
   updateLinkTag("canonical", seo.url);
+  updateRelMeLinks();
 
   addStructuredData(seo, path, pageName);
 }
@@ -157,6 +187,16 @@ function updateLinkTag(rel: string, href?: string) {
   tag.href = href;
 }
 
+function updateRelMeLinks() {
+  document.querySelectorAll('link[rel="me"]').forEach((el) => el.remove());
+  for (const href of REL_ME_LINKS) {
+    const link = document.createElement("link");
+    link.rel = "me";
+    link.href = href;
+    document.head.appendChild(link);
+  }
+}
+
 function addStructuredData(seo: SEOProps, path: string, pageName: string) {
   document
     .querySelectorAll('script[type="application/ld+json"]')
@@ -167,6 +207,7 @@ function addStructuredData(seo: SEOProps, path: string, pageName: string) {
     pageName,
     includeProfilePage: seo.structuredData?.includeProfilePage,
     includeCreativeWorks: seo.structuredData?.includeCreativeWorks,
+    includeBreadcrumbs: seo.structuredData?.includeBreadcrumbs,
     faqs: seo.structuredData?.faqs,
   });
 

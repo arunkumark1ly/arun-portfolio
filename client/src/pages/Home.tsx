@@ -15,7 +15,13 @@ import { Github, Linkedin, Mail, PenLine, Phone, MessageCircle } from "lucide-re
 import { SiStackoverflow } from "react-icons/si";
 import { FaqSection } from "@/components/FaqSection";
 import { absoluteUrl } from "@/lib/site-config";
-import { HOME_FAQS, updateSEO } from "@/lib/seo";
+import {
+  HOME_FAQS,
+  HOME_KEYWORDS,
+  HOME_META_DESCRIPTION,
+  HOME_TITLE,
+  updateSEO,
+} from "@/lib/seo";
 
 export default function Home() {
   const { data: skills, isLoading: skillsLoading } = useSkills();
@@ -26,11 +32,9 @@ export default function Home() {
   // Initialize SEO on component mount
   useEffect(() => {
     updateSEO({
-      title: "ArunKumar Kandasamy - Principal Software Engineer",
-      description:
-        "With 16+ years of experience designing and delivering web platforms and enterprise products across Agile and Hybrid delivery models. Blend hands-on architecture and engineering leadership (Ruby on Rails, cloud, performance, distributed systems) with end-to-end technical delivery ownership (scope, planning, risk management, release governance) to ship predictable outcomes.",
-      keywords:
-        "Lead Technical Consultant, Technical Product Manager, Ruby on Rails Expert, React.js Developer, Solutions Architect, Agile Leadership, Full-Stack Development, SaaS Product Management, Technical Delivery, Cloud Architecture",
+      title: HOME_TITLE,
+      description: HOME_META_DESCRIPTION,
+      keywords: HOME_KEYWORDS,
       url: absoluteUrl("/"),
       path: "/",
       structuredData: {
